@@ -26,6 +26,8 @@
   --wf-primary:            #6366f1;
   --wf-primary-hover:      #818cf8;
   --wf-primary-fg:         #ffffff;
+  /* CTA buttons: #4f46e5 achieves ≥4.5:1 contrast with white (WCAG AA) */
+  --wf-primary-cta:        #4f46e5;
 
   /* --- Borders --- */
   --wf-border:             #1e1e21;
@@ -119,6 +121,7 @@ html.light {
   --wf-primary:            #6366f1;
   --wf-primary-hover:      #818cf8;
   --wf-primary-fg:         #ffffff;
+  --wf-primary-cta:        #4f46e5;
 
   /* --- Borders --- */
   --wf-border:             #e4e4e7;

@@ -175,7 +175,7 @@ export default function Header() {
               data-ga-cta
               data-cta-label="Get Access"
               data-cta-stage="awareness"
-              className="inline-flex items-center gap-1.5 bg-[var(--wf-primary)] text-white text-[0.9375rem] font-semibold no-underline py-2.5 px-5 rounded-[var(--wf-radius-md)] transition-micro hover:bg-[var(--wf-primary-hover)]"
+              className="inline-flex items-center gap-1.5 bg-[var(--wf-primary-cta)] text-white text-[0.9375rem] font-semibold no-underline py-2.5 px-5 rounded-[var(--wf-radius-md)] transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -280,7 +280,7 @@ export default function Header() {
               data-ga-cta
               data-cta-label="Get Access"
               data-cta-stage="awareness"
-              className="flex-1 text-center py-3 rounded-[var(--wf-radius-md)] bg-[var(--wf-primary)] text-[0.9375rem] font-semibold text-white no-underline transition-micro hover:bg-[var(--wf-primary-hover)]"
+              className="flex-1 text-center py-3 rounded-[var(--wf-radius-md)] bg-[var(--wf-primary-cta)] text-[0.9375rem] font-semibold text-white no-underline transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access
             </a>

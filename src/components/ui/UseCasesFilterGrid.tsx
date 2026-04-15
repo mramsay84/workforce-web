@@ -68,9 +68,9 @@ export function UseCasesFilterGrid({ entries }: UseCasesFilterGridProps) {
           <button
             key={domain}
             onClick={() => handleDomainSelect(domain)}
-            className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors border ${
+            className={`min-h-[44px] rounded-full px-4 py-2.5 text-sm font-medium transition-colors border ${
               activeDomain === domain
-                ? 'bg-[#6366f1] border-[#6366f1] text-white'
+                ? 'bg-[#4f46e5] border-[#4f46e5] text-white'
                 : 'border-white/[0.08] bg-white/[0.04] text-[#b5b5c2] hover:text-[#fdfdff] hover:border-white/[0.15]'
             }`}
           >

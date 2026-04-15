@@ -121,7 +121,7 @@ export function Hero({
                   "inline-flex h-10 items-center rounded-md px-5 text-sm font-medium transition-colors",
                   cta.variant === "secondary"
                     ? "bg-white/[0.06] text-[#fdfdff] border border-white/[0.12] hover:bg-white/[0.10]"
-                    : "bg-[#6366f1] text-white hover:bg-[#818cf8]"
+                    : "bg-[#4f46e5] text-white hover:bg-[#818cf8]"
                 )}
               >
                 {cta.label}

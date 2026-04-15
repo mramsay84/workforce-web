@@ -125,7 +125,7 @@ export default async function UseCasePage({ params }: PageProps) {
               data-ga-cta
               data-cta-label="Get started free"
               data-cta-stage="decision"
-              className="inline-flex h-10 items-center rounded-md bg-[#6366f1] px-5 text-sm font-medium text-white hover:bg-[#818cf8] transition-colors"
+              className="inline-flex h-10 items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white hover:bg-[#818cf8] transition-colors"
             >
               Get started free
             </a>

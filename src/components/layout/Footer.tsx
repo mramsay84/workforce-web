@@ -43,9 +43,9 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h4 className="text-[0.6875rem] font-semibold tracking-[0.07em] uppercase text-[var(--wf-fg-dim)] mb-4">
+              <p className="text-[0.6875rem] font-semibold tracking-[0.07em] uppercase text-[var(--wf-fg-dim)] mb-4">
                 {section}
-              </h4>
+              </p>
               <ul className="list-none p-0 m-0 flex flex-col gap-2.5">
                 {links.map((link) => (
                   <li key={link.name}>

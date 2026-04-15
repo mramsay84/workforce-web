@@ -70,7 +70,7 @@ export function CallToAction({
             href={primary.href}
             data-ga-cta
             data-cta-label={primary.label}
-            className="inline-flex h-10 items-center rounded-md bg-[#6366f1] px-5 text-sm font-medium text-white transition-colors hover:bg-[#818cf8]"
+            className="inline-flex h-10 items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white transition-colors hover:bg-[#818cf8]"
           >
             {primary.label}
           </a>
