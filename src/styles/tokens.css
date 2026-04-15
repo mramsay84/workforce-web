@@ -1,0 +1,167 @@
+/* ============================================================
+   Workforce Design Tokens — src/styles/tokens.css
+   Faithful translation of: Workforce — Theme Guideline.html
+   Source: apps/web/src/app/globals.css (production dashboard)
+
+   Dark theme is the DEFAULT (:root).
+   Light theme activates with html.light class.
+   Hero panel is ALWAYS dark — even in light mode.
+   ============================================================ */
+
+/* ============================================================
+   DARK THEME (default)
+   ============================================================ */
+:root {
+  /* --- Backgrounds --- */
+  --wf-bg:                 #050507;
+  --wf-bg-surface:         #09090b;
+  --wf-bg-surface-2:       #0a0a0c;
+
+  /* --- Foreground --- */
+  --wf-fg:                 #fdfdff;
+  --wf-fg-muted:           #b5b5c2;
+  --wf-fg-dim:             #6e7a93;
+
+  /* --- Primary — Indigo --- */
+  --wf-primary:            #6366f1;
+  --wf-primary-hover:      #818cf8;
+  --wf-primary-fg:         #ffffff;
+
+  /* --- Borders --- */
+  --wf-border:             #1e1e21;
+  --wf-border-soft:        rgba(255, 255, 255, 0.06);
+  --wf-border-softer:      rgba(255, 255, 255, 0.08);
+
+  /* --- Accent / muted surfaces --- */
+  --wf-accent:             #27272a;
+
+  /* --- Glass card surfaces --- */
+  --wf-card-bg:            rgba(255, 255, 255, 0.02);
+  --wf-card-header-bg:     rgba(255, 255, 255, 0.025);
+  --wf-card-border:        rgba(255, 255, 255, 0.06);
+  --wf-card-blur:          12px;
+
+  /* --- Surface system --- */
+  --wf-surface-radius:     1rem;        /* 16px */
+  --wf-surface-border:     1px solid rgba(255, 255, 255, 0.06);
+  --wf-surface-shadow:
+    0 8px 60px rgba(0, 0, 0, 0.40),
+    0 2px 20px rgba(0, 0, 0, 0.25);
+
+  /* --- Ambient gradients --- */
+  --wf-shell-bg: #050507;
+  --wf-shell-gradient:
+    radial-gradient(ellipse 2400px 1900px at 22% 14%,
+      color-mix(in srgb, var(--wf-primary) 4%, rgba(148, 163, 184, 0.04)) 0%,
+      transparent 72%),
+    radial-gradient(ellipse 2600px 2100px at 80% 86%,
+      color-mix(in srgb, var(--wf-primary) 4%, rgba(148, 163, 184, 0.035)) 0%,
+      transparent 72%);
+  --wf-orb-gradient: radial-gradient(
+    ellipse 60% 140% at 50% 118%,
+    color-mix(in srgb, var(--wf-primary) 12%, rgba(148, 163, 184, 0.16)) 0%,
+    color-mix(in srgb, var(--wf-primary)  6%, rgba(148, 163, 184, 0.06)) 32%,
+    color-mix(in srgb, var(--wf-primary)  2%, rgba(148, 163, 184, 0.02)) 58%,
+    transparent 82%
+  );
+
+  /* --- Hero panel — always dark regardless of theme --- */
+  --wf-hero-panel-bg:      #09090b;
+  --wf-hero-text:          #ffffff;
+  --wf-hero-text-muted:    rgba(255, 255, 255, 0.7);
+  --wf-hero-text-dim:      rgba(255, 255, 255, 0.8);
+  --wf-hero-bullet:        rgba(255, 255, 255, 0.5);
+
+  /* --- Border radii --- */
+  --wf-radius-sm:          0.5rem;     /*  8px — inputs, chips */
+  --wf-radius-md:          0.75rem;    /* 12px — buttons, menus */
+  --wf-radius-lg:          1rem;       /* 16px — cards, modals */
+  --wf-radius-xl:          1.5rem;     /* 24px — hero surfaces */
+
+  /* --- Spacing scale (matches 4px grid) --- */
+  --wf-space-1:            4px;
+  --wf-space-2:            8px;
+  --wf-space-3:            12px;
+  --wf-space-4:            16px;
+  --wf-space-6:            24px;
+  --wf-space-8:            32px;
+  --wf-space-12:           48px;
+  --wf-space-16:           64px;
+
+  /* --- Typography families --- */
+  --wf-font-display:       'Aileron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --wf-font-body:          'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --wf-font-mono:          'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* --- Layout --- */
+  --wf-container-max:      1120px;
+  --wf-container-px:       2rem;       /* 32px */
+  --wf-container-py-top:   6rem;       /* 96px */
+  --wf-container-py-btm:   7.5rem;     /* 120px */
+}
+
+/* ============================================================
+   LIGHT THEME — activated by html.light
+   Hero panel intentionally stays dark (--wf-hero-* unchanged).
+   ============================================================ */
+html.light {
+  /* --- Backgrounds --- */
+  --wf-bg:                 #ffffff;
+  --wf-bg-surface:         #ffffff;
+  --wf-bg-surface-2:       #ffffff;
+
+  /* --- Foreground --- */
+  --wf-fg:                 #09090b;
+  --wf-fg-muted:           #71717a;
+  --wf-fg-dim:             #94a3b8;
+
+  /* --- Primary stays the same --- */
+  --wf-primary:            #6366f1;
+  --wf-primary-hover:      #818cf8;
+  --wf-primary-fg:         #ffffff;
+
+  /* --- Borders --- */
+  --wf-border:             #e4e4e7;
+  --wf-border-soft:        rgba(0, 0, 0, 0.06);
+  --wf-border-softer:      rgba(0, 0, 0, 0.08);
+
+  /* --- Accent --- */
+  --wf-accent:             #f4f4f5;
+
+  /* --- Glass card surfaces (lighter on white) --- */
+  --wf-card-bg:            rgba(255, 255, 255, 0.50);
+  --wf-card-header-bg:     rgba(255, 255, 255, 0.50);
+  --wf-card-border:        rgba(228, 228, 231, 0.60);
+  --wf-card-blur:          12px;
+
+  /* --- Surface system --- */
+  --wf-surface-radius:     1rem;
+  --wf-surface-border:     1px solid rgba(0, 0, 0, 0.06);
+  --wf-surface-shadow:
+    0 8px 60px rgba(0, 0, 0, 0.08),
+    0 2px 20px rgba(0, 0, 0, 0.04);
+
+  /* --- Ambient gradients (stronger on white) --- */
+  --wf-shell-bg:           #ffffff;
+  --wf-shell-gradient:
+    radial-gradient(ellipse 2400px 1900px at 22% 14%,
+      color-mix(in srgb, var(--wf-primary) 14%, rgba(148, 163, 184, 0.13)) 0%,
+      transparent 72%),
+    radial-gradient(ellipse 2600px 2100px at 80% 86%,
+      color-mix(in srgb, var(--wf-primary) 13%, rgba(148, 163, 184, 0.12)) 0%,
+      transparent 72%);
+  --wf-orb-gradient: radial-gradient(
+    ellipse 60% 140% at 50% 118%,
+    color-mix(in srgb, var(--wf-primary) 10%, rgba(226, 232, 240, 0.38)) 0%,
+    color-mix(in srgb, var(--wf-primary)  6%, rgba(226, 232, 240, 0.16)) 32%,
+    color-mix(in srgb, var(--wf-primary)  3%, rgba(226, 232, 240, 0.04)) 58%,
+    transparent 82%
+  );
+
+  /* Hero panel stays dark even in light mode */
+  --wf-hero-panel-bg:      #09090b;
+  --wf-hero-text:          #ffffff;
+  --wf-hero-text-muted:    rgba(255, 255, 255, 0.7);
+  --wf-hero-text-dim:      rgba(255, 255, 255, 0.8);
+  --wf-hero-bullet:        rgba(255, 255, 255, 0.5);
+}

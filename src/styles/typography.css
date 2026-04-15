@@ -1,0 +1,170 @@
+/* ============================================================
+   Workforce Typography System — src/styles/typography.css
+   Type scale: Display 56 → Headline 40 → Title 28 → Subtitle 20
+               Body 15 → Label 12
+   Fonts: Aileron (display/headings) · DM Sans (body/UI) · JetBrains Mono (code)
+   ============================================================ */
+
+/* ============================================================
+   TYPE SCALE UTILITY CLASSES
+   ============================================================ */
+
+/* Display — 56px / Aileron Bold — page-level hero headlines */
+.type-display {
+  font-family: var(--wf-font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  letter-spacing: -2.2px;
+  line-height: 1;
+}
+
+/* Headline — 40px / Aileron Bold — section headlines */
+.type-headline {
+  font-family: var(--wf-font-display);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  letter-spacing: -1.6px;
+  line-height: 1.05;
+}
+
+/* Title — 28px / Aileron SemiBold — sub-section titles, card headers */
+.type-title {
+  font-family: var(--wf-font-display);
+  font-size: clamp(22px, 2.5vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+}
+
+/* Subtitle — 20px / DM Sans SemiBold — lead copy, feature subtitles */
+.type-subtitle {
+  font-family: var(--wf-font-body);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  line-height: 1.35;
+}
+
+/* Body — 15px / DM Sans Regular — paragraphs, descriptions */
+.type-body {
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--wf-fg-muted);
+}
+
+/* Body large — 16px variant for prominent lead text */
+.type-body-lg {
+  font-family: var(--wf-font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--wf-fg-muted);
+}
+
+/* Label — 12px / DM Sans SemiBold uppercase — section eyebrows, tags */
+.type-label {
+  font-family: var(--wf-font-body);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--wf-fg-dim);
+  line-height: 1;
+}
+
+/* Label medium — 13px / DM Sans Medium — navigation, button labels */
+.type-label-md {
+  font-family: var(--wf-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--wf-fg-dim);
+}
+
+/* Code — JetBrains Mono */
+.type-code {
+  font-family: var(--wf-font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   HEADING ELEMENT DEFAULTS
+   Ensure h1–h6 inherit display font (overridable per-component)
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--wf-font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--wf-fg);
+}
+
+/* ============================================================
+   HERO TYPOGRAPHY — always-dark panel overrides
+   ============================================================ */
+.hero-headline {
+  font-family: var(--wf-font-display);
+  font-size: clamp(36px, 4.5vw, 44px);
+  font-weight: 700;
+  letter-spacing: -1.6px;
+  line-height: 1.05;
+  color: var(--wf-hero-text);
+  white-space: pre-line;
+}
+
+.hero-body {
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--wf-hero-text-muted);
+}
+
+/* ============================================================
+   WORDMARK / LOGO TYPOGRAPHY
+   ============================================================ */
+.wf-wordmark {
+  font-family: var(--wf-font-display);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  color: var(--wf-fg);
+}
+
+/* ============================================================
+   RESPONSIVE ADJUSTMENTS
+   Mobile-first: base styles above are mobile.
+   Tablet (≥768px) and Desktop (≥1280px) scale up.
+   ============================================================ */
+@media (max-width: 767px) {
+  .type-display {
+    font-size: 36px;
+    letter-spacing: -1.4px;
+  }
+  .type-headline {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  .type-title {
+    font-size: 22px;
+    letter-spacing: -0.4px;
+  }
+  .hero-headline {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .type-display {
+    font-size: 56px;
+    letter-spacing: -2.2px;
+  }
+  .type-headline {
+    font-size: 40px;
+    letter-spacing: -1.6px;
+  }
+}

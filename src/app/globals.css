@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+/* ─── Workforce Design Tokens ─────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'Aileron';
+  src: url('/fonts/Aileron-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: url('/fonts/Aileron-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aileron';
+  src: url('/fonts/Aileron-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  /* ── Colors ── */
+  --color-wf-bg: var(--wf-bg);
+  --color-wf-bg-surface: var(--wf-bg-surface);
+  --color-wf-bg-surface-2: var(--wf-bg-surface-2);
+  --color-wf-fg: var(--wf-fg);
+  --color-wf-fg-muted: var(--wf-fg-muted);
+  --color-wf-fg-dim: var(--wf-fg-dim);
+  --color-wf-primary: var(--wf-primary);
+  --color-wf-primary-hover: var(--wf-primary-hover);
+  --color-wf-primary-fg: var(--wf-primary-fg);
+  --color-wf-border: var(--wf-border);
+  --color-wf-accent: var(--wf-accent);
+
+  /* ── Typography ── */
+  --font-display: var(--wf-font-display);
+  --font-body: var(--wf-font-body);
+  --font-mono: var(--wf-font-mono);
+  --font-sans: var(--wf-font-body);
+
+  /* ── Radii ── */
+  --radius-wf-sm: var(--wf-radius-sm);
+  --radius-wf-md: var(--wf-radius-md);
+  --radius-wf-lg: var(--wf-radius-lg);
+  --radius-wf-xl: var(--wf-radius-xl);
+
+  /* ── Spacing ── */
+  --spacing-wf-1: var(--wf-space-1);
+  --spacing-wf-2: var(--wf-space-2);
+  --spacing-wf-3: var(--wf-space-3);
+  --spacing-wf-4: var(--wf-space-4);
+  --spacing-wf-6: var(--wf-space-6);
+  --spacing-wf-8: var(--wf-space-8);
+  --spacing-wf-12: var(--wf-space-12);
+  --spacing-wf-16: var(--wf-space-16);
+}
+
+/* ─── Token Definitions (dark default) ─────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --wf-bg: #050507;
+  --wf-bg-surface: #09090b;
+  --wf-bg-surface-2: #0a0a0c;
+  --wf-fg: #fdfdff;
+  --wf-fg-muted: #b5b5c2;
+  --wf-fg-dim: #6e7a93;
+  --wf-primary: #6366f1;
+  --wf-primary-hover: #818cf8;
+  --wf-primary-fg: #ffffff;
+  --wf-border: #1e1e21;
+  --wf-border-soft: rgba(255, 255, 255, 0.06);
+  --wf-border-softer: rgba(255, 255, 255, 0.08);
+  --wf-accent: #27272a;
+
+  /* Glass cards */
+  --wf-card-bg: rgba(255, 255, 255, 0.02);
+  --wf-card-header-bg: rgba(255, 255, 255, 0.025);
+  --wf-card-border: rgba(255, 255, 255, 0.06);
+  --wf-card-blur: 12px;
+  --wf-surface-radius: 1rem;
+  --wf-surface-border: 1px solid rgba(255, 255, 255, 0.06);
+  --wf-surface-shadow: 0 8px 60px rgba(0, 0, 0, 0.40), 0 2px 20px rgba(0, 0, 0, 0.25);
+
+  /* Ambient gradients */
+  --wf-shell-bg: #050507;
+  --wf-shell-gradient:
+    radial-gradient(ellipse 2400px 1900px at 22% 14%,
+      color-mix(in srgb, var(--wf-primary) 4%, rgba(148, 163, 184, 0.04)) 0%,
+      transparent 72%),
+    radial-gradient(ellipse 2600px 2100px at 80% 86%,
+      color-mix(in srgb, var(--wf-primary) 4%, rgba(148, 163, 184, 0.035)) 0%,
+      transparent 72%);
+  --wf-orb-gradient: radial-gradient(
+    ellipse 60% 140% at 50% 118%,
+    color-mix(in srgb, var(--wf-primary) 12%, rgba(148, 163, 184, 0.16)) 0%,
+    color-mix(in srgb, var(--wf-primary) 6%, rgba(148, 163, 184, 0.06)) 32%,
+    color-mix(in srgb, var(--wf-primary) 2%, rgba(148, 163, 184, 0.02)) 58%,
+    transparent 82%
+  );
+
+  /* Hero panel */
+  --wf-hero-panel-bg: #09090b;
+  --wf-hero-text: #ffffff;
+  --wf-hero-text-muted: rgba(255, 255, 255, 0.7);
+  --wf-hero-text-dim: rgba(255, 255, 255, 0.8);
+  --wf-hero-bullet: rgba(255, 255, 255, 0.5);
+
+  /* Typography */
+  --wf-font-display: 'Aileron', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --wf-font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --wf-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Border radius */
+  --wf-radius-sm: 0.5rem;
+  --wf-radius-md: 0.75rem;
+  --wf-radius-lg: 1rem;
+  --wf-radius-xl: 1.5rem;
+
+  /* Spacing */
+  --wf-space-1: 4px;
+  --wf-space-2: 8px;
+  --wf-space-3: 12px;
+  --wf-space-4: 16px;
+  --wf-space-6: 24px;
+  --wf-space-8: 32px;
+  --wf-space-12: 48px;
+  --wf-space-16: 64px;
+}
+
+/* ─── Light Theme ────────────────────────────────────────────────────────────── */
+
+html.light {
+  --wf-bg: #ffffff;
+  --wf-bg-surface: #ffffff;
+  --wf-bg-surface-2: #ffffff;
+  --wf-fg: #09090b;
+  --wf-fg-muted: #71717a;
+  --wf-fg-dim: #94a3b8;
+  --wf-border: #e4e4e7;
+  --wf-border-soft: rgba(0, 0, 0, 0.06);
+  --wf-border-softer: rgba(0, 0, 0, 0.08);
+  --wf-accent: #f4f4f5;
+  --wf-card-bg: rgba(255, 255, 255, 0.50);
+  --wf-card-header-bg: rgba(255, 255, 255, 0.50);
+  --wf-card-border: rgba(228, 228, 231, 0.60);
+  --wf-shell-bg: #ffffff;
+  --wf-surface-shadow: 0 8px 60px rgba(0, 0, 0, 0.08), 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--wf-bg);
+  color: var(--wf-fg);
+  font-family: var(--wf-font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Utility Classes ────────────────────────────────────────────────────────── */
+
+.wf-glass {
+  background: var(--wf-card-bg);
+  border: var(--wf-surface-border);
+  border-radius: var(--wf-radius-lg);
+  backdrop-filter: blur(var(--wf-card-blur));
+  -webkit-backdrop-filter: blur(var(--wf-card-blur));
+  box-shadow: var(--wf-surface-shadow);
+}
+
+.wf-gradient-text {
+  background: linear-gradient(135deg, var(--wf-fg) 0%, var(--wf-fg-muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wf-primary-gradient-text {
+  background: linear-gradient(135deg, var(--wf-primary) 0%, var(--wf-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
