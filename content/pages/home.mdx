@@ -1,110 +1,175 @@
 ---
-title: "Workforce — AI Development Team Orchestration"
-description: "Deploy a coordinated team of AI specialists that communicate, review each other's work, and build software autonomously. Not one agent — a whole team."
+title: "AI Workforce Platform — Brief It. It Staffs. It Executes. It Delivers."
+description: "Workforce plans, staffs, and executes complex professional work — deploying structured teams of specialized AI agents so you get complete deliverables, not better chat responses."
 slug: home
 type: page
 phase: D0
 ---
 
 <Hero
-  headline="Your AI workforce, coordinated"
-  subheadline="Not one agent doing everything. A coordinated team of AI specialists — each with a defined role, communication channels, and quality gates — building software the way real teams do."
   badge="AI Workforce Platform"
-  cta={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
-  ctaSecondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+  headline="Brief it. It staffs. It executes. It delivers."
+  subheadline="Workforce plans, staffs, and executes complex professional work — deploying structured teams of specialized AI agents so you get complete deliverables, not better chat responses. You describe the project. The platform assembles the right leads and specialists, manages every review cycle, and delivers finished work."
+  cta={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+  ctaSecondary={{ label: "See how it works", href: "/how-it-works" }}
 />
 
 <Section
-  title="The problem with single-agent AI"
-  subtitle="One agent doing frontend, backend, security, testing, and architecture hits every limit at once."
+  title="Every AI tool today has the same structural flaw: one agent doing everything."
+  subtitle="A single agent hits context limits on complex work. It cannot simultaneously specialize in legal reasoning, software architecture, and financial modeling — so it generalizes. When one agent does everything, you become the coordinator. You route the tasks. You track the decisions. You catch the mistakes."
   align="center"
 >
-  <FeatureGrid columns={3}>
+  <FeatureGrid columns={2}>
     <FeatureCard
-      title="Context limits"
-      description="Long sessions degrade quality. The agent forgets earlier decisions, repeats work, contradicts itself."
-      tag="Problem"
+      title="One agent doing everything"
+      description="Single agents hit context limits. They generalize across every domain. They forget decisions. No one reviews their work. You become the coordinator — the thing AI was supposed to replace."
+      tag="The problem"
     />
     <FeatureCard
-      title="No review"
-      description="No one catches mistakes. No one asks 'did you check the existing component library before building a custom one?'"
-      tag="Problem"
-    />
-    <FeatureCard
-      title="No specialisation"
-      description="A generalist making shallow choices across every domain — frontend, backend, security, architecture — all at once."
-      tag="Problem"
+      title="A structured team, each agent in their domain"
+      description="Workforce runs teams. A planning consultant designs the approach. Leads own their domains. Specialists execute in parallel — each scoped to what they actually know. Work is reviewed at every stage before it closes."
+      tag="Workforce"
+      accent
     />
   </FeatureGrid>
 </Section>
 
 <Section
-  title="A real team, not a single agent"
-  subtitle="Workforce coordinates specialised AI agents the way real engineering organisations work."
+  title="What teams use Workforce for"
+  subtitle="Find your domain. See what gets built."
   variant="surface"
   align="center"
 >
+  <FeatureGrid columns={3}>
+    <FeatureCard
+      title="Full-Stack SaaS MVP"
+      description="A working application — frontend, backend, auth, and deployment — built by a coordinated AI engineering org."
+      tag="Development"
+      href="/use-cases/saas-mvp"
+      cta="See how it works →"
+    />
+    <FeatureCard
+      title="Product Launch GTM"
+      description="Strategy, copy, landing page, emails — one coordinated operation."
+      tag="Marketing"
+      href="/use-cases/product-launch-gtm"
+      cta="See how it works →"
+    />
+    <FeatureCard
+      title="Investment Memo"
+      description="Market, financial, and legal analysis run in parallel. One synthesis."
+      tag="Research & Strategy"
+      href="/use-cases/investment-memo"
+      cta="See how it works →"
+    />
+  </FeatureGrid>
+  <CallToAction
+    body=""
+    primary={{ label: "Browse all use cases →", href: "/use-cases" }}
+    variant="inline"
+  />
+</Section>
+
+<Section title="How it works" align="center">
   <StepList
     orientation="horizontal"
     steps={[
       {
-        title: "Describe your project",
-        description: "Tell the planner what needs to be done. It interviews you, designs the right team, and submits a plan for your approval."
+        title: "Brief the platform",
+        description: "Describe what needs to be done in plain language — no workflow configuration, no technical setup required."
       },
       {
-        title: "Approve the team",
-        description: "Review the agent roster, their roles, and the execution plan. Approve to start. Nothing runs without your sign-off."
+        title: "Planner designs your team",
+        description: "The right leads and specialists are selected. A structured execution proposal is submitted for your approval before any work begins."
       },
       {
-        title: "Watch it execute",
-        description: "Agents work in parallel — each owning their domain. You see everything in real time and stay in control of what matters."
+        title: "Team executes in parallel",
+        description: "Leads own their domains. Specialists work simultaneously — no sequential bottleneck across legal, research, engineering, or marketing."
+      },
+      {
+        title: "You review what matters",
+        description: "Deliverables arrive structured and reviewed. High-stakes decisions come back to you. The platform handles coordination and quality enforcement."
+      }
+    ]}
+  />
+  <CallToAction
+    body=""
+    primary={{ label: "See the full breakdown →", href: "/how-it-works" }}
+    variant="inline"
+  />
+</Section>
+
+<Section
+  title="Four structural differences that make Workforce distinct"
+  subtitle="These are not features. They describe how the platform is architected."
+  align="center"
+>
+  <FeatureGrid columns={2}>
+    <PillarCard
+      title="A Real Team, Not a Single Agent"
+      description="The right agent for each job. Leads own their domain. Specialists execute within scope. A legal agent applies GREEN/YELLOW/RED risk frameworks. A research agent grades evidence and tracks competing hypotheses. Not one agent doing everything — a team designed for the work."
+      accent
+    />
+    <PillarCard
+      title="Brief It. The Platform Runs It."
+      description="You describe the work in plain language. The platform designs the team, routes the tasks, manages agent lifecycles, and enforces quality standards automatically. You approve the plan; the platform handles the rest. No workflow design. No agent configuration."
+    />
+    <PillarCard
+      title="Outcomes, Not Outputs"
+      description="Review cycles are enforced by the platform — not a process you set up. No specialist work closes without lead sign-off. Domain-appropriate quality standards are built into each work mode. The deliverable arrives finished, not drafted."
+    />
+    <PillarCard
+      title="Every Domain. One System."
+      description="Ten live professional work modes — Development, Website, Marketing, Content, Research, Think Tank, Legal, Finance, Compliance, and Strategy. Modes are designed to sequence: Research to Strategy, Marketing to Content to Website. One governance model across all of them."
+    />
+  </FeatureGrid>
+</Section>
+
+<Section
+  title="Some projects don't fit one domain. That's the point."
+  subtitle="Complex work spans multiple domains. Workforce is designed to sequence them — each phase's deliverable becomes the next phase's brief."
+  variant="surface"
+  align="center"
+>
+  <StepList
+    orientation="vertical"
+    steps={[
+      {
+        title: "Research → Strategy → Marketing → Content → Website",
+        description: "Validate the market. Design the approach. Build the campaign. Write the copy. Ship the site. The same positioning and brand standards carry through every workstream."
+      },
+      {
+        title: "Compliance → Development",
+        description: "Audit the codebase. Findings, severity-rated. Then a Development sprint to fix what was found. The audit becomes the engineering brief — no gap between what was identified and what gets fixed."
+      },
+      {
+        title: "Legal + Finance + Research → Due Diligence",
+        description: "Three parallel teams running simultaneously: legal risk review, financial model validation, market and competitive research. A synthesis lead assembles the integrated package."
       }
     ]}
   />
 </Section>
 
 <Section
-  title="What makes Workforce different"
+  title="Built for professional work. Enforced at every stage."
   align="center"
 >
-  <FeatureGrid columns={2}>
-    <PillarCard
-      title="Specialised teams"
-      description="Frontend lead, backend lead, QA, security, DevOps — each owns their domain. No single agent doing everything."
-      accent
-    />
-    <PillarCard
-      title="Mandatory code review"
-      description="Every change is reviewed by a peer agent before it merges. No self-merging. Ever."
-    />
-    <PillarCard
-      title="Persistent context"
-      description="Agents save decisions to the database. Knowledge survives restarts. The team doesn't forget."
-    />
-    <PillarCard
-      title="Company laws enforced"
-      description="Your rules are injected into every agent's context. They literally cannot start without them loaded."
-    />
-  </FeatureGrid>
-</Section>
-
-<Section variant="surface" align="center">
   <TrustBadge
     variant="row"
     items={[
-      { value: "~$50–200/day", label: "vs $500K+/yr for a human team" },
-      { value: "24/7", label: "No breaks, no politics, no turnover" },
-      { value: "Zero", label: "Knowledge lost between sessions" },
-      { value: "Seconds", label: "To scale from 3 agents to 10" }
+      { value: "10", label: "Professional work modes — live today" },
+      { value: "Parallel", label: "Execution across domains — no sequential wait" },
+      { value: "Every task", label: "Review cycles enforced — lead sign-off required" },
+      { value: "Finished", label: "Deliverables — not assisted drafts" }
     ]}
   />
 </Section>
 
 <Section align="center">
   <CallToAction
-    headline="Replace your most expensive bottleneck"
-    body="A real workforce costs $500K–$2M/year. Workforce costs ~$50–200/day for a team that works 24/7, follows every rule, and scales in seconds."
-    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
-    secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+    headline="Run your first project."
+    body="Describe your project. Workforce designs the team and proposes the execution plan. Nothing starts until you approve it."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "See how it works first →", href: "/how-it-works" }}
   />
 </Section>

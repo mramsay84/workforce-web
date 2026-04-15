@@ -28,51 +28,20 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        borderTop: '1px solid var(--wf-border-soft)',
-        background: 'var(--wf-bg)',
-        marginTop: '0',
-      }}
-    >
-      <div
-        className="mx-auto"
-        style={{ maxWidth: '1200px', padding: '64px 24px 48px' }}
-      >
+    <footer className="border-t border-[var(--wf-border-soft)] bg-[var(--wf-bg)]">
+      <div className="mx-auto max-w-[1120px] px-6 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <Link href="/" className="inline-flex items-center gap-2.5 mb-4" style={{ textDecoration: 'none' }}>
-              <div
-                className="flex items-center justify-center rounded-lg flex-shrink-0"
-                style={{
-                  width: '28px',
-                  height: '28px',
-                  background: 'linear-gradient(135deg, var(--wf-primary) 0%, #4f46e5 100%)',
-                }}
-              >
-                <span style={{ color: '#fff', fontWeight: 700, fontSize: '12px', fontFamily: 'var(--wf-font-display)' }}>W</span>
+            <Link href="/" className="inline-flex items-center gap-2.5 mb-4 no-underline">
+              <div className="flex items-center justify-center rounded-lg flex-shrink-0 w-7 h-7 bg-gradient-to-br from-[var(--wf-primary)] to-[#4f46e5]">
+                <span className="text-white font-bold text-xs">W</span>
               </div>
-              <span
-                style={{
-                  fontFamily: 'var(--wf-font-display)',
-                  fontWeight: 700,
-                  fontSize: '1rem',
-                  color: 'var(--wf-fg)',
-                  letterSpacing: '-0.02em',
-                }}
-              >
+              <span className="font-bold text-base text-[var(--wf-fg)] tracking-[-0.02em]">
                 Workforce
               </span>
             </Link>
-            <p
-              style={{
-                fontSize: '0.875rem',
-                color: 'var(--wf-fg-dim)',
-                lineHeight: 1.6,
-                maxWidth: '180px',
-              }}
-            >
+            <p className="text-sm text-[var(--wf-fg-dim)] leading-relaxed max-w-[180px]">
               Brief it. It staffs. It executes. It delivers.
             </p>
           </div>
@@ -80,29 +49,15 @@ export default function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h4
-                style={{
-                  fontSize: '0.6875rem',
-                  fontWeight: 600,
-                  letterSpacing: '0.07em',
-                  textTransform: 'uppercase',
-                  color: 'var(--wf-fg-dim)',
-                  marginBottom: '16px',
-                }}
-              >
+              <h4 className="text-[0.6875rem] font-semibold tracking-[0.07em] uppercase text-[var(--wf-fg-dim)] mb-4">
                 {section}
               </h4>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <ul className="list-none p-0 m-0 flex flex-col gap-2.5">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      style={{
-                        fontSize: '0.875rem',
-                        color: 'var(--wf-fg-muted)',
-                        textDecoration: 'none',
-                        transition: 'color 150ms ease',
-                      }}
+                      className="text-sm text-[var(--wf-fg-muted)] no-underline transition-micro hover:text-[var(--wf-fg)]"
                     >
                       {link.name}
                     </Link>
@@ -113,18 +68,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <div
-          className="flex flex-col sm:flex-row justify-between items-center gap-4"
-          style={{
-            marginTop: '48px',
-            paddingTop: '24px',
-            borderTop: '1px solid var(--wf-border-soft)',
-          }}
-        >
-          <p style={{ fontSize: '0.8125rem', color: 'var(--wf-fg-dim)' }}>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mt-12 pt-6 border-t border-[var(--wf-border-soft)]">
+          <p className="text-[0.8125rem] text-[var(--wf-fg-dim)]">
             © {new Date().getFullYear()} Workforce. All rights reserved.
           </p>
-          <p style={{ fontSize: '0.8125rem', color: 'var(--wf-fg-dim)' }}>
+          <p className="text-[0.8125rem] text-[var(--wf-fg-dim)]">
             AI analysis only — not professional advice.
           </p>
         </div>

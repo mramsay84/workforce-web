@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '../styles/interactions.css';
 
 /* ── Workforce design tokens ─────────────────────────────────────────── */
 :root {

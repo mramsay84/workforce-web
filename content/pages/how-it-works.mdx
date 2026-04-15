@@ -1,52 +1,160 @@
 ---
-title: "How Workforce works"
-description: "A coordinated AI team — planner, leads, specialists — that follows your rules, reviews each other's work, and builds software autonomously."
+title: "How Workforce Works — One Brief. One Plan. A Coordinated Team. A Complete Deliverable."
+description: "Workforce turns a project brief into structured execution — a planning consultant designs the team, leads and specialists execute in parallel, and review cycles enforce quality at every stage."
 slug: how-it-works
 type: page
 phase: D0
 ---
 
 <Hero
-  headline="How Workforce works"
-  subheadline="A planner designs your team. Leads own their domains. Specialists execute in parallel. You approve the plan, review what matters, and watch the work happen."
-  cta={{ label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" }}
+  headline="One brief. One plan. A coordinated team. A complete deliverable."
+  subheadline="When you brief Workforce, a planning consultant designs the right team for your project and proposes an execution plan. You approve the plan before any work begins. Then leads and specialists execute in parallel — each in their domain — with built-in review cycles that enforce quality before anything closes."
+  cta={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+  ctaSecondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
 />
 
-<Section title="The team structure">
+<Section title="The team structure" subtitle="Every Workforce project runs a lead-specialist hierarchy — the right roles for the right domains.">
   <FeatureGrid columns={3}>
-    <FeatureCard title="Planner" description="Interviews you, designs the right team for the job, and submits a structured proposal for your approval before any work starts." tag="Phase 0" />
-    <FeatureCard title="Leads" description="Own their domain — frontend, backend, QA, security. Hire specialists, create tasks, review work, and report to the project manager." tag="Leads" />
-    <FeatureCard title="Specialists" description="Execute assigned tasks. Write code, commit to git, review each other, and communicate through structured channels." tag="Specialists" />
+    <FeatureCard
+      title="Planner"
+      description="Reviews your brief, designs the right team, and submits a structured execution proposal for your approval before any work starts. Nothing begins without your sign-off."
+      tag="Phase 0"
+    />
+    <FeatureCard
+      title="Leads"
+      description="Own their domain — backend engineering, legal analysis, market research, content production. Leads hire specialists, review all work before it closes, and own quality within their workstream."
+      tag="Leads"
+    />
+    <FeatureCard
+      title="Specialists"
+      description="Execute scoped tasks within their domain. They have context on what they need — not on the full project. This is intentional: specialization produces depth; breadth produces generalism."
+      tag="Specialists"
+    />
   </FeatureGrid>
 </Section>
 
 <Section title="How work flows" variant="surface">
   <StepList steps={[
-    { title: "You create a project", description: "Describe what needs to be done. Attach company laws — non-negotiable rules that every agent follows." },
-    { title: "Planner designs the team", description: "The planner reads your brief, determines which roles the project needs, and submits a team + plan for your approval." },
-    { title: "You approve and start", description: "Review the plan. Approve to begin. The platform auto-spawns the team you approved." },
-    { title: "Agents work in parallel", description: "Leads spawn specialists. Each domain works simultaneously — frontend, backend, QA — no sequential bottleneck." },
-    { title: "Review cycles enforce quality", description: "No task closes without lead sign-off. No code merges without peer review. Quality gates are automatic, not optional." },
-    { title: "You review what matters", description: "Proposals surface decisions that need human input. Everything else the team handles autonomously." }
+    {
+      title: "You describe the project",
+      description: "Write what needs to be done in plain language — no workflow configuration, no Python, no schema definitions. You describe the work; the platform figures out how to staff and execute it."
+    },
+    {
+      title: "Planner designs the team",
+      description: "The planner reviews your brief, determines which roles the project needs, proposes the team structure and phased execution plan, and submits it for your approval. Nothing executes until you sign off."
+    },
+    {
+      title: "You approve and the team starts",
+      description: "Review the plan. Push back if something needs adjustment — the planner revises. Approve to begin. The platform spawns the leads you approved; leads hire their specialists."
+    },
+    {
+      title: "Leads and specialists work in parallel",
+      description: "Each domain works simultaneously — no sequential bottleneck. A legal team and a financial team run at the same time. A frontend lead and a backend lead work in parallel. Specialists execute; leads review before anything closes."
+    },
+    {
+      title: "Review cycles enforce quality",
+      description: "No specialist work closes without lead sign-off. In Research and Think Tank modes, a critique phase runs before synthesis: agents challenge each other's findings. Quality gates are structural — they cannot be skipped."
+    },
+    {
+      title: "You review what matters",
+      description: "High-stakes decisions surface as proposals during execution — you approve before work proceeds. Deliverables arrive structured and reviewed. You stay in the decision seat; the platform handles everything between briefing and delivery."
+    }
   ]} />
 </Section>
 
-<Section title="What the platform handles automatically">
+<Section title="Domain-specific quality standards" subtitle="Each work mode applies domain-appropriate standards — built into every agent in that mode." align="center">
   <FeatureGrid columns={2}>
-    <FeatureCard title="Agent lifecycle" description="Spawn, wake, sleep, kill — agents are managed automatically. If one crashes, it's restarted with fresh context." />
-    <FeatureCard title="File locking" description="No two agents edit the same file simultaneously. The platform enforces exclusive access before any write." />
-    <FeatureCard title="Context persistence" description="Agents save state to the database. Knowledge survives restarts. The team doesn't lose track of what it decided." />
-    <FeatureCard title="Preview deployment" description="Development and website projects deploy to a live Fly.dev preview URL automatically. No DevOps config needed." />
-    <FeatureCard title="Phased spawning" description="Phase 2 agents don't spin up until Phase 1 deliverables are done. No wasted work on premature execution." />
-    <FeatureCard title="Heartbeat monitoring" description="If an agent hasn't sent a heartbeat in 5 minutes, it's considered stale. The daemon kills and restarts it automatically." />
+    <FeatureCard
+      title="Legal"
+      description="GREEN/YELLOW/RED risk tiering on every clause reviewed. RED items flagged for mandatory human review. Every output carries 'analysis, not legal advice' framing."
+      tag="Legal mode"
+    />
+    <FeatureCard
+      title="Research"
+      description="Evidence grading — primary vs. secondary, peer-reviewed vs. informal. Hypothesis tracking logs competing evidence. Think Tank mode adds a critique phase: agents challenge each other's findings before synthesis."
+      tag="Research mode"
+    />
+    <FeatureCard
+      title="Finance"
+      description="Double-entry validation enforced. Every number traced to a source document. Period awareness applied throughout."
+      tag="Finance mode"
+    />
+    <FeatureCard
+      title="Development"
+      description="File locking prevents concurrent conflicts. No specialist self-merges — all commits go through lead review. Playwright E2E tests run on every build. Lighthouse audits confirm performance and accessibility thresholds."
+      tag="Development mode"
+    />
+    <FeatureCard
+      title="Compliance"
+      description="Findings-only output — no code changes, no direct fixes. Severity-rated findings (Critical / High / Medium / Low) with remediation guidance. Audit-style discipline throughout."
+      tag="Compliance mode"
+    />
+    <FeatureCard
+      title="Marketing & Content"
+      description="Brief-first workflow. Hook→Problem→Solution→CTA framework applied. Editorial lead review before any content piece closes. Brand voice consistency enforced across every specialist."
+      tag="Marketing / Content modes"
+    />
   </FeatureGrid>
+</Section>
+
+<Section title="What the platform handles automatically" subtitle="You brief and review. The platform handles everything between.">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Agent lifecycle"
+      description="Agents spawn, work, and stop automatically based on project needs. You do not manage agent state or monitor individual processes."
+    />
+    <FeatureCard
+      title="File locking"
+      description="No two agents edit the same file simultaneously. The platform enforces exclusive access before any write — preventing conflicts in code and document-heavy projects."
+    />
+    <FeatureCard
+      title="Context persistence"
+      description="Agents save their work between sessions. Projects do not lose state. A lead picks up exactly where the team left off — long projects are not constrained by session limits."
+    />
+    <FeatureCard
+      title="Phased spawning"
+      description="Phase 2 agents do not spawn until Phase 1 deliverables are complete. No wasted work on premature execution. Dependencies are enforced by the platform."
+    />
+    <FeatureCard
+      title="Proposals"
+      description="Major decisions come back to you for approval — at plan approval before execution begins and at key decision points mid-project. High-stakes decisions never happen without your direction."
+    />
+    <FeatureCard
+      title="Company laws"
+      description="Your non-negotiable rules — brand standards, security requirements, coding conventions, quality thresholds — are set once and enforced automatically across every agent in every mode."
+    />
+  </FeatureGrid>
+</Section>
+
+<Section
+  title="Ten work modes. One platform. The right team for every type of work."
+  variant="surface"
+  align="center"
+>
+  <FeatureGrid columns={2}>
+    <FeatureCard title="Development" description="Build software — frontend, backend, QA, DevOps running in parallel" />
+    <FeatureCard title="Website" description="Build marketing sites — design-first, with live preview deployment" />
+    <FeatureCard title="Marketing" description="GTM strategy, positioning, audience analysis, campaign architecture" />
+    <FeatureCard title="Content" description="Brief-first writing — drafts, reviews, revisions, delivered" />
+    <FeatureCard title="Research" description="Evidence-graded literature reviews, competitive analysis, synthesis" />
+    <FeatureCard title="Think Tank" description="Multi-agent structured thinking — independent research → critique → synthesis" />
+    <FeatureCard title="Legal" description="Contract review with GREEN/YELLOW/RED risk tiering; NDA triage at scale" />
+    <FeatureCard title="Finance" description="Journal entries, reconciliations, variance analyses — double-entry enforced" />
+    <FeatureCard title="Compliance" description="Audit-style findings with severity ratings — findings only, no code changes" />
+    <FeatureCard title="Strategy" description="Market sizing, competitive landscapes, growth strategy, M&A analysis" />
+  </FeatureGrid>
+  <CallToAction
+    body="Modes are designed to sequence. Research → Strategy → Content → Website is one coordinated project."
+    primary={{ label: "Explore use cases by domain →", href: "/use-cases" }}
+    variant="inline"
+  />
 </Section>
 
 <Section align="center">
   <CallToAction
-    headline="See it run on your project"
-    body="Start with a brief. The planner designs your team in minutes."
-    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
-    secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+    headline="You've seen how it works. Now run a project."
+    body="The planner will design the team and propose an execution plan. Nothing starts until you approve it."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "See use cases by domain →", href: "/use-cases" }}
   />
 </Section>
