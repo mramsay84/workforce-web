@@ -21,12 +21,11 @@ export function PillarCard({ title, description, children, accent }: PillarCardP
   return (
     <div
       className={clsx(
-        "rounded-xl border p-8 transition-colors",
+        "rounded-xl border p-8 backdrop-blur-md transition-colors",
         accent
           ? "bg-[#6366f1]/[0.06] border-[#6366f1]/25 hover:border-[#6366f1]/40"
           : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.10]"
       )}
-      style={{ backdropFilter: "blur(12px)" }}
     >
       <h3
         className={clsx(

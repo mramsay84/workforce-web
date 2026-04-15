@@ -76,14 +76,14 @@ export function FeatureCard({ title, description, icon, tag, href, cta, accent }
 
   if (href) {
     return (
-      <a href={href} className={classes} style={{ backdropFilter: "blur(12px)", textDecoration: "none" }}>
+      <a href={href} className={`${classes} backdrop-blur-md no-underline`}>
         {inner}
       </a>
     );
   }
 
   return (
-    <div className={classes} style={{ backdropFilter: "blur(12px)" }}>
+    <div className={`${classes} backdrop-blur-md`}>
       {inner}
     </div>
   );

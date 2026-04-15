@@ -34,12 +34,11 @@ export function UseCaseCard({ slug, title, tagline, domain, hero }: UseCaseCardP
     <a
       href={`/use-cases/${slug}`}
       className={clsx(
-        "group relative block rounded-lg border p-6 transition-colors",
+        "group relative block rounded-lg border p-6 backdrop-blur-md transition-colors",
         "bg-white/[0.02] border-white/[0.06]",
         "hover:bg-white/[0.04] hover:border-[#6366f1]/40",
         hero && "border-[#6366f1]/20 bg-[#6366f1]/[0.04]"
       )}
-      style={{ backdropFilter: "blur(12px)" }}
     >
       <div className="mb-3 flex items-center gap-2">
         <span className="rounded-full bg-[#6366f1]/[0.18] border border-[#6366f1]/45 px-2.5 py-0.5 text-xs font-semibold text-[#818cf8]">

@@ -20,14 +20,7 @@ export function GlassCard({ children, className = "", header, style }: GlassCard
       style={style}
     >
       {header && (
-        <div
-          className="px-6 py-4"
-          style={{
-            background: "var(--wf-card-header-bg)",
-            borderBottom: "var(--wf-surface-border)",
-            borderRadius: "var(--wf-radius-lg) var(--wf-radius-lg) 0 0",
-          }}
-        >
+        <div className="px-6 py-4 bg-[var(--wf-card-header-bg,rgba(255,255,255,0.03))] border-b border-[var(--wf-card-border,rgba(255,255,255,0.06))] rounded-t-[var(--wf-radius-lg)]">
           {header}
         </div>
       )}

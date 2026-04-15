@@ -40,12 +40,11 @@ export function PricingTable({ tiers }: PricingTableProps) {
         <div
           key={i}
           className={clsx(
-            "relative flex flex-col rounded-xl border p-8 transition-colors",
+            "relative flex flex-col rounded-xl border p-8 backdrop-blur-md transition-colors",
             tier.highlighted
               ? "bg-[#6366f1]/[0.08] border-[#6366f1]/40 shadow-surface"
               : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04]"
           )}
-          style={{ backdropFilter: "blur(12px)" }}
         >
           {tier.highlighted && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2">
