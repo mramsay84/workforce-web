@@ -118,7 +118,7 @@ export function Hero({
                 data-cta-label={cta.label}
                 data-cta-stage="awareness"
                 className={clsx(
-                  "inline-flex h-10 items-center rounded-md px-5 text-sm font-medium transition-colors",
+                  "inline-flex h-11 min-h-[44px] items-center rounded-md px-5 text-sm font-medium transition-colors",
                   cta.variant === "secondary"
                     ? "bg-white/[0.06] text-[#fdfdff] border border-white/[0.12] hover:bg-white/[0.10]"
                     : "bg-[#4f46e5] text-white hover:bg-[#818cf8]"
@@ -134,7 +134,7 @@ export function Hero({
                 data-cta-label={ctaSecondary.label}
                 data-cta-stage="awareness"
                 className={clsx(
-                  "inline-flex h-10 items-center rounded-md px-5 text-sm font-medium transition-colors",
+                  "inline-flex h-11 min-h-[44px] items-center rounded-md px-5 text-sm font-medium transition-colors",
                   "bg-white/[0.06] text-[#fdfdff] border border-white/[0.12] hover:bg-white/[0.10]"
                 )}
               >

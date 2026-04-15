@@ -95,7 +95,7 @@ export function PricingTable({ tiers }: PricingTableProps) {
           <a
             href={tier.cta.href}
             className={clsx(
-              "mt-8 inline-flex h-10 items-center justify-center rounded-md px-5 text-sm font-medium transition-colors",
+              "mt-8 inline-flex h-11 min-h-[44px] items-center justify-center rounded-md px-5 text-sm font-medium transition-colors",
               tier.highlighted
                 ? "bg-[#6366f1] text-white hover:bg-[#818cf8]"
                 : "border border-white/[0.12] bg-white/[0.06] text-[#fdfdff] hover:bg-white/[0.10]"

@@ -70,7 +70,7 @@ export function CallToAction({
             href={primary.href}
             data-ga-cta
             data-cta-label={primary.label}
-            className="inline-flex h-10 items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white transition-colors hover:bg-[#818cf8]"
+            className="inline-flex h-11 min-h-[44px] items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white transition-colors hover:bg-[#818cf8]"
           >
             {primary.label}
           </a>
@@ -79,7 +79,7 @@ export function CallToAction({
               href={secondary.href}
               data-ga-cta
               data-cta-label={secondary.label}
-              className="inline-flex h-10 items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] transition-colors hover:bg-white/[0.10]"
+              className="inline-flex h-11 min-h-[44px] items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] transition-colors hover:bg-white/[0.10]"
             >
               {secondary.label}
             </a>

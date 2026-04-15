@@ -125,7 +125,7 @@ export default async function UseCasePage({ params }: PageProps) {
               data-ga-cta
               data-cta-label="Get started free"
               data-cta-stage="decision"
-              className="inline-flex h-10 items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white hover:bg-[#818cf8] transition-colors"
+              className="inline-flex h-11 min-h-[44px] items-center rounded-md bg-[#4f46e5] px-5 text-sm font-medium text-white hover:bg-[#818cf8] transition-colors"
             >
               Get started free
             </a>
@@ -134,7 +134,7 @@ export default async function UseCasePage({ params }: PageProps) {
               data-ga-cta
               data-cta-label="Sign in"
               data-cta-stage="decision"
-              className="inline-flex h-10 items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] hover:bg-white/[0.10] transition-colors"
+              className="inline-flex h-11 min-h-[44px] items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] hover:bg-white/[0.10] transition-colors"
             >
               Sign in
             </a>

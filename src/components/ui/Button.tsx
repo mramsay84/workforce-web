@@ -51,6 +51,7 @@ export function Button({
     display: "inline-flex",
     alignItems: "center",
     justifyContent: "center",
+    minHeight: "44px",
     gap: "8px",
     fontFamily: "var(--wf-font-body)",
     fontWeight: 600,

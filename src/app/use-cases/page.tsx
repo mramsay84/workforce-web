@@ -45,6 +45,7 @@ export default function UseCasesPage() {
           </p>
         </div>
 
+        <h2 className="sr-only">Browse use cases</h2>
         <UseCasesFilterGrid entries={entries} />
       </div>
     </main>
