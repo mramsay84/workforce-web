@@ -1,61 +1,37 @@
 ---
 title: "Pricing — Workforce"
-description: "Usage-based pricing. Pay for the work your structured team of AI agents does. Request access to get started."
+description: "Workforce is in early access. Usage is billed based on the work your structured team of AI agents executes. Request access to get started."
 slug: pricing
 type: page
 phase: D0
 ---
 
 <Hero
-  headline="Pricing"
-  subheadline="Workforce is in early access. Usage is billed based on the work your team executes — the agents, models, and compute involved in your project. Request access to get started."
+  headline="Early access. Usage-based billing."
+  subheadline="Workforce is currently available in early access. You pay for the work your structured team executes — the agents, models, and compute involved in running your project. No seat fees, no monthly minimums. You approve the plan before work begins, and you see what runs before it runs."
   align="center"
-  badge="Early Access"
+  badge="Pricing"
 />
 
-<Section align="center">
-  <PricingTable tiers={[
-    {
-      name: "Starter",
-      price: "Pay as you go",
-      description: "For individuals and small teams running focused projects. Pay for the work that runs — no seat fees, no minimums.",
-      features: [
-        "Core work modes: Development, Website, Content, Research",
-        "Standard company laws enforcement",
-        "Planner-designed team structure on every project",
-        "Lead-specialist review cycles built in",
-        "Context persistence across sessions"
-      ],
-      cta: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }
-    },
-    {
-      name: "Team",
-      price: "Usage-based",
-      description: "For teams running multiple concurrent projects across multiple work modes. Higher parallelism, all ten modes, custom company laws.",
-      features: [
-        "All ten professional work modes",
-        "Higher agent concurrency across projects",
-        "Custom company laws — your standards enforced across every agent",
-        "Team workspace for shared project history",
-        "Priority support"
-      ],
-      cta: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
-      highlighted: true
-    },
-    {
-      name: "Enterprise",
-      description: "For organisations running Workforce at scale — dedicated infrastructure, custom integrations, and compliance tooling.",
-      features: [
-        "Dedicated infrastructure",
-        "Custom MCP integrations",
-        "SSO / SAML",
-        "Audit logs and compliance exports",
-        "Dedicated account support",
-        "Custom SLA"
-      ],
-      cta: { label: "Contact us", href: "https://workforce-dev.rawaihub.com/signup" }
-    }
-  ]} />
+<Section title="How billing works" align="center">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="You pay for work, not seats"
+      description="Billing is based on the agents, models, and compute that run your project. A focused single-team project costs less than a multi-phase, multi-workstream project. There are no per-seat charges or flat monthly subscriptions."
+    />
+    <FeatureCard
+      title="You approve before anything runs"
+      description="The planner designs your team and proposes the execution plan before any work begins. You review the proposed leads, specialists, and project phases. Nothing executes — and nothing bills — until you sign off."
+    />
+    <FeatureCard
+      title="All ten work modes are available"
+      description="Development, Website, Marketing, Content, Research, Think Tank, Legal, Finance, Compliance, and Strategy — all live today. Access is not gated by tier. Work modes available to you depend on your access level during early access."
+    />
+    <FeatureCard
+      title="Data is not used for training"
+      description="Your project content — briefs, uploaded documents, and agent deliverables — is not used to train models. Project context is isolated to your project and scoped to the agents assigned to it."
+    />
+  </FeatureGrid>
 </Section>
 
 <Section title="What you approve before anything runs" subtitle="Every project starts with a plan. You control what executes." align="center" variant="surface">
@@ -79,10 +55,35 @@ phase: D0
   </FeatureGrid>
 </Section>
 
+<Section title="Common questions" variant="surface">
+  <FAQList items={[
+    {
+      question: "What does a 'project' actually include?",
+      answer: "A project starts when you submit a brief. The planner interviews you, designs the right team, and proposes an execution plan. You approve the plan, and the team begins work. A project ends when the deliverable is complete and has passed the platform's review cycles. Deliverables vary by work mode — a Development project produces deployed code; a Legal project produces a structured contract analysis; a Research project produces a synthesis document with evidence grading."
+    },
+    {
+      question: "How much do I need to set up before starting?",
+      answer: "No technical configuration is required. You describe the project in plain language — the planner handles team design, task routing, and execution structure. The planner may ask clarifying questions to ensure the right specialists are assigned. A well-articulated brief produces meaningfully better results, but there is no schema to fill out, no workflow to design, and no agent configuration required."
+    },
+    {
+      question: "What models does Workforce use?",
+      answer: "Workforce agents run on large language model infrastructure from established AI providers. The platform selects models based on the work mode and task requirements. Your project content is transmitted to those model providers as part of inference. Workforce does not operate its own model infrastructure."
+    },
+    {
+      question: "Where does my data go? Is it used to train models?",
+      answer: "Your project content — briefs, uploaded documents, and agent-produced deliverables — is stored in Workforce's database for the duration of your project and accessible only to the agents assigned to that project. Your data is not used to train models. If you have specific retention, compliance, or data handling requirements for your organisation, contact us before running sensitive work."
+    },
+    {
+      question: "Is Workforce for technical teams only?",
+      answer: "No. The platform is designed for professional work across domains — development, marketing, legal, finance, research, strategy, and more. Non-technical users brief the platform in plain language; the planner handles team design and execution structure. Technical buyers may choose to give more detailed specs for Development mode projects, but no technical configuration is ever required."
+    }
+  ]} />
+</Section>
+
 <Section align="center">
   <CallToAction
-    headline="Run your first project."
-    body="Describe your project. The planner designs the team and proposes the execution plan. Nothing starts until you approve it."
+    headline="Start your first project."
+    body="Describe your project. The planner designs the team and proposes the execution plan. Nothing starts — and nothing bills — until you approve it."
     primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
     secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
   />
