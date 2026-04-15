@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Required for Fly.io Docker deployment — produces .next/standalone directory
+  output: "standalone",
   // MDX is processed via next-mdx-remote at runtime — no static .mdx page transforms needed.
   // If @next/mdx page-level transforms are added later, configure them here.
   experimental: {

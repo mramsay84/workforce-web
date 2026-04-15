@@ -15,6 +15,14 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# NEXT_PUBLIC_* vars are baked into the bundle at build time
+ARG NEXT_PUBLIC_SITE_URL=https://workforce-web.fly.dev
+ARG NEXT_PUBLIC_SIGNUP_URL=https://workforce-dev.rawaihub.com/signup
+ARG NEXT_PUBLIC_LOGIN_URL=https://workforce-dev.rawaihub.com/login
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_SIGNUP_URL=$NEXT_PUBLIC_SIGNUP_URL
+ENV NEXT_PUBLIC_LOGIN_URL=$NEXT_PUBLIC_LOGIN_URL
+
 RUN npm run build
 
 # ─── Stage 3: Runner ──────────────────────────────────────────────────────────
