@@ -3,6 +3,14 @@
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 
+// audience_domain values for GA4 audience_path_select events
+const CATEGORY_AUDIENCE: Record<string, string> = {
+  'Development': 'dev',
+  'Marketing & Content': 'marketing',
+  'Research & Analysis': 'research',
+  'Legal & Compliance': 'legal',
+}
+
 const useCasesDropdown = {
   Development: [
     { name: 'SaaS MVP', href: '/use-cases/saas-mvp', desc: 'Full-stack app, deployed' },
@@ -116,6 +124,7 @@ export default function Header() {
                               <Link
                                 href={item.href}
                                 onClick={() => setDropdownOpen(false)}
+                                data-ga-audience-domain={CATEGORY_AUDIENCE[category]}
                                 className="flex flex-col py-[7px] px-2.5 rounded-[var(--wf-radius-sm)] no-underline transition-micro hover:bg-white/[0.04]"
                               >
                                 <span className="text-sm font-medium text-[var(--wf-fg)] leading-snug">
@@ -162,6 +171,10 @@ export default function Header() {
             </a>
             <a
               href="https://workforce-dev.rawaihub.com/signup"
+              data-ga-nav-cta
+              data-ga-cta
+              data-cta-label="Get Access"
+              data-cta-stage="awareness"
               className="inline-flex items-center gap-1.5 bg-[var(--wf-primary)] text-white text-[0.9375rem] font-semibold no-underline py-2.5 px-5 rounded-[var(--wf-radius-md)] transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access
@@ -263,6 +276,10 @@ export default function Header() {
             </a>
             <a
               href="https://workforce-dev.rawaihub.com/signup"
+              data-ga-nav-cta
+              data-ga-cta
+              data-cta-label="Get Access"
+              data-cta-stage="awareness"
               className="flex-1 text-center py-3 rounded-[var(--wf-radius-md)] bg-[var(--wf-primary)] text-[0.9375rem] font-semibold text-white no-underline transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access

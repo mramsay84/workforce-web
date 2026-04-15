@@ -1,8 +1,21 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { UseCaseGrid } from '@/components/mdx'
 import type { UseCaseEntry } from '@/types/content'
+import { trackAudiencePathSelect, type AudienceDomain } from '@/lib/analytics'
+
+// Maps domain keys → GA4 audience_domain values for audience_path_select events
+const DOMAIN_TO_AUDIENCE: Record<string, AudienceDomain | null> = {
+  all: null,
+  development: 'dev',
+  marketing: 'marketing',
+  research: 'research',
+  legal: 'legal',
+  finance: 'finance',
+  strategy: 'strategy',
+}
 
 const DOMAIN_LABELS: Record<string, string> = {
   all: 'All',
@@ -20,6 +33,15 @@ interface UseCasesFilterGridProps {
 
 export function UseCasesFilterGrid({ entries }: UseCasesFilterGridProps) {
   const [activeDomain, setActiveDomain] = useState('all')
+  const pathname = usePathname()
+
+  function handleDomainSelect(domain: string) {
+    setActiveDomain(domain)
+    const audienceDomain = DOMAIN_TO_AUDIENCE[domain]
+    if (audienceDomain) {
+      trackAudiencePathSelect({ audience_domain: audienceDomain, page_path: pathname })
+    }
+  }
 
   // Derive the set of domains that actually exist in the entries
   const availableDomains = ['all', ...Array.from(
@@ -45,7 +67,7 @@ export function UseCasesFilterGrid({ entries }: UseCasesFilterGridProps) {
         {availableDomains.map((domain) => (
           <button
             key={domain}
-            onClick={() => setActiveDomain(domain)}
+            onClick={() => handleDomainSelect(domain)}
             className={`rounded-full px-4 py-1.5 text-sm font-medium transition-colors border ${
               activeDomain === domain
                 ? 'bg-[#6366f1] border-[#6366f1] text-white'

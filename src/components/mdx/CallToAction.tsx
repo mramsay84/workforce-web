@@ -68,6 +68,8 @@ export function CallToAction({
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <a
             href={primary.href}
+            data-ga-cta
+            data-cta-label={primary.label}
             className="inline-flex h-10 items-center rounded-md bg-[#6366f1] px-5 text-sm font-medium text-white transition-colors hover:bg-[#818cf8]"
           >
             {primary.label}
@@ -75,6 +77,8 @@ export function CallToAction({
           {secondary && (
             <a
               href={secondary.href}
+              data-ga-cta
+              data-cta-label={secondary.label}
               className="inline-flex h-10 items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] transition-colors hover:bg-white/[0.10]"
             >
               {secondary.label}

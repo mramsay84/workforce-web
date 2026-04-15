@@ -114,6 +114,9 @@ export function Hero({
             {cta && (
               <a
                 href={cta.href}
+                data-ga-cta
+                data-cta-label={cta.label}
+                data-cta-stage="awareness"
                 className={clsx(
                   "inline-flex h-10 items-center rounded-md px-5 text-sm font-medium transition-colors",
                   cta.variant === "secondary"
@@ -127,6 +130,9 @@ export function Hero({
             {ctaSecondary && (
               <a
                 href={ctaSecondary.href}
+                data-ga-cta
+                data-cta-label={ctaSecondary.label}
+                data-cta-stage="awareness"
                 className={clsx(
                   "inline-flex h-10 items-center rounded-md px-5 text-sm font-medium transition-colors",
                   "bg-white/[0.06] text-[#fdfdff] border border-white/[0.12] hover:bg-white/[0.10]"

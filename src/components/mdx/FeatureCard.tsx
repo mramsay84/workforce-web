@@ -33,6 +33,20 @@ interface FeatureCardProps {
  *     cta="See how it works →"
  *   />
  */
+// Maps tag labels → GA4 audience_domain values for audience_path_select events
+const TAG_TO_AUDIENCE: Record<string, string> = {
+  'Development': 'dev',
+  'Marketing': 'marketing',
+  'Marketing & Content': 'marketing',
+  'Research': 'research',
+  'Research & Strategy': 'research',
+  'Research & Analysis': 'research',
+  'Legal': 'legal',
+  'Legal & Compliance': 'legal',
+  'Finance': 'finance',
+  'Strategy': 'strategy',
+}
+
 export function FeatureCard({ title, description, icon, tag, href, cta, accent }: FeatureCardProps) {
   const inner = (
     <>
@@ -75,8 +89,13 @@ export function FeatureCard({ title, description, icon, tag, href, cta, accent }
   );
 
   if (href) {
+    const audienceDomain = tag ? TAG_TO_AUDIENCE[tag] : undefined
     return (
-      <a href={href} className={`${classes} backdrop-blur-md no-underline`}>
+      <a
+        href={href}
+        data-ga-audience-domain={audienceDomain}
+        className={`${classes} backdrop-blur-md no-underline`}
+      >
         {inner}
       </a>
     );

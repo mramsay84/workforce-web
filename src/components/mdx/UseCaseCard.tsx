@@ -14,6 +14,17 @@ const DOMAIN_LABELS: Record<string, string> = {
   strategy: "Strategy",
 };
 
+// Maps use-case domain → GA4 audience_domain for audience_path_select events
+const DOMAIN_TO_AUDIENCE: Record<string, string> = {
+  development: "dev",
+  marketing: "marketing",
+  research: "research",
+  legal: "legal",
+  finance: "finance",
+  strategy: "strategy",
+  operations: "strategy",
+};
+
 interface UseCaseCardProps {
   slug: string;
   title: string;
@@ -33,6 +44,7 @@ export function UseCaseCard({ slug, title, tagline, domain, hero }: UseCaseCardP
   return (
     <a
       href={`/use-cases/${slug}`}
+      data-ga-audience-domain={DOMAIN_TO_AUDIENCE[domain]}
       className={clsx(
         "group relative block rounded-lg border p-6 backdrop-blur-md transition-colors",
         "bg-white/[0.02] border-white/[0.06]",

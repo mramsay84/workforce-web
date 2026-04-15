@@ -35,6 +35,35 @@ export const metadata: Metadata = {
   },
 };
 
+// ─── Structured data ─────────────────────────────────────────────────────────
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Workforce",
+  url: "https://workforce-dev.rawaihub.com",
+  description:
+    "Workforce is an AI Workforce Platform that plans, staffs, and executes complex professional work — deploying structured teams of specialized AI agents to deliver complete deliverables.",
+  sameAs: [],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Workforce",
+  url: "https://workforce-dev.rawaihub.com",
+  description:
+    "AI Workforce Platform — structured teams of specialized AI agents that plan, staff, and execute complex professional work.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://workforce-dev.rawaihub.com/use-cases?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
 /**
  * Root layout — minimal shell for the Workforce marketing site.
  * Navigation and footer are owned by the Page Builder (frontend-lead).
@@ -54,6 +83,15 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
           rel="stylesheet"
+        />
+        {/* Structured data — Organization + WebSite schemas */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
       <body className="bg-[#050507] text-[#fdfdff] antialiased">

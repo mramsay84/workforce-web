@@ -76,6 +76,8 @@ export interface UseCaseFrontmatter {
   deliverables: string[];
   /** Related use case slugs for the "Related Use Cases" section */
   related?: string[];
+  /** ICP priority tier (1–5). 1 = highest priority audience segment. */
+  icp_tier?: number;
 }
 
 /** Parsed content entry for use in components */
