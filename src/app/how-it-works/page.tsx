@@ -4,11 +4,23 @@ import { getPageContent } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = getPageContent("how-it-works");
-  if (!page) return {};
   return {
-    title: page.frontmatter.title,
-    description: page.frontmatter.description,
+    title: "How It Works",
+    description:
+      "One brief. Workforce designs the right AI team, coordinates parallel specialists, and enforces review cycles — delivering complete work, not drafts.",
+    alternates: { canonical: "/how-it-works" },
+    openGraph: {
+      title: "How It Works",
+      description:
+        "One brief. Workforce designs the right AI team, coordinates parallel specialists, and enforces review cycles — delivering complete work, not drafts.",
+      url: "/how-it-works",
+      type: "website",
+    },
+    twitter: {
+      title: "How It Works",
+      description:
+        "One brief. Workforce designs the right AI team, coordinates parallel specialists, and enforces review cycles — delivering complete work, not drafts.",
+    },
   };
 }
 

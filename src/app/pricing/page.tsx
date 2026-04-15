@@ -4,11 +4,23 @@ import { getPageContent } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = getPageContent("pricing");
-  if (!page) return {};
   return {
-    title: page.frontmatter.title,
-    description: page.frontmatter.description,
+    title: "Pricing",
+    description:
+      "Workforce is in early access. Usage-based billing — pay for what your AI team executes. No seat fees, no minimums. You approve the plan before work begins.",
+    alternates: { canonical: "/pricing" },
+    openGraph: {
+      title: "Pricing",
+      description:
+        "Workforce is in early access. Usage-based billing — pay for what your AI team executes. No seat fees, no minimums. You approve the plan before work begins.",
+      url: "/pricing",
+      type: "website",
+    },
+    twitter: {
+      title: "Pricing",
+      description:
+        "Workforce is in early access. Usage-based billing — pay for what your AI team executes. No seat fees, no minimums. You approve the plan before work begins.",
+    },
   };
 }
 

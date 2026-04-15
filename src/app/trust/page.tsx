@@ -4,11 +4,23 @@ import { getPageContent } from "@/lib/content";
 import { mdxComponents } from "@/components/mdx";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const page = getPageContent("trust");
-  if (!page) return {};
   return {
-    title: page.frontmatter.title,
-    description: page.frontmatter.description,
+    title: "Trust & Security",
+    description:
+      "How Workforce handles your data, enforces output quality, and why legal and financial outputs are analysis, not legal advice — what to know before you brief.",
+    alternates: { canonical: "/trust" },
+    openGraph: {
+      title: "Trust & Security",
+      description:
+        "How Workforce handles your data, enforces output quality, and why legal and financial outputs are analysis, not legal advice — what to know before you brief.",
+      url: "/trust",
+      type: "website",
+    },
+    twitter: {
+      title: "Trust & Security",
+      description:
+        "How Workforce handles your data, enforces output quality, and why legal and financial outputs are analysis, not legal advice — what to know before you brief.",
+    },
   };
 }
 

@@ -2,15 +2,37 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { AnalyticsClickHandler } from "@/components/analytics/AnalyticsClickHandler";
+import { HomepageScrollTracker } from "@/components/analytics/HomepageScrollTracker";
 
 export const metadata: Metadata = {
   title: {
-    default: "Workforce — AI Development Team Orchestration",
+    default: "Workforce — AI Workforce Platform",
     template: "%s | Workforce",
   },
   description:
-    "Deploy a coordinated team of AI specialists that communicate, review each other's work, and build software autonomously. Not one agent — a whole team.",
+    "Workforce plans, staffs, and executes complex professional work — structured teams of specialized AI agents deliver complete deliverables, not better chat responses.",
   metadataBase: new URL("https://workforce-dev.rawaihub.com"),
+  openGraph: {
+    type: "website",
+    siteName: "Workforce",
+    title: {
+      default: "Workforce — AI Workforce Platform",
+      template: "%s | Workforce",
+    },
+    description:
+      "Brief it. Workforce assembles specialized AI agent teams and delivers complete work — across development, legal, research, marketing, and more.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: {
+      default: "Workforce — AI Workforce Platform",
+      template: "%s | Workforce",
+    },
+    description:
+      "Brief it. Workforce assembles specialized AI agent teams and delivers complete work — across development, legal, research, marketing, and more.",
+  },
 };
 
 /**
@@ -49,6 +71,9 @@ export default function RootLayout({
             `,
           }}
         />
+        <GoogleAnalytics />
+        <AnalyticsClickHandler />
+        <HomepageScrollTracker />
         <Header />
         <div className="pt-16">{children}</div>
         <Footer />

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getUseCaseBySlug, getAllUseCaseSlugs, getRelatedUseCases } from "@/lib/content";
 import { mdxComponents, UseCaseGrid } from "@/components/mdx";
+import { UseCaseViewTracker } from "@/components/analytics/UseCaseViewTracker";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -16,9 +17,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const useCase = getUseCaseBySlug(slug);
   if (!useCase) return {};
+  const { title, description } = useCase.frontmatter;
   return {
-    title: useCase.frontmatter.title,
-    description: useCase.frontmatter.description,
+    title,
+    description,
+    alternates: { canonical: `/use-cases/${slug}` },
+    openGraph: {
+      title,
+      description,
+      url: `/use-cases/${slug}`,
+      type: "website",
+    },
+    twitter: {
+      title,
+      description,
+    },
   };
 }
 
@@ -42,6 +55,12 @@ export default async function UseCasePage({ params }: PageProps) {
 
   return (
     <main>
+      {/* GA4: fires use_case_view with slug and ICP tier */}
+      <UseCaseViewTracker
+        use_case_slug={frontmatter.slug}
+        icp_tier={frontmatter.icp_tier ?? 3}
+      />
+
       {/* MDX content — Hero component inside MDX handles the page header */}
       <MDXRemote source={content} components={mdxComponents} />
 
@@ -103,12 +122,18 @@ export default async function UseCasePage({ params }: PageProps) {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href="https://workforce-dev.rawaihub.com/signup"
+              data-ga-cta
+              data-cta-label="Get started free"
+              data-cta-stage="decision"
               className="inline-flex h-10 items-center rounded-md bg-[#6366f1] px-5 text-sm font-medium text-white hover:bg-[#818cf8] transition-colors"
             >
               Get started free
             </a>
             <a
               href="https://workforce-dev.rawaihub.com/login"
+              data-ga-cta
+              data-cta-label="Sign in"
+              data-cta-stage="decision"
               className="inline-flex h-10 items-center rounded-md border border-white/[0.12] bg-white/[0.06] px-5 text-sm font-medium text-[#fdfdff] hover:bg-white/[0.10] transition-colors"
             >
               Sign in

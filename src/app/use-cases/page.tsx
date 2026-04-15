@@ -6,6 +6,19 @@ export const metadata: Metadata = {
   title: "Use Cases",
   description:
     "Real projects the Workforce AI platform can run — from full-stack development to legal review, investment research, and marketing production.",
+  alternates: { canonical: "/use-cases" },
+  openGraph: {
+    title: "Use Cases",
+    description:
+      "Real projects the Workforce AI platform can run — from full-stack development to legal review, investment research, and marketing production.",
+    url: "/use-cases",
+    type: "website",
+  },
+  twitter: {
+    title: "Use Cases",
+    description:
+      "Real projects the Workforce AI platform can run — from full-stack development to legal review, investment research, and marketing production.",
+  },
 };
 
 /**
