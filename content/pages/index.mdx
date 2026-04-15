@@ -1,140 +1,197 @@
 ---
-title: ""
-description: ""
+title: "AI Workforce Platform — Brief It. It Staffs. It Executes. It Delivers."
+description: "Workforce plans, staffs, and executes complex professional work — deploying structured teams of specialized AI agents so you get complete deliverables, not better chat responses."
 slug: "/"
 pageType: "homepage"
 primaryAudience: ["all-icps"]
 phase: "D0"
 conversionCTAs:
   primary:
-    label: ""
+    label: "Get Access"
     href: "https://workforce-dev.rawaihub.com/signup"
   secondary:
-    label: ""
+    label: "See how it works"
     href: "/how-it-works"
 ---
 
-{/*
-  HOMEPAGE — /
-  Source authority: website-content-blueprint.md §1.1–1.8 | sitemap-and-page-architecture.md §3.1
-  Primary audience: ICP #1 (Engineering Leads), ICP #2 (Marketing Directors)
-  Page goal: Establish AI Workforce Platform category. Trigger self-selection by domain. Drive to use cases or How It Works.
-  Block sequence: Hero → Insight → Use Case Highlights → How It Works Preview → Four Pillars → Cross-Mode Power → Trust & Proof → Final CTA
-*/}
-
 {/* ============================================================
   BLOCK 1: HERO
-  Source: website-content-blueprint.md §1.1 | messaging-framework.md §2, §3 Pillar 1
-  Required elements:
-    - Category label (above headline): "AI Workforce Platform" — exact string, not a headline
-    - Primary headline: team-not-tool framing. Direction: "Brief it. It staffs. It executes. It delivers."
-    - Subheadline: 1–2 sentences. What "team" means, kinds of work, who is in control. Plant all 4 pillars.
-    - Primary CTA: "Get Access" or "Join the Waitlist" → /signup
-    - Secondary CTA: "See how it works" → /how-it-works
-    - Hero visual: agent team hierarchy diagram (Planner → Leads → Specialists) OR animated parallel workstreams. NOT a chat interface.
-  Vocabulary constraints:
-    - DO NOT USE: autonomous, AI-powered, revolutionary, game-changing, cutting-edge
-    - DO USE: structured team, coordinated, parallel, specialists, leads, work modes, deliverable
 ============================================================ */}
+
+export const hero = {
+  categoryLabel: "AI Workforce Platform",
+  headline: "Brief it. It staffs. It executes. It delivers.",
+  subheadline: "Workforce plans, staffs, and executes complex professional work — deploying structured teams of specialized AI agents so you get complete deliverables, not better chat responses. You describe the project. The platform assembles the right leads and specialists, manages every review cycle, and delivers finished work. You stay in control of the decisions that matter.",
+  primaryCTA: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
+  secondaryCTA: { label: "See how it works", href: "/how-it-works" },
+  visualDirection: "Agent team hierarchy diagram — Planner → Leads → Specialists — or animated parallel workstreams. Not a chat interface. Not a single agent."
+}
 
 {/* ============================================================
   BLOCK 2: THE INSIGHT (Differentiation Anchor)
-  Source: website-content-blueprint.md §1.2 | messaging-framework.md §3 Pillar 1
-  Required elements:
-    - Opening diagnostic: "Every AI tool today has the same flaw: one agent doing everything."
-    - 3-sentence expansion: single agents hit context limits; cannot specialize across legal + software + finance simultaneously; you become the coordinator
-    - Pivot sentence: "Workforce is different because it runs teams."
-    - Visual: compact 2-panel diagram — "One agent trying to do everything" vs. "A structured team, each agent in their domain"
-  Constraints:
-    - Do NOT name competitors
-    - Do NOT use the word "better"
-    - Structural contrast only — not competitive attack
-    - No CTA in this block
 ============================================================ */}
+
+export const insight = {
+  sectionLabel: "Why this is different",
+  openingDiagnostic: "Every AI tool today has the same structural flaw: one agent doing everything.",
+  expansion: [
+    "A single agent hits context limits on complex work. It cannot simultaneously specialize in legal reasoning, software architecture, and financial modeling — so it generalizes, and generalization is where quality falls apart.",
+    "When one agent does everything, you become the coordinator. You route the tasks. You track decisions. You catch the mistakes. That is not what AI was supposed to replace.",
+    "Workforce is different because it runs teams."
+  ],
+  pivot: "Instead of one generalist agent, every Workforce project runs a structured team: a planning consultant who designs the right approach, leads who own their domains, and specialists who execute in parallel — each scoped to what they actually know. Work is reviewed at every stage before it closes.",
+  visualDirection: "Two-panel diagram. Left: 'One agent doing everything.' Right: 'A structured team — Planner, Leads, Specialists — each in their domain.' Two elements only. No CTA in this section."
+}
 
 {/* ============================================================
   BLOCK 3: USE CASE HIGHLIGHTS (Self-Selection Hub)
-  Source: website-content-blueprint.md §1.3 | sitemap-and-page-architecture.md §3.1 Block 3
-  Required elements:
-    - Section headline: "What teams use Workforce for" or "Find your use case"
-    - 3 use case cards (Day 0):
-        Card 1: Domain "Development" | Use case "Full-Stack SaaS MVP" | Outcome "A working application: frontend, backend, auth, deployed." | Link → /use-cases/saas-mvp
-        Card 2: Domain "Marketing" | Use case "Product Launch GTM" | Outcome "Strategy, copy, landing page, emails — one coordinated operation." | Link → /use-cases/product-launch-gtm
-        Card 3: Domain "Research & Strategy" | Use case "Investment Memo" | Outcome "Market, financial, and legal analysis run in parallel. One synthesis." | Link → /use-cases/investment-memo
-    - Sub-link: "Browse all use cases →" → /use-cases
-  Constraints:
-    - One-line outcomes must match use-cases.md deliverables exactly
-    - Cards MUST appear within first 2 scrolls (before pillars)
-    - No conversion CTA — forward movement only
 ============================================================ */}
+
+export const useCaseHighlights = {
+  sectionHeadline: "What teams use Workforce for",
+  sectionSubheadline: "Find your domain. See what gets built.",
+  cards: [
+    {
+      domainLabel: "Development",
+      useCaseName: "Full-Stack SaaS MVP",
+      oneLineOutcome: "A working application — frontend, backend, auth, and deployment — built by a coordinated AI engineering org.",
+      cta: { label: "See how it works →", href: "/use-cases/saas-mvp" }
+    },
+    {
+      domainLabel: "Marketing",
+      useCaseName: "Product Launch GTM",
+      oneLineOutcome: "Strategy, copy, landing page, emails — one coordinated operation.",
+      cta: { label: "See how it works →", href: "/use-cases/product-launch-gtm" }
+    },
+    {
+      domainLabel: "Research & Strategy",
+      useCaseName: "Investment Memo",
+      oneLineOutcome: "Market, financial, and legal analysis run in parallel. One synthesis.",
+      cta: { label: "See how it works →", href: "/use-cases/investment-memo" }
+    }
+  ],
+  browseAllCTA: { label: "Browse all use cases →", href: "/use-cases" }
+}
 
 {/* ============================================================
   BLOCK 4: HOW IT WORKS (Preview)
-  Source: website-content-blueprint.md §1.4 | sitemap-and-page-architecture.md §3.1 Block 4
-  Required elements:
-    - Section headline: "How it works"
-    - 4-step visual sequence (1 sentence per step — no paragraphs):
-        Step 1: "Brief the platform" — describe the work in natural language; no technical configuration
-        Step 2: "Planner designs your team" — right leads and specialists selected; proposal submitted for your approval
-        Step 3: "Team executes in parallel" — work across domains simultaneously; no sequential bottleneck
-        Step 4: "You review what matters" — deliverables, not process; high-stakes decisions come back to you
-    - Link CTA: "See the full breakdown →" → /how-it-works (text link only)
-  Constraints:
-    - Scannable in 15 seconds — no paragraphs
-    - Visual must show Planner → Leads → Specialists hierarchy accurately
-    - Do NOT show PM separately in homepage version
 ============================================================ */}
+
+export const howItWorksPreview = {
+  sectionHeadline: "How it works",
+  steps: [
+    {
+      number: 1,
+      label: "Brief the platform",
+      description: "Describe what needs to be done in plain language — no workflow configuration, no technical setup."
+    },
+    {
+      number: 2,
+      label: "Planner designs your team",
+      description: "The right leads and specialists are selected. A structured execution proposal is submitted for your approval before any work begins."
+    },
+    {
+      number: 3,
+      label: "Team executes in parallel",
+      description: "Leads own their domains. Specialists work simultaneously — legal, financial, and research teams run at the same time; no sequential bottleneck."
+    },
+    {
+      number: 4,
+      label: "You review what matters",
+      description: "Deliverables arrive structured and reviewed. High-stakes decisions come back to you. The platform handles coordination and quality enforcement."
+    }
+  ],
+  linkCTA: { label: "See the full breakdown →", href: "/how-it-works" }
+}
 
 {/* ============================================================
   BLOCK 5: FOUR PILLARS
-  Source: website-content-blueprint.md §1.5 | messaging-framework.md §3 Pillars 1–4
-  Required elements:
-    - Section framing: "What makes this different" or "Four structural differences" — NOT "features" or "benefits"
-    - Pillar 1 — A Real Team, Not a Single Agent: icon + label + 2–3 sentences
-    - Pillar 2 — Brief It. The Platform Runs It.: icon + label + 2–3 sentences
-    - Pillar 3 — Outcomes, Not Outputs: icon + label + 2–3 sentences
-    - Pillar 4 — Every Domain. One System.: icon + label + 2–3 sentences
-    - Each pillar links to How It Works page
-  Constraints:
-    - Frame as structural differentiators, not product features
-    - Use pillar statement language from messaging-framework.md §3 as directional copy
 ============================================================ */}
+
+export const fourPillars = {
+  sectionHeadline: "Four structural differences that make Workforce distinct",
+  pillars: [
+    {
+      label: "A Real Team, Not a Single Agent",
+      body: "The right agent for each job. Leads own their domain. Specialists execute within scope. Domain expertise is structural — a legal agent applies GREEN/YELLOW/RED risk frameworks; a research agent grades evidence and tracks competing hypotheses; a finance agent validates every number to its source document. Not one agent doing everything. A team designed for the work.",
+      linkCTA: { label: "See how teams are structured →", href: "/how-it-works" }
+    },
+    {
+      label: "Brief It. The Platform Runs It.",
+      body: "You describe the work in plain language. The platform designs the team, routes the tasks, manages agent lifecycles, and enforces quality standards automatically. You approve the plan; the platform handles the rest. No workflow design. No agent configuration. No dependency tracking.",
+      linkCTA: { label: "See the proposals system →", href: "/how-it-works" }
+    },
+    {
+      label: "Outcomes, Not Outputs",
+      body: "Review cycles are enforced by the platform — not a process you have to set up. No specialist work closes without lead sign-off. Domain-appropriate quality standards are built into each work mode. The deliverable arrives finished, not drafted — ready for your review and sign-off, not your reconstruction.",
+      linkCTA: { label: "See how quality works →", href: "/how-it-works" }
+    },
+    {
+      label: "Every Domain. One System.",
+      body: "Ten live professional work modes — Development, Website, Marketing, Content, Research, Think Tank, Legal, Finance, Compliance, and Strategy. Modes are designed to sequence: Research to Strategy, Marketing to Content to Website. One governance model, one proposals system, one set of quality standards — across every domain.",
+      linkCTA: { label: "Explore all work modes →", href: "/how-it-works" }
+    }
+  ]
+}
 
 {/* ============================================================
   BLOCK 6: CROSS-MODE POWER COMBINATIONS
-  Source: website-content-blueprint.md §1.6 | sitemap-and-page-architecture.md §3.1 Block 6
-  Required elements:
-    - Heading: "Complex work spans multiple domains. Workforce chains them."
-    - 2–3 cross-mode sequences with brief outcome descriptions:
-        Sequence 1: Research → Strategy → Marketing → Content → Website
-        Sequence 2: Compliance → Development
-        Sequence 3: Legal + Finance + Research → Due Diligence
-    - Link to /capabilities (W1) — handle gracefully if page doesn't exist at D0 launch
-  Constraints:
-    - Sequence names and domains must use approved work mode names from messaging-framework
 ============================================================ */}
+
+export const crossModePower = {
+  sectionHeadline: "Some projects don't fit one domain. That's the point.",
+  subheadline: "Complex work spans multiple domains. Workforce is designed to sequence them.",
+  sequences: [
+    {
+      label: "Research → Strategy → Marketing → Content → Website",
+      description: "Validate the market. Design the approach. Build the campaign. Write the copy. Ship the site. Each phase's deliverable becomes the next phase's brief — the same positioning and brand standards carry through every workstream."
+    },
+    {
+      label: "Compliance → Development",
+      description: "Audit the codebase. Findings, severity-rated. Then a Development sprint to fix what was found. The audit becomes the engineering brief — no gap between what was identified and what gets fixed."
+    },
+    {
+      label: "Legal + Finance + Research → Due Diligence",
+      description: "Three parallel teams running simultaneously — legal risk review, financial model validation, market and competitive research. A synthesis lead assembles the integrated package."
+    }
+  ],
+  linkCTA: { label: "See how it works →", href: "/how-it-works" },
+  note: "Cross-mode sequencing: each phase's deliverable becomes the next phase's input. Described as 'designed to sequence' — not claimed as a single automatically-chained pipeline."
+}
 
 {/* ============================================================
   BLOCK 7: TRUST AND PROOF LAYER
-  Source: website-content-blueprint.md §1.7 | sitemap-and-page-architecture.md §3.1 Block 7
-  Required elements (Day 0 — platform facts only, no customer logos):
-    - "10 professional work modes"
-    - "Parallel execution across domains"
-    - "Review cycles enforced — every task, every time"
-    - "Complete deliverables, not assisted drafts"
-  Month 1 update: Replace/supplement with customer logos and outcomes
-  Constraints:
-    - Do NOT invent proof points not in this list at D0
-    - Do NOT use customer logos at launch (none available)
 ============================================================ */}
+
+export const trustProof = {
+  sectionHeadline: "Built for professional work. Enforced at every stage.",
+  proofPoints: [
+    {
+      fact: "10 professional work modes",
+      context: "Development, Website, Marketing, Content, Research, Think Tank, Legal, Finance, Compliance, and Strategy — live today."
+    },
+    {
+      fact: "Parallel execution across domains",
+      context: "Leads and specialists work simultaneously. Legal does not wait for finance. Backend does not wait for frontend. Projects run at the speed of parallel workstreams, not the slowest sequential step."
+    },
+    {
+      fact: "Review cycles enforced — every task, every time",
+      context: "No specialist work closes without lead sign-off. Quality gates are structural, not optional. The platform enforces them; you do not have to set them up."
+    },
+    {
+      fact: "Complete deliverables, not assisted drafts",
+      context: "Deployed code, risk-tiered contract reviews, evidence-graded literature reviews, complete GTM strategies — finished work packages, ready for your review and sign-off."
+    }
+  ]
+}
 
 {/* ============================================================
   BLOCK 8: FINAL CTA
-  Source: website-content-blueprint.md §1.8 | sitemap-and-page-architecture.md §3.1 Block 8
-  Required elements:
-    - Heading: Restate value proposition with closing framing
-    - Primary CTA: "Get Access" or "Join the Waitlist" → https://workforce-dev.rawaihub.com/signup
-    - Optional sub-copy: address "try it later" objection
-  Constraints:
-    - CTA destination is external URL — must open correctly
 ============================================================ */}
+
+export const finalCTA = {
+  headline: "Run your first project.",
+  supportingLine: "Describe your project. Workforce designs the team and proposes the execution plan. Nothing starts until you approve it.",
+  primaryCTA: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
+  secondaryCTA: { label: "See how it works first →", href: "/how-it-works" }
+}
