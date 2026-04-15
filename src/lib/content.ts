@@ -107,6 +107,7 @@ export function getAllUseCaseSlugs(): string[] {
 /**
  * Get all use case entries with frontmatter (for listing pages).
  * Sorted: hero use cases first, then alphabetically by title.
+ * Filters out incomplete placeholder files (empty title or missing tagline).
  */
 export function getAllUseCases(): UseCaseEntry[] {
   return getAllUseCaseSlugs()
@@ -115,7 +116,12 @@ export function getAllUseCases(): UseCaseEntry[] {
       if (!result) return null;
       return { slug, frontmatter: result.frontmatter };
     })
-    .filter((entry): entry is UseCaseEntry => entry !== null)
+    .filter((entry): entry is UseCaseEntry => {
+      // Skip placeholder/incomplete entries
+      if (!entry) return false;
+      if (!entry.frontmatter.title || entry.frontmatter.title.trim() === "") return false;
+      return true;
+    })
     .sort((a, b) => {
       // Hero use cases first
       if (a.frontmatter.hero_use_case && !b.frontmatter.hero_use_case) return -1;
