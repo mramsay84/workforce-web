@@ -386,6 +386,274 @@
 
 
 /* ============================================================
+   BUTTON STATES — Primary, Secondary, Ghost
+   These classes express hover/focus/active pseudo-class states
+   that cannot be achieved with React inline style={}.
+   Use these CSS classes directly on <button> and <a> elements,
+   or use the Tailwind equivalents shown in comments.
+   ============================================================ */
+
+/* Primary button — default: indigo bg */
+.wf-btn-primary {
+  background-color: #6366f1;
+  color: #ffffff;
+  border: 1px solid #6366f1;
+  transition:
+    background-color 120ms ease,
+    border-color     120ms ease,
+    box-shadow       120ms ease;
+  cursor: pointer;
+}
+/* Tailwind equiv: bg-[#6366f1] text-white border border-[#6366f1]
+   hover:bg-[#818cf8] hover:border-[#818cf8]
+   focus-visible:ring-[3px] focus-visible:ring-[rgba(129,140,248,0.25)]
+   active:bg-[#4f52d9] active:border-[#4f52d9]
+   transition-[background-color,border-color,box-shadow] duration-[120ms] ease-in-out
+   disabled:opacity-45 disabled:cursor-not-allowed */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-btn-primary:hover {
+    background-color: #818cf8;
+    border-color: #818cf8;
+  }
+}
+.wf-btn-primary:active {
+  background-color: #4f52d9;
+  border-color: #4f52d9;
+  transition-duration: 80ms;
+}
+.wf-btn-primary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  outline: none;
+}
+.wf-btn-primary:disabled,
+.wf-btn-primary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* Secondary button — ghost with subtle bg */
+.wf-btn-secondary {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--wf-fg, #fdfdff);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition:
+    background-color 120ms ease,
+    border-color     120ms ease,
+    box-shadow       120ms ease;
+  cursor: pointer;
+}
+/* Tailwind equiv: bg-white/[0.06] text-[var(--wf-fg)] border border-white/[0.08]
+   hover:bg-white/[0.10] hover:border-white/[0.12]
+   focus-visible:ring-[3px] focus-visible:ring-[rgba(129,140,248,0.25)]
+   active:bg-white/[0.14]
+   disabled:opacity-45 disabled:cursor-not-allowed */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+.wf-btn-secondary:active {
+  background-color: rgba(255, 255, 255, 0.14);
+  transition-duration: 80ms;
+}
+.wf-btn-secondary:focus-visible {
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  outline: none;
+}
+.wf-btn-secondary:disabled,
+.wf-btn-secondary[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* Ghost button — fully transparent, text-only */
+.wf-btn-ghost {
+  background-color: transparent;
+  color: var(--wf-fg-muted, #b5b5c2);
+  border: 1px solid transparent;
+  transition:
+    background-color 120ms ease,
+    color            120ms ease,
+    box-shadow       120ms ease;
+  cursor: pointer;
+}
+/* Tailwind equiv: bg-transparent text-[var(--wf-fg-muted)] border border-transparent
+   hover:text-[var(--wf-fg)] hover:bg-white/[0.04]
+   focus-visible:ring-[3px] focus-visible:ring-[rgba(129,140,248,0.25)]
+   active:bg-white/[0.07]
+   disabled:opacity-45 disabled:cursor-not-allowed */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-btn-ghost:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+    color: var(--wf-fg, #fdfdff);
+  }
+}
+.wf-btn-ghost:active {
+  background-color: rgba(255, 255, 255, 0.07);
+  transition-duration: 80ms;
+}
+.wf-btn-ghost:focus-visible {
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  outline: none;
+}
+.wf-btn-ghost:disabled,
+.wf-btn-ghost[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   NAV LINK STATES
+   ============================================================ */
+
+/* Primary nav link (desktop header) */
+.wf-nav-link {
+  color: var(--wf-fg-muted, #b5b5c2);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+/* Tailwind equiv: text-[var(--wf-fg-muted)] no-underline
+   hover:text-[var(--wf-fg)]
+   focus-visible:ring-[3px] focus-visible:ring-[rgba(129,140,248,0.25)] focus-visible:rounded-sm
+   aria-current-page:text-[var(--wf-fg)] */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-nav-link:hover {
+    color: var(--wf-fg, #fdfdff);
+  }
+}
+.wf-nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  border-radius: 4px;
+}
+.wf-nav-link[aria-current="page"],
+.wf-nav-link.is-active {
+  color: var(--wf-fg, #fdfdff);
+}
+
+
+/* Dropdown item (within Use Cases / Capabilities panels) */
+.wf-dropdown-item {
+  color: var(--wf-fg, #fdfdff);
+  background-color: transparent;
+  text-decoration: none;
+  transition: color 120ms ease, background-color 120ms ease;
+  border-radius: var(--wf-radius-sm, 6px);
+}
+/* Tailwind equiv: text-[var(--wf-fg)] bg-transparent no-underline rounded-[6px]
+   hover:text-[#818cf8] hover:bg-white/[0.03]
+   focus-visible:ring-[3px] focus-visible:ring-[rgba(129,140,248,0.25)] */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-dropdown-item:hover {
+    color: #818cf8;
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+}
+.wf-dropdown-item:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+}
+
+
+/* Footer links */
+.wf-footer-link {
+  color: var(--wf-fg-dim, #6e7a93);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+/* Tailwind equiv: text-[var(--wf-fg-dim)] no-underline hover:text-[var(--wf-fg-muted)] */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-footer-link:hover {
+    color: var(--wf-fg-muted, #b5b5c2);
+  }
+}
+.wf-footer-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  border-radius: 2px;
+}
+
+
+/* Inline body text links */
+.wf-link {
+  color: #818cf8;
+  text-decoration: none;
+  transition: color 120ms ease, text-decoration-color 120ms ease;
+}
+/* Tailwind equiv: text-[#818cf8] no-underline
+   hover:text-[#a5b4fc] hover:underline hover:decoration-[rgba(165,180,252,0.5)] */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-link:hover {
+    color: #a5b4fc;
+    text-decoration: underline;
+    text-decoration-color: rgba(165, 180, 252, 0.5);
+  }
+}
+.wf-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+  border-radius: 2px;
+}
+
+
+/* ============================================================
+   CHIP STATES — Filter, Category, Tag
+   ============================================================ */
+
+.wf-chip {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--wf-fg, #fdfdff);
+  transition:
+    background-color 120ms ease,
+    border-color     120ms ease,
+    color            120ms ease;
+  cursor: default;
+}
+/* Interactive chips (clickable filters) — add .wf-chip-interactive */
+.wf-chip-interactive {
+  cursor: pointer;
+}
+/* Tailwind equiv: bg-white/[0.06] border border-white/[0.08] text-[var(--wf-fg)]
+   hover:bg-white/[0.09] hover:border-white/[0.12]
+   data-selected:bg-indigo-500/[0.18] data-selected:border-indigo-400/[0.45] data-selected:text-[#c7d2fe] */
+
+@media (hover: hover) and (pointer: fine) {
+  .wf-chip-interactive:hover {
+    background-color: rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+}
+.wf-chip-interactive:active {
+  transition-duration: 80ms;
+}
+.wf-chip-interactive:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+}
+.wf-chip[aria-selected="true"],
+.wf-chip.is-selected {
+  background-color: rgba(99, 102, 241, 0.18);
+  border-color: rgba(99, 102, 241, 0.45);
+  color: #c7d2fe;
+}
+
+
+/* ============================================================
    REDUCED MOTION — Disable all non-essential animation
    State-change transitions (hover color, focus ring) remain
    active — they are functional, not decorative.

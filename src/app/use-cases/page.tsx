@@ -1,36 +1,45 @@
-import { AppShell } from "@/components/AppShell";
-import { Nav } from "@/components/Nav";
 import type { Metadata } from "next";
+import { getAllUseCases } from "@/lib/content";
+import { UseCaseGrid } from "@/components/mdx";
 
 export const metadata: Metadata = {
   title: "Use Cases",
-  description: "Explore how teams use Workforce AI agents across industries and workflows.",
+  description:
+    "Real projects the Workforce AI platform can run — from full-stack development to legal review, investment research, and marketing production.",
 };
 
+/**
+ * Use cases listing page — /use-cases
+ * Renders all use case entries from /content/use-cases/ as a filterable grid.
+ * Content authors add new use cases by dropping .mdx files in /content/use-cases/.
+ */
 export default function UseCasesPage() {
+  const entries = getAllUseCases();
+
   return (
-    <AppShell>
-      <Nav />
-      <main
-        className="flex-1 flex flex-col"
-        style={{ maxWidth: "1200px", margin: "0 auto", padding: "var(--wf-space-16) var(--wf-space-6)", width: "100%" }}
-      >
-        <h1
-          style={{
-            fontFamily: "var(--wf-font-display)",
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            fontWeight: 700,
-            letterSpacing: "-0.03em",
-            color: "var(--wf-fg)",
-            marginBottom: "var(--wf-space-6)",
-          }}
-        >
-          Use Cases
-        </h1>
-        <p style={{ color: "var(--wf-fg-muted)", fontSize: "1.125rem" }}>
-          Content coming soon — Use Cases page stub.
-        </p>
-      </main>
-    </AppShell>
+    <main className="px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-5xl">
+        <div className="mb-12 text-center">
+          <span className="mb-4 inline-block rounded-full border border-[#6366f1]/45 bg-[#6366f1]/[0.18] px-3 py-1 text-xs font-semibold tracking-[2.5px] uppercase text-[#818cf8]">
+            Use Cases
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-bold tracking-[-1.6px] text-[#fdfdff] md:text-[40px]">
+            What Workforce can run
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl font-body text-[15px] leading-[1.65] text-[#b5b5c2]">
+            Real projects. Not aspirational demos — concrete use cases across development,
+            legal, finance, research, marketing, and more.
+          </p>
+        </div>
+
+        {entries.length > 0 ? (
+          <UseCaseGrid entries={entries} />
+        ) : (
+          <p className="text-center text-[#6e7a93]">
+            No use cases found. Add .mdx files to /content/use-cases/.
+          </p>
+        )}
+      </div>
+    </main>
   );
 }

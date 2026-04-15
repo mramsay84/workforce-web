@@ -1,62 +1,82 @@
 ---
-title: ""
-description: ""
-slug: "/pricing"
-pageType: "hub"
-primaryAudience: ["all-icps"]
-phase: "D0"
+title: "Pricing — Workforce"
+description: "Usage-based pricing. Pay for the work your AI team does, not the hours they're available. No annual contracts."
+slug: pricing
+type: page
+phase: D0
 ---
 
-{/*
-  PRICING / WAITLIST — /pricing
-  Source authority: website-content-blueprint.md §9 | sitemap-and-page-architecture.md §1.1
-  Primary audience: Decision-stage buyers across all ICPs
-  Page goal: Convert to sign-up or waitlist
-  Block sequence: Hero/Positioning → Pricing/Access Model → CTA / Sign-Up → FAQ (pricing-specific)
-*/}
+<Hero
+  headline="Pricing"
+  subheadline="Usage-based. Pay for the work your AI team does. A human team costs $500K–$2M/year — Workforce costs ~$50–200/day."
+  align="center"
+/>
 
-{/* ============================================================
-  BLOCK 1: HERO / POSITIONING
-  Source: website-content-blueprint.md §9 | messaging-framework.md §2 Core Value Proposition
-  Required elements:
-    - Headline: conversion framing — restate value in decision-stage context
-    - Brief restatement of core value proposition (see messaging-framework.md §2)
-    - Frame waitlist/access clearly — what the user is signing up for
-  Constraints:
-    - Do NOT say "free trial," "freemium," or any pricing tier language not approved by boss
-============================================================ */}
+<Section align="center">
+  <PricingTable tiers={[
+    {
+      name: "Starter",
+      price: "Pay as you go",
+      description: "For individuals exploring AI-assisted development. Pay only for what you use.",
+      features: [
+        "Up to 3 concurrent agents",
+        "Core work modes (development, website, content)",
+        "Standard company laws",
+        "Community support",
+        "Fly.dev preview deployment"
+      ],
+      cta: { label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" }
+    },
+    {
+      name: "Team",
+      price: "Usage-based",
+      description: "For teams running multiple projects simultaneously. Higher concurrency, all work modes.",
+      features: [
+        "Up to 10 concurrent agents per project",
+        "All work modes",
+        "Custom company laws",
+        "Priority support",
+        "Advanced analytics",
+        "Team workspace"
+      ],
+      cta: { label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" },
+      highlighted: true
+    },
+    {
+      name: "Enterprise",
+      description: "For organisations running Workforce at scale — dedicated infrastructure, custom integrations, SLA.",
+      features: [
+        "Unlimited concurrent agents",
+        "Dedicated infrastructure",
+        "Custom MCP integrations",
+        "SSO / SAML",
+        "Audit logs and compliance exports",
+        "Dedicated account support"
+      ],
+      cta: { label: "Contact us", href: "https://workforce-dev.rawaihub.com/signup" }
+    }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 2: PRICING / ACCESS MODEL
-  Source: website-content-blueprint.md §9
-  Required elements:
-    - Present current access model as approved
-    - ROI framing vs. hiring/agency without specific price numbers
-  Constraints:
-    - Do NOT invent pricing tiers
-    - Do NOT include specific dollar amounts unless explicitly approved
-    - Do NOT imply pricing that contradicts the approved model
-============================================================ */}
+<Section title="Compare to a human team" align="center" variant="surface">
+  <TrustBadge
+    variant="grid"
+    items={[
+      { value: "$500K–2M", label: "Human team / year", description: "Salary, benefits, management, office space." },
+      { value: "$50–200/day", label: "Workforce equivalent", description: "API tokens for a full team working 24/7." },
+      { value: "0", label: "Days to onboard", description: "No interviews, no ramp time. Brief and start." },
+      { value: "Seconds", label: "Scale-up time", description: "From 3 agents to 10. No hiring process." },
+      { value: "24/7", label: "Availability", description: "No breaks, no sick days, no time zones." },
+      { value: "Zero", label: "Knowledge lost", description: "State lives in the database, not in people." }
+    ]}
+  />
+</Section>
 
-{/* ============================================================
-  BLOCK 3: CTA / SIGN-UP
-  Source: website-content-blueprint.md §9 | sitemap-and-page-architecture.md (conversion targets)
-  Required elements:
-    - Primary CTA: "Get Access" → https://workforce-dev.rawaihub.com/signup
-    - Secondary CTA: "Log in" → https://workforce-dev.rawaihub.com/login
-  Constraints:
-    - These are the ONLY two conversion destinations for the entire site
-    - CTA labels and URLs must be exact
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 4: FAQ (PRICING-SPECIFIC)
-  Source: website-content-blueprint.md §9
-  Required FAQ items:
-    Q1: "What does it cost vs. hiring or an agency?"
-      Answer: ROI framing — do NOT include specific dollar amounts
-    Q2: Additional pricing-specific questions as per blueprint §9
-  Constraints:
-    - Answers must use messaging-framework vocabulary
-    - Do NOT discuss competitor pricing
-============================================================ */}
+<Section align="center">
+  <CallToAction
+    headline="Start your first project free"
+    body="No credit card required. Describe your project and let the planner design your team."
+    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+  />
+</Section>

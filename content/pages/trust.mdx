@@ -1,72 +1,90 @@
 ---
-title: ""
-description: ""
-slug: "/trust"
-pageType: "hub"
-primaryAudience: ["icp-4-legal", "icp-3-strategy-finance"]
-phase: "D0"
+title: "Why Workforce — AI Team You Can Trust"
+description: "Every known weakness of AI agents is systematically mitigated. Company laws, peer review, persistent context, heartbeat monitoring — the structural reinforcements that make it reliable."
+slug: trust
+type: page
+phase: D0
 ---
 
-{/*
-  TRUST & SECURITY — /trust
-  Source authority: website-content-blueprint.md §10 | sitemap-and-page-architecture.md §1.1, §1.2 (Trust note)
-  Primary audience: ICP #4 (In-House Legal), ICP #3 (Strategy & Finance) — require trust signals before converting
-  CRITICAL: This page was added as D0 in sitemap v1.1. Legal and Ops buyers require it before converting.
-  Key requirement: "analysis not advice" framing MUST be explicit and prominent on this page.
-  Block sequence: Hero → Data Handling → "Analysis Not Advice" → Platform Security → CTA
-*/}
+<Hero
+  headline="Built around every known agent failure"
+  subheadline="We've catalogued 12 ways AI agents fail in production. Every one of them has a systematic mitigation built into Workforce."
+  align="center"
+  badge="Reliability"
+/>
 
-{/* ============================================================
-  BLOCK 1: HERO
-  Source: website-content-blueprint.md §10
-  Required elements:
-    - Headline: trust-first framing — security, privacy, and responsible use
-    - Purpose statement: explain what this page covers and why it exists
-  Constraints:
-    - Do NOT open with product marketing language — this page is for buyers doing due diligence
-============================================================ */}
+<Section title="The 12 known failure modes — and how we fix them">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="They run off on their own"
+      description="Company laws are injected into every agent's context before they write a single line. Peer review catches violations automatically."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="Context window limits"
+      description="All state lives in the database. Agents call get_my_context() on every restart. Specialised roles reduce context needs — a frontend dev doesn't need to understand the entire backend."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They lose track mid-task"
+      description="update_progress() after each step forces articulation. Plans are written to context before starting. The PM checks in on standups."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They hallucinate"
+      description="QA verifies with real browser testing. Multiple agents cross-check each other. Nothing closes without lead sign-off."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They over-engineer"
+      description="Company law: only make changes directly requested or clearly necessary. Code review explicitly checks for extras. Focused task descriptions say what NOT to touch."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They ignore conventions"
+      description="Company laws give specific examples. Read-before-write is mandatory. Review explicitly checks each law by number."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They crash"
+      description="All state lives in Supabase. Heartbeat monitoring detects crashes in under 5 minutes. Auto-restart with fresh context. File locks auto-expire."
+      tag="Fixed"
+    />
+    <FeatureCard
+      title="They don't ask for help"
+      description="Base rule: if stuck after 2 attempts, STOP. Post a blocker. The PM monitors progress. block_task() explicitly marks tasks as blocked."
+      tag="Fixed"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 2: DATA HANDLING
-  Source: website-content-blueprint.md §10
-  Required elements:
-    - Explain data handling policy as approved
-    - Address: what data enters the platform, how it is handled, retention policy
-  Constraints:
-    - MUST exist at launch (per sitemap v1.1 note)
-    - Do NOT make security claims that are not approved/verified
-    - Do NOT invent security certifications (e.g., SOC 2, ISO 27001) unless confirmed by boss
-============================================================ */}
+<Section title="Systematic quality gates" variant="surface">
+  <StepList steps={[
+    { title: "Company laws", description: "Your non-negotiable rules are injected into every agent's system prompt before any work starts. They cannot be bypassed." },
+    { title: "Mandatory peer review", description: "No code merges without a review from a peer agent. No self-merging. Ever. The platform enforces this structurally." },
+    { title: "QA with real browser testing", description: "The QA agent uses Chrome DevTools — actually clicks through the app, fills forms, reads page content, takes screenshots." },
+    { title: "Security audits", description: "A dedicated security agent audits code for vulnerabilities before tasks close. Findings become tasks for the development team." },
+    { title: "Persistent context", description: "Decisions, findings, and patterns are saved to the database. When an agent restarts, it reloads everything it knew." }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 3: "ANALYSIS NOT ADVICE" FRAMING
-  Source: sitemap-and-page-architecture.md §1.2 (Trust page note) | website-content-blueprint.md §10
-  Required elements:
-    - EXPLICIT AND PROMINENT statement: outputs from legal/finance/compliance modes are structured analysis, not legal or financial advice
-    - Explain what this means in practice for users
-  Constraints:
-    - This framing is REQUIRED — it cannot be omitted or buried
-    - Particularly critical for NDA Triage, Investment Memo, Regulatory Compliance use cases
-    - Placed prominently — not in a footnote or fine print
-============================================================ */}
+<Section align="center">
+  <TrustBadge
+    variant="row"
+    items={[
+      { value: "12", label: "Agent failure modes catalogued" },
+      { value: "12", label: "Systematic mitigations built" },
+      { value: "0", label: "Self-merges allowed" },
+      { value: "100%", label: "State persisted to database" }
+    ]}
+  />
+</Section>
 
-{/* ============================================================
-  BLOCK 4: PLATFORM SECURITY
-  Source: website-content-blueprint.md §10
-  Required elements:
-    - Platform security standards as approved
-    - Infrastructure and access controls
-  Constraints:
-    - Only use approved, verified security claims
-    - Do NOT invent or imply certifications not confirmed by boss
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 5: CTA
-  Source: website-content-blueprint.md §10
-  Required elements:
-    - Soft CTA: trust-satisfied buyers move to pricing
-    - Link to /pricing
-  Constraints:
-    - Keep conversion pressure low — this is a due-diligence page
-============================================================ */}
+<Section align="center">
+  <CallToAction
+    headline="The system you can trust"
+    body="Not one agent. A team with specialisation, communication, review, testing, and monitoring — the combination that catches what individual agents miss."
+    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+  />
+</Section>

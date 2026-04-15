@@ -1,36 +1,24 @@
-import { AppShell } from "@/components/AppShell";
-import { Nav } from "@/components/Nav";
 import type { Metadata } from "next";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { getPageContent } from "@/lib/content";
+import { mdxComponents } from "@/components/mdx";
 
-export const metadata: Metadata = {
-  title: "Trust & Security",
-  description: "How Workforce protects your data and keeps your AI agents secure.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = getPageContent("trust");
+  if (!page) return {};
+  return {
+    title: page.frontmatter.title,
+    description: page.frontmatter.description,
+  };
+}
 
-export default function TrustPage() {
+export default async function TrustPage() {
+  const page = getPageContent("trust");
+  if (!page) return <main className="px-6 py-32 text-center"><p className="text-[#6e7a93]">trust.mdx not found</p></main>;
+
   return (
-    <AppShell>
-      <Nav />
-      <main
-        className="flex-1 flex flex-col"
-        style={{ maxWidth: "1200px", margin: "0 auto", padding: "var(--wf-space-16) var(--wf-space-6)", width: "100%" }}
-      >
-        <h1
-          style={{
-            fontFamily: "var(--wf-font-display)",
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            fontWeight: 700,
-            letterSpacing: "-0.03em",
-            color: "var(--wf-fg)",
-            marginBottom: "var(--wf-space-6)",
-          }}
-        >
-          Trust &amp; Security
-        </h1>
-        <p style={{ color: "var(--wf-fg-muted)", fontSize: "1.125rem" }}>
-          Content coming soon — Trust &amp; Security page stub.
-        </p>
-      </main>
-    </AppShell>
+    <main>
+      <MDXRemote source={page.content} components={mdxComponents} />
+    </main>
   );
 }

@@ -1,202 +1,52 @@
 ---
-title: "How Workforce Works — One Brief. One Plan. A Coordinated Team. A Complete Deliverable."
-description: "Workforce turns a project brief into structured execution — a planning consultant designs the team, leads and specialists execute in parallel, and review cycles enforce quality at every stage."
-slug: "/how-it-works"
-pageType: "hub"
-primaryAudience: ["all-icps"]
-phase: "D0"
+title: "How Workforce works"
+description: "A coordinated AI team — planner, leads, specialists — that follows your rules, reviews each other's work, and builds software autonomously."
+slug: how-it-works
+type: page
+phase: D0
 ---
 
-{/* ============================================================
-  BLOCK 1: HERO
-============================================================ */}
+<Hero
+  headline="How Workforce works"
+  subheadline="A planner designs your team. Leads own their domains. Specialists execute in parallel. You approve the plan, review what matters, and watch the work happen."
+  cta={{ label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" }}
+/>
 
-export const hero = {
-  headline: "One brief. One plan. A coordinated team. A complete deliverable.",
-  subheadline: "When you brief Workforce, a planning consultant designs the right team for your project and proposes an execution plan. You approve the plan before any work begins. Then leads and specialists execute in parallel — each in their domain — with built-in review cycles that enforce quality before anything closes. You stay in the decision seat. The platform handles everything else.",
-  visualDirection: "Operating model diagram: four-layer hierarchy Planner → PM → Leads → Specialists, with two human control gates marked: Plan Approval and Final Review. Show role labels and directional flow. Scannable in 10 seconds."
-}
+<Section title="The team structure">
+  <FeatureGrid columns={3}>
+    <FeatureCard title="Planner" description="Interviews you, designs the right team for the job, and submits a structured proposal for your approval before any work starts." tag="Phase 0" />
+    <FeatureCard title="Leads" description="Own their domain — frontend, backend, QA, security. Hire specialists, create tasks, review work, and report to the project manager." tag="Leads" />
+    <FeatureCard title="Specialists" description="Execute assigned tasks. Write code, commit to git, review each other, and communicate through structured channels." tag="Specialists" />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 2: THE FOUR STEPS
-============================================================ */}
+<Section title="How work flows" variant="surface">
+  <StepList steps={[
+    { title: "You create a project", description: "Describe what needs to be done. Attach company laws — non-negotiable rules that every agent follows." },
+    { title: "Planner designs the team", description: "The planner reads your brief, determines which roles the project needs, and submits a team + plan for your approval." },
+    { title: "You approve and start", description: "Review the plan. Approve to begin. The platform auto-spawns the team you approved." },
+    { title: "Agents work in parallel", description: "Leads spawn specialists. Each domain works simultaneously — frontend, backend, QA — no sequential bottleneck." },
+    { title: "Review cycles enforce quality", description: "No task closes without lead sign-off. No code merges without peer review. Quality gates are automatic, not optional." },
+    { title: "You review what matters", description: "Proposals surface decisions that need human input. Everything else the team handles autonomously." }
+  ]} />
+</Section>
 
-export const fourSteps = {
-  steps: [
-    {
-      number: 1,
-      heading: "You describe the project",
-      subheading: "Start with a brief — no technical setup required.",
-      body: "You describe what needs to be done in plain language. No workflow configuration, no Python, no schema definitions, no agent orchestration logic. You write what you need; the platform figures out how to staff it and execute it.\n\nThe planning consultant will ask clarifying questions to sharpen the brief before designing the team. A well-articulated brief produces meaningfully better results — but the platform is designed to help you get there, not to require perfection upfront.",
-      exampleBrief: "\"Build a go-to-market plan for our Series B product launch — targeting enterprise HR teams, launching in Q3. We need ICP definition, a messaging framework, positioning against [category], channel strategy, and a launch sequence with asset dependencies.\"",
-      whatHappensNext: "The planning consultant reviews your brief, designs the team, and proposes an execution plan. You do not need to do anything further until the proposal arrives for your approval."
-    },
-    {
-      number: 2,
-      heading: "The plan is proposed — you approve it",
-      subheading: "Before work starts, you approve the plan.",
-      body: "No work begins until you have reviewed and approved a structured execution proposal. This is not a formality — it is the mechanism that keeps you in control of what the platform does on your behalf.\n\nThe planning consultant reviews your brief and produces a proposal that includes: team structure (which leads are assigned and which specialist types each lead will hire), a phased execution plan with dependencies made explicit, expected deliverables per phase, and any clarifying questions that need resolution before execution begins.\n\nYou review the proposal. If it looks right, you approve it. If something needs adjustment — a scope change, a different approach, a reordered phase — you push back and the planner revises. Nothing executes until you sign off.",
-      pillarCallout: "You approve the plan. The team executes. You review what matters.",
-      whyItMatters: "The proposals system is not a sign-off formality. It is the structural guarantee that high-stakes decisions never happen without your direction."
-    },
-    {
-      number: 3,
-      heading: "The team executes — in parallel",
-      subheading: "Specialists work in parallel — each in their domain.",
-      body: "Once the plan is approved, leads spawn their specialist teams and execution begins. Every project runs a lead-specialist hierarchy. A Lead owns a domain — backend engineering, legal analysis, market research, content production. Leads hire the right specialists for their workstream. Specialists receive scoped tasks — they have context on what they need, not on the full project. This is intentional: specialization produces depth; breadth produces generalism.\n\nParallel execution in practice: an investment memo project runs a market research team, a financial analysis team, and a legal risk review team simultaneously — not in sequence. Each team produces its domain deliverable. A synthesis lead then assembles the integrated package.\n\nAgents save their work between sessions. Projects do not lose state. A lead picks up exactly where the team left off.",
-      domainStandards: [
-        {
-          domain: "Legal",
-          standard: "GREEN/YELLOW/RED risk tiering on every clause reviewed. RED items flagged for mandatory human review. Every output carries 'analysis, not legal advice' framing."
-        },
-        {
-          domain: "Research",
-          standard: "Evidence grading — primary vs. secondary, peer-reviewed vs. informal. Hypothesis tracking logs competing evidence explicitly. Think Tank mode adds a critique phase: agents challenge each other's findings before synthesis."
-        },
-        {
-          domain: "Finance",
-          standard: "Double-entry validation enforced. Every number traced to a source document. Period awareness applied throughout."
-        },
-        {
-          domain: "Development",
-          standard: "File locking prevents concurrent conflicts. No specialist self-merges — all commits go through lead review. Playwright E2E tests run on every build. Lighthouse audits confirm performance and accessibility thresholds."
-        },
-        {
-          domain: "Compliance",
-          standard: "Findings-only output — no code changes, no direct fixes. Severity-rated findings (Critical / High / Medium / Low) with remediation guidance."
-        }
-      ]
-    },
-    {
-      number: 4,
-      heading: "Review cycles, then delivery",
-      subheading: "Nothing closes without review.",
-      internalReviewBody: "Quality is enforced by the platform, not hoped for. Before any specialist task closes, the relevant lead reviews and approves the work. This is architectural — it cannot be skipped. No specialist self-merges in development. No research output ships without lead review of evidence citations. No content piece is finalized without editorial sign-off.\n\nIn Research and Think Tank modes, a structured critique phase runs before synthesis: agents are explicitly tasked with challenging each other's findings, identifying contradictions, and stress-testing conclusions. Competing hypotheses are tested, not averaged.",
-      deliverableExamples: [
-        {
-          mode: "Research",
-          deliverable: "A structured literature review, evidence grading table (primary, secondary, peer-reviewed, informal), hypothesis tracking log with supporting and contradicting evidence mapped, and a synthesis document. PRISMA methodology applied where relevant."
-        },
-        {
-          mode: "Development",
-          deliverable: "Working, deployed code at a live preview URL, a full automated test suite, a Lighthouse performance and accessibility audit, and technical documentation for the codebase."
-        },
-        {
-          mode: "Legal",
-          deliverable: "A clause-by-clause analysis with GREEN/YELLOW/RED risk tiers, negotiation recommendations on YELLOW items, and escalation flags on RED items. 'Analysis, not legal advice' framed explicitly throughout."
-        },
-        {
-          mode: "Marketing",
-          deliverable: "A complete GTM package — ICP definitions, positioning framework, competitive differentiation map, messaging framework, channel strategy with prioritized mix, launch calendar with asset dependencies."
-        }
-      ],
-      correctionCycles: "The platform supports revision cycles. If a deliverable needs adjustment — a scope clarification, a revised approach, an additional domain element — you push back, the lead routes the revision, and specialists correct."
-    }
-  ],
-  pillarStatement: "A Real Team, Not a Single Agent. Brief It. The Platform Runs It. Outcomes, Not Outputs. Every Domain. One System."
-}
+<Section title="What the platform handles automatically">
+  <FeatureGrid columns={2}>
+    <FeatureCard title="Agent lifecycle" description="Spawn, wake, sleep, kill — agents are managed automatically. If one crashes, it's restarted with fresh context." />
+    <FeatureCard title="File locking" description="No two agents edit the same file simultaneously. The platform enforces exclusive access before any write." />
+    <FeatureCard title="Context persistence" description="Agents save state to the database. Knowledge survives restarts. The team doesn't lose track of what it decided." />
+    <FeatureCard title="Preview deployment" description="Development and website projects deploy to a live Fly.dev preview URL automatically. No DevOps config needed." />
+    <FeatureCard title="Phased spawning" description="Phase 2 agents don't spin up until Phase 1 deliverables are done. No wasted work on premature execution." />
+    <FeatureCard title="Heartbeat monitoring" description="If an agent hasn't sent a heartbeat in 5 minutes, it's considered stale. The daemon kills and restarts it automatically." />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 3: PLATFORM MECHANICS
-============================================================ */}
-
-export const platformMechanics = {
-  sectionHeadline: "What the platform handles automatically",
-  mechanics: [
-    {
-      name: "Agent lifecycle",
-      description: "Agents spawn, work, and stop automatically based on project needs. You do not manage agent state or monitor individual processes."
-    },
-    {
-      name: "Task routing",
-      description: "The right task goes to the right agent. No manual assignment, no dependency tracking, no workflow design by the user."
-    },
-    {
-      name: "Parallel execution",
-      description: "Multiple specialists work simultaneously across independent workstreams. No sequential bottleneck — domains progress in parallel."
-    },
-    {
-      name: "Review cycles",
-      description: "Leads review all specialist work before it closes. Quality gates are platform-enforced, not process-dependent."
-    },
-    {
-      name: "Proposals",
-      description: "Major decisions come back to you for approval — plan approval before execution begins, and at key decision points during a project."
-    },
-    {
-      name: "Context persistence",
-      description: "Agents resume exactly where they left off. Projects do not lose state between sessions. Long projects are not constrained by session limits."
-    },
-    {
-      name: "Company laws",
-      description: "Your non-negotiable rules — brand standards, security requirements, coding conventions, quality thresholds — are set once and enforced automatically across every agent in every mode."
-    },
-    {
-      name: "Quality standards",
-      description: "Domain-appropriate standards are enforced per work mode. The platform knows what 'good' looks like in legal, research, development, finance, and compliance. You do not have to define it."
-    }
-  ]
-}
-
-{/* ============================================================
-  BLOCK 4: WORK MODES OVERVIEW
-============================================================ */}
-
-export const workModesOverview = {
-  sectionHeadline: "Ten work modes. One platform. The right team for every type of work.",
-  intro: "One platform. 10 professional domains.",
-  modes: [
-    { name: "Development", description: "Build software — frontend, backend, QA, DevOps running in parallel" },
-    { name: "Website", description: "Build marketing sites — design-first, with live preview deployment" },
-    { name: "Marketing", description: "GTM strategy, positioning, audience analysis, campaign architecture" },
-    { name: "Content", description: "Brief-first writing — drafts, reviews, revisions, delivered" },
-    { name: "Research", description: "Evidence-graded literature reviews, competitive analysis, synthesis" },
-    { name: "Think Tank", description: "Multi-agent structured thinking — independent research → critique → synthesis" },
-    { name: "Legal", description: "Contract review with GREEN/YELLOW/RED risk tiering; NDA triage at scale" },
-    { name: "Finance", description: "Journal entries, reconciliations, variance analyses — double-entry enforced" },
-    { name: "Compliance", description: "Audit-style findings with severity ratings — findings only, no code changes" },
-    { name: "Strategy", description: "Market sizing, competitive landscapes, growth strategy, M&A analysis" }
-  ],
-  crossModeNote: "Modes are designed to sequence. Research → Strategy → Content → Website is one coordinated project. The same brief, positioning, and brand standards carry forward across every phase.",
-  linkCTA: { label: "Explore use cases by domain →", href: "/use-cases" }
-}
-
-{/* ============================================================
-  BLOCK 5: OBJECTIONS / FAQ
-============================================================ */}
-
-export const faq = {
-  items: [
-    {
-      question: "Is the output actually good enough to use?",
-      answer: "Every work mode builds quality enforcement into the execution architecture. Specialist work is reviewed by leads before it closes — this is not an optional process, it is how tasks are structured. Legal outputs apply GREEN/YELLOW/RED risk tiering. Research outputs include evidence grading and cite every source. Development outputs require Playwright E2E test suites and Lighthouse audit thresholds. The multi-agent review cycle catches errors before they reach you — not as a safety net, but as the primary quality mechanism."
-    },
-    {
-      question: "What happens if an agent makes a mistake?",
-      answer: "Lead review catches errors before specialist work closes. When significant issues are identified — contradictory findings in research, risk-flagged clauses in legal review, test failures in development — they are escalated rather than buried. RED-level items in legal and compliance mode are flagged for mandatory human review. The proposals system applies at critical decision points mid-project, not just at the start. If a deliverable needs correction after review, you push back and the lead routes revisions to the relevant specialists."
-    },
-    {
-      question: "Do I have to manage the agents?",
-      answer: "No. You brief the project and approve the plan. The platform manages task routing, agent lifecycles, inter-agent communication, and review cycles automatically. Your role is the decision seat: approve the plan, review what matters, sign off on deliverables. You do not manage tasks, monitor agent states, or coordinate between leads. That is what the platform is for."
-    },
-    {
-      question: "What does it cost compared to hiring or using an agency?",
-      answer: "Workforce provides the structured execution capacity of a multi-domain professional team — at a fraction of the cost of a contractor sprint or agency retainer. The right comparison depends on your use case: for a marketing team, the alternative is typically a $15–25K/month agency retainer. For an engineering team, the comparison is a $10–15K/month contractor or augmented staff arrangement. Pricing is available on the pricing page — the first project is the right way to evaluate whether the model fits your work."
-    },
-    {
-      question: "Can it work with my existing tools and codebase?",
-      answer: "Development mode integrates with your existing git repository — agents commit to a shared branch, use file locking to prevent conflicts, and work within your established coding conventions (enforced as company laws). Web search, Fly.dev deployment, and Supabase are live MCP integrations. Connecting additional tools may require setup — we lead with what is live rather than what is theoretically possible."
-    }
-  ]
-}
-
-{/* ============================================================
-  BLOCK 6: FINAL CTA
-============================================================ */}
-
-export const finalCTA = {
-  headline: "You've seen how it works. Now run a project.",
-  supportingLine: "The planner will design the team and propose an execution plan. Nothing starts until you approve it.",
-  primaryCTA: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
-  secondaryCTA: { label: "See use cases by domain →", href: "/use-cases" }
-}
+<Section align="center">
+  <CallToAction
+    headline="See it run on your project"
+    body="Start with a brief. The planner designs your team in minutes."
+    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+  />
+</Section>

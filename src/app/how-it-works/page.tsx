@@ -1,36 +1,24 @@
-import { AppShell } from "@/components/AppShell";
-import { Nav } from "@/components/Nav";
 import type { Metadata } from "next";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import { getPageContent } from "@/lib/content";
+import { mdxComponents } from "@/components/mdx";
 
-export const metadata: Metadata = {
-  title: "How It Works",
-  description: "Learn how Workforce AI agent teams operate and integrate into your business.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const page = getPageContent("how-it-works");
+  if (!page) return {};
+  return {
+    title: page.frontmatter.title,
+    description: page.frontmatter.description,
+  };
+}
 
-export default function HowItWorksPage() {
+export default async function HowItWorksPage() {
+  const page = getPageContent("how-it-works");
+  if (!page) return <main className="px-6 py-32 text-center"><p className="text-[#6e7a93]">how-it-works.mdx not found</p></main>;
+
   return (
-    <AppShell>
-      <Nav />
-      <main
-        className="flex-1 flex flex-col"
-        style={{ maxWidth: "1200px", margin: "0 auto", padding: "var(--wf-space-16) var(--wf-space-6)", width: "100%" }}
-      >
-        <h1
-          style={{
-            fontFamily: "var(--wf-font-display)",
-            fontSize: "clamp(2rem, 5vw, 3.5rem)",
-            fontWeight: 700,
-            letterSpacing: "-0.03em",
-            color: "var(--wf-fg)",
-            marginBottom: "var(--wf-space-6)",
-          }}
-        >
-          How It Works
-        </h1>
-        <p style={{ color: "var(--wf-fg-muted)", fontSize: "1.125rem" }}>
-          Content coming soon — How It Works page stub.
-        </p>
-      </main>
-    </AppShell>
+    <main>
+      <MDXRemote source={page.content} components={mdxComponents} />
+    </main>
   );
 }

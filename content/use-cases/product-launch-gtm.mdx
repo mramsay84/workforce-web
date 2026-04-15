@@ -1,100 +1,60 @@
 ---
-title: ""
-description: ""
-slug: "/use-cases/product-launch-gtm"
-pageType: "use-case"
-primaryAudience: ["icp-2-marketing"]
-phase: "D0"
-domain: "marketing"
-deliverable: ""
-teamRoles: []
-relatedUseCases: []
+title: "Product Launch GTM"
+description: "Strategy first, then content production, then website build — three sequential agent teams using the same messaging framework, audience insights, and brand positioning."
+slug: product-launch-gtm
+type: use-case
+domain: marketing
+audience: ["marketing", "founders"]
+phase: D0
+hero_use_case: true
+tagline: "Three sequential agent teams: GTM strategy → content production → website build. All from the same approved messaging framework."
+modes: ["Marketing", "Content", "Website"]
+deliverables:
+  - "GTM strategy document"
+  - "Audience personas and ICP definitions"
+  - "Messaging framework"
+  - "Launch blog posts and email sequence"
+  - "Social content calendar"
+  - "Campaign landing page"
+  - "Updated product pages"
+related:
+  - "content-calendar-execution"
+  - "competitive-positioning-refresh"
 ---
 
-{/*
-  USE CASE: PRODUCT LAUNCH GTM — /use-cases/product-launch-gtm
-  Source authority: use-cases.md (linked project KB) — Product Launch GTM entry | website-content-blueprint.md §5 | sitemap-and-page-architecture.md §3.4
-  Primary audience: ICP #2 — Marketing Directors
-  Key requirement: Convert marketing buyers. Hero use case for ICP #2.
-  Block sequence: Hero → What Gets Built → How It Runs → The Team → Why It's Different → Audience Pathway Callout → Related Use Cases → CTA
-  IMPORTANT: All deliverable language must be sourced from use-cases.md
-*/}
+<Section title="What agents produce">
 
-{/* ============================================================
-  BLOCK 1: HERO
-  Source: sitemap-and-page-architecture.md §3.4 Block 1 | website-content-blueprint.md §5
-  Required elements:
-    - Domain label: "Marketing" (exact)
-    - Headline: deliverable-first. Direction: "Strategy, copy, landing page, emails — one coordinated operation."
-    - Subheadline: 1 sentence on team composition and parallel marketing execution
-    - Primary CTA
-    - Supporting visual: output representation or team structure
-============================================================ */}
+Three coordinated teams, three sequential phases. Marketing produces the strategy — who to target, what to say, how to sequence. Content executes — launch posts, email sequences, social content. Website builds — campaign landing page, updated product pages, announcement page. All using the same messaging framework, the same audience insights, the same brand positioning.
 
-{/* ============================================================
-  BLOCK 2: WHAT GETS BUILT
-  Source: use-cases.md (linked project KB) — Product Launch GTM entry, outputs section
-  Required elements:
-    - Deliverable in concrete terms
-    - Bulleted list of specific outputs — use exact language from use-cases.md
-  Constraints:
-    - Do NOT invent outputs not present in use-cases.md
-============================================================ */}
+</Section>
 
-{/* ============================================================
-  BLOCK 3: HOW IT RUNS
-  Source: use-cases.md (linked project KB) — Product Launch GTM entry, process section
-  Required elements:
-    - Step-by-step breakdown specific to Product Launch GTM
-    - Parallel workstreams across marketing domains (strategy, copy, landing page, email)
-    - Names the planner, marketing lead, key specialists
-============================================================ */}
+<Section title="How it runs" variant="surface">
+  <StepList steps={[
+    {
+      title: "Marketing team builds the strategy",
+      description: "GTM plan, audience personas, ICP definitions, channel mix, messaging framework, launch sequence. Documents only — no writing, no code."
+    },
+    {
+      title: "Content team executes from the strategy",
+      description: "Launch blog posts, email sequence, social content, press release — all briefed from the approved strategy. Consistent voice. No strategic drift."
+    },
+    {
+      title: "Website team builds from the content",
+      description: "Campaign landing page, updated product pages, launch announcement — built from the approved copy. Design-first workflow."
+    }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 4: THE TEAM
-  Source: use-cases.md (linked project KB) — Product Launch GTM entry, team section
-  Required elements:
-    - "For this project, Workforce typically assembles:"
-    - Marketing-domain lead roles with domain responsibility
-    - Specialist roles with task responsibility
-    - Review cycle note: brief-first workflow and editorial quality gates
-  Constraints:
-    - Use exact role names from use-cases.md
-============================================================ */}
+<Section title="Why sequential teams matter">
 
-{/* ============================================================
-  BLOCK 5: WHY IT'S DIFFERENT
-  Source: positioning-structural-differentiation.md (marketing-focused layer) | messaging-framework.md §3 Pillar 1, Pillar 2
-  Required elements:
-    - Comparison frame: vs. agency / freelancers / ChatGPT for content
-    - 3–4 structural differences
-    - Brief-first workflow and parallel production as key differentiators
-  Constraints:
-    - Do NOT name specific agencies or competitor products
-    - Structural contrast only
-============================================================ */}
+The most common marketing failure is building the site before the strategy is clear, writing the copy before the messaging is locked, or running these three phases simultaneously with no coordination.
 
-{/* ============================================================
-  BLOCK 6: AUDIENCE PATHWAY CALLOUT (contextual)
-  Source: sitemap-and-page-architecture.md §3.4 Block 6
-  Required elements:
-    - "For Marketing Teams — how Workforce fits into your launch workflow"
-    - Link to Marketing Teams audience pathway page (footer nav)
-============================================================ */}
+Workforce enforces the right sequence: strategy first, then content execution, then web build. Each phase uses the prior phase's outputs as locked inputs. No rework when the messaging changes on day three.
 
-{/* ============================================================
-  BLOCK 7: RELATED USE CASES
-  Source: sitemap-and-page-architecture.md §3.4 Block 7
-  Required elements:
-    - 3 cards: related use cases by domain
-    - Marketing domain W1 options: Content Calendar, Competitive Positioning
-    - Cross-domain: SaaS MVP or Investment Memo
-============================================================ */}
+</Section>
 
-{/* ============================================================
-  BLOCK 8: CTA
-  Source: sitemap-and-page-architecture.md §3.4 Block 8
-  Required elements:
-    - CTA label: "Brief this project to Workforce" or "Start with a plan"
-    - Primary CTA → https://workforce-dev.rawaihub.com/signup
-============================================================ */}
+<CallToAction
+  headline="Launch with a coordinated AI team"
+  primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+  secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+/>

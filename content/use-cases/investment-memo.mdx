@@ -1,102 +1,64 @@
 ---
-title: ""
-description: ""
-slug: "/use-cases/investment-memo"
-pageType: "use-case"
-primaryAudience: ["icp-3-strategy-finance"]
-phase: "D0"
-domain: "research-strategy"
-deliverable: ""
-teamRoles: []
-relatedUseCases: []
+title: "Full Investment Memo"
+description: "Market analysis, competitive landscape, company deep-dive, financial model review, risk assessment — a complete investment memo produced by parallel AI analyst teams."
+slug: investment-memo
+type: use-case
+domain: finance
+audience: ["investors", "finance"]
+phase: D0
+hero_use_case: true
+tagline: "A multi-week analyst task — market team, financial team, and legal team working simultaneously, then a synthesis lead assembling the memo."
+modes: ["Research", "Strategy", "Finance"]
+deliverables:
+  - "Market analysis"
+  - "Competitive landscape"
+  - "Company deep-dive"
+  - "Financial model review"
+  - "Risk assessment"
+  - "Full investment memo"
+related:
+  - "due-diligence-package"
+  - "startup-financial-model-review"
 ---
 
-{/*
-  USE CASE: INVESTMENT MEMO — /use-cases/investment-memo
-  Source authority: use-cases.md (linked project KB) — Investment Memo entry | website-content-blueprint.md §6 | sitemap-and-page-architecture.md §3.4
-  Primary audience: ICP #3 — Strategy / Finance professionals
-  Key requirement: Convert strategy/finance buyers. Hero use case for ICP #3.
-  Block sequence: Hero → What Gets Built → How It Runs → The Team → Why It's Different → Audience Pathway Callout → Related Use Cases → CTA
-  IMPORTANT: "analysis not advice" framing required. All deliverable language from use-cases.md.
-*/}
+<Section title="What agents produce">
 
-{/* ============================================================
-  BLOCK 1: HERO
-  Source: sitemap-and-page-architecture.md §3.4 Block 1 | website-content-blueprint.md §6
-  Required elements:
-    - Domain label: "Research & Strategy" (exact)
-    - Headline: deliverable-first. Direction: "Market, financial, and legal analysis run in parallel. One synthesis."
-    - Subheadline: 1 sentence on parallel research streams and synthesis power
-    - Primary CTA
-    - Supporting visual: parallel research streams converging to synthesis
-============================================================ */}
+A complete investment memo in standard format — market analysis, competitive landscape, company deep-dive, financial model review, risk assessment, and executive summary. Three agent teams work simultaneously: market research, financial analysis, and legal review. A synthesis lead integrates findings into the final memo.
 
-{/* ============================================================
-  BLOCK 2: WHAT GETS BUILT
-  Source: use-cases.md (linked project KB) — Investment Memo entry, outputs section
-  Required elements:
-    - Parallel research streams: market analysis, financial analysis, legal analysis
-    - Synthesis deliverable as final output
-    - Bulleted list of specific outputs — use exact language from use-cases.md
-  Constraints:
-    - Do NOT invent outputs
-    - "Analysis not advice" framing must appear somewhere in this block or Block 4
-============================================================ */}
+</Section>
 
-{/* ============================================================
-  BLOCK 3: HOW IT RUNS
-  Source: use-cases.md (linked project KB) — Investment Memo entry, process section
-  Required elements:
-    - Step-by-step: Planner → parallel research leads (market, financial, legal) → synthesis specialist
-    - Parallel workstreams (key differentiator for this use case)
-    - Critique/Think Tank layer if applicable per use-cases.md
-============================================================ */}
+<Section title="How it runs" variant="surface">
+  <StepList steps={[
+    {
+      title: "Market research team analyses the landscape",
+      description: "Research agents map the competitive landscape, size the market, and analyse comparable transactions — in parallel, with evidence grading."
+    },
+    {
+      title: "Financial team reviews the model",
+      description: "Financial analysis agents validate assumptions, stress-test unit economics, run sensitivity analyses, and benchmark against comparable companies."
+    },
+    {
+      title: "Legal team flags the risks",
+      description: "Legal review agents assess corporate structure, cap table, IP ownership, regulatory exposure, and management risk. RED findings always escalate."
+    },
+    {
+      title: "Synthesis lead assembles the memo",
+      description: "A dedicated synthesis agent integrates findings from all three teams into a coherent investment memo — one voice, consistent analysis."
+    }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 4: THE TEAM
-  Source: use-cases.md (linked project KB) — Investment Memo entry, team section
-  Required elements:
-    - "For this project, Workforce typically assembles:"
-    - Research, finance, legal leads with domain responsibility
-    - Synthesis specialist role
-    - Review cycle note: evidence grading and cross-domain validation
-  Constraints:
-    - Use exact role names from use-cases.md
-    - "Analysis not advice" qualification must be present
-============================================================ */}
+<Section title="The team">
+  <FeatureGrid columns={2}>
+    <FeatureCard title="Market Research Lead" description="Maps competitive landscape, sizes the market, analyses comparable transactions." />
+    <FeatureCard title="Financial Analysis Lead" description="Validates the model, stress-tests assumptions, benchmarks unit economics." />
+    <FeatureCard title="Legal Review Lead" description="Assesses structure, IP, regulatory exposure, and management risk." />
+    <FeatureCard title="Synthesis Lead" description="Integrates all findings into a unified memo — one voice, no contradictions." />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 5: WHY IT'S DIFFERENT
-  Source: positioning-structural-differentiation.md (research/finance layer) | messaging-framework.md §3
-  Required elements:
-    - Comparison frame: vs. junior analyst / single-agent AI research
-    - 3–4 structural differences
-    - Parallel workstreams and synthesis as key differentiators
-  Constraints:
-    - Do NOT name specific research firms or competitor products
-    - Structural contrast only
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 6: AUDIENCE PATHWAY CALLOUT (contextual)
-  Source: sitemap-and-page-architecture.md §3.4 Block 6
-  Required elements:
-    - "For Strategy & Finance Teams — how Workforce fits into your analysis workflow"
-    - Link to Strategy & Finance audience pathway page (footer nav)
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 7: RELATED USE CASES
-  Source: sitemap-and-page-architecture.md §3.4 Block 7
-  Required elements:
-    - 3 cards: related use cases by domain
-    - Options: Literature Review (D0), Due Diligence (W1), Financial Model Review (M1)
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 8: CTA
-  Source: sitemap-and-page-architecture.md §3.4 Block 8
-  Required elements:
-    - CTA label: "Brief this project to Workforce" or "Start with a plan"
-    - Primary CTA → https://workforce-dev.rawaihub.com/signup
-============================================================ */}
+<CallToAction
+  headline="Run your next investment analysis with Workforce"
+  primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+  secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
+/>
