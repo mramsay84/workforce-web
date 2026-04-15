@@ -1,81 +1,187 @@
 ---
-title: ""
-description: ""
+title: "Use Cases — Find Your Project"
+description: "Whatever the work, there's a structured team for it. Browse Workforce use cases by domain — development, marketing, research, legal, and strategy."
 slug: "/use-cases"
 pageType: "hub"
 primaryAudience: ["all-icps"]
 phase: "D0"
 ---
 
-{/*
-  USE CASES HUB — /use-cases
-  Source authority: website-content-blueprint.md §3 | sitemap-and-page-architecture.md §3.3
-  Primary audience: All ICPs in Consideration stage
-  Key requirement: Scannable — buyers identify their problem within 15 seconds
-  Block sequence: Hero → Category Filter → Hero Use Cases (5 featured) → Use Cases Grid → Cross-Mode Combinations → Don't See Your Use Case
-*/}
-
 {/* ============================================================
   BLOCK 1: HERO
-  Source: sitemap-and-page-architecture.md §3.3 Block 1
-  Required elements:
-    - Headline: "From software builds to investment research — one platform"
-    - Subheadline: brief statement on platform breadth and self-selection invitation
-    - NO individual CTA — this is a discovery page
 ============================================================ */}
+
+export const hero = {
+  headline: "Find your use case.",
+  subheadline: "Whatever the work, there's a structured team for it. Browse by domain to find the projects Workforce runs — and see exactly what gets built.",
+  note: "No primary CTA here — this is a discovery and self-selection page."
+}
 
 {/* ============================================================
   BLOCK 2: CATEGORY FILTER
-  Source: sitemap-and-page-architecture.md §3.3 Block 2
-  Required elements:
-    - Filter tabs/chips (use exact labels):
-        All | Development | Marketing & Content | Research & Analysis | Legal | Finance & Strategy | Operations
-    - Default view: All use cases, sorted by ICP priority (Development and Marketing first)
-    - Filter behaviour: click shows only matching use cases
-  Constraints:
-    - Filter labels are controlled vocabulary — do not change
 ============================================================ */}
 
-{/* ============================================================
-  BLOCK 3: HERO USE CASES (5 Featured Day-0 Cards)
-  Source: sitemap-and-page-architecture.md §3.3 Block 3 | use-cases.md (linked project KB)
-  Required elements — full-width or 3-column featured treatment:
-    Each card: Domain label | Use case name | One-line outcome | Team composition preview | "See full breakdown →"
-    Card 1: Domain "Development" | "Full-Stack SaaS MVP" | → /use-cases/saas-mvp
-    Card 2: Domain "Marketing" | "Product Launch GTM" | → /use-cases/product-launch-gtm
-    Card 3: Domain "Research & Strategy" | "Investment Memo" | → /use-cases/investment-memo
-    Card 4: Domain "Legal" | "NDA Triage at Scale" | → /use-cases/nda-triage
-    Card 5: Domain "Research" | "Systematic Literature Review" | → /use-cases/literature-review
-  Constraints:
-    - One-line outcomes must match use-cases.md deliverables exactly — do not paraphrase
-    - Visual treatment slightly elevated vs. the grid (these are primary discovery paths)
-============================================================ */}
+export const categoryFilter = {
+  filters: [
+    { label: "All", default: true },
+    { label: "Development" },
+    { label: "Marketing & Content" },
+    { label: "Research & Analysis" },
+    { label: "Legal" },
+    { label: "Finance & Strategy" },
+    { label: "Operations" }
+  ],
+  note: "Filter labels are controlled vocabulary — do not rename. Default view: All use cases, Development and Marketing first per ICP priority."
+}
 
 {/* ============================================================
-  BLOCK 4: USE CASES GRID
-  Source: sitemap-and-page-architecture.md §3.3 Block 4
-  Required elements:
-    - Remaining use cases in tighter 3–4 column grid
-    - Each card: Domain label | Name | One-line outcome | "See how →"
-    - Day 0: 5 featured cards already shown above — remaining grid = W1 content (placeholder at D0 launch)
-  Note: W1 cards expand this grid significantly. Design grid to accommodate future cards.
+  BLOCK 3: HERO USE CASES — 5 Featured Day-0 Cards
 ============================================================ */}
+
+export const heroUseCases = {
+  sectionHeadline: "Start here — the five use cases that show what Workforce can do.",
+  cards: [
+    {
+      domainLabel: "Development",
+      useCaseName: "Full-Stack SaaS MVP",
+      oneLineOutcome: "A fully-deployed SaaS application — built by an AI engineering org.",
+      teamCompositionPreview: "Frontend Lead, Backend Lead, QA Lead, DevOps Lead, Security Lead — working in parallel",
+      keyClaim: "File locking, peer review, and Playwright E2E testing enforced at every stage.",
+      href: "/use-cases/saas-mvp",
+      cta: "See full breakdown →"
+    },
+    {
+      domainLabel: "Marketing",
+      useCaseName: "Product Launch GTM",
+      oneLineOutcome: "GTM strategy, campaign copy, landing pages — one coordinated launch operation.",
+      teamCompositionPreview: "Marketing strategy team → Content production team → Web build team",
+      keyClaim: "Each phase's output becomes the next phase's brief. Strategy feeds copy. Copy builds the site.",
+      href: "/use-cases/product-launch-gtm",
+      cta: "See full breakdown →"
+    },
+    {
+      domainLabel: "Research & Strategy",
+      useCaseName: "Investment Memo",
+      oneLineOutcome: "Market analysis, financial review, and legal risk assessed in parallel — one synthesis package.",
+      teamCompositionPreview: "Market research team, financial analysis team, legal risk team — running simultaneously",
+      keyClaim: "Three parallel workstreams. One synthesis lead. Investment decision ready.",
+      href: "/use-cases/investment-memo",
+      cta: "See full breakdown →"
+    },
+    {
+      domainLabel: "Legal",
+      useCaseName: "NDA Triage at Scale",
+      oneLineOutcome: "12 NDAs. Three triage tiers. You review only what needs your attention.",
+      teamCompositionPreview: "Legal specialist agents reviewing simultaneously, lead handling escalations",
+      keyClaim: "GREEN/YELLOW/RED risk tiering applied clause-by-clause across every agreement.",
+      href: "/use-cases/nda-triage",
+      cta: "See full breakdown →"
+    },
+    {
+      domainLabel: "Research",
+      useCaseName: "Systematic Literature Review",
+      oneLineOutcome: "A PRISMA-methodology literature review — evidence-graded, hypothesis-tracked, synthesis-integrated.",
+      teamCompositionPreview: "Research specialists, critique agents, synthesis lead",
+      keyClaim: "Specialists research in parallel. A critique phase challenges findings. Synthesis integrates with competing evidence explicitly mapped.",
+      href: "/use-cases/literature-review",
+      cta: "See full breakdown →"
+    }
+  ]
+}
+
+{/* ============================================================
+  BLOCK 4: USE CASES GRID — Remaining / W1 expansion
+============================================================ */}
+
+export const useCasesGrid = {
+  sectionNote: "Day 0: 5 featured cards above. W1 additions expand this grid. Design to accommodate future cards.",
+  week1Preview: [
+    {
+      domainLabel: "Development",
+      useCaseName: "Legacy Codebase Audit",
+      oneLineOutcome: "Severity-rated technical debt and security findings — then a fix sprint.",
+      href: "/use-cases/legacy-codebase-audit",
+      phase: "W1"
+    },
+    {
+      domainLabel: "Development",
+      useCaseName: "API Design & Documentation",
+      oneLineOutcome: "Architecture design and full API documentation package.",
+      href: "/use-cases/api-design",
+      phase: "W1"
+    },
+    {
+      domainLabel: "Marketing & Content",
+      useCaseName: "Full Content Calendar",
+      oneLineOutcome: "20+ finished content pieces — strategy-first, brand-consistent, delivered in parallel.",
+      href: "/use-cases/content-calendar",
+      phase: "W1"
+    },
+    {
+      domainLabel: "Marketing & Content",
+      useCaseName: "Competitive Positioning Refresh",
+      oneLineOutcome: "Updated competitive landscape, differentiation map, and messaging framework.",
+      href: "/use-cases/competitive-positioning",
+      phase: "W1"
+    },
+    {
+      domainLabel: "Research & Analysis",
+      useCaseName: "Due Diligence Package",
+      oneLineOutcome: "Integrated diligence across legal, financial, and market domains.",
+      href: "/use-cases/due-diligence",
+      phase: "W1"
+    },
+    {
+      domainLabel: "Legal",
+      useCaseName: "Regulatory Compliance Assessment",
+      oneLineOutcome: "GDPR, HIPAA, or SOC 2 audit findings — severity-rated with remediation roadmap.",
+      href: "/use-cases/regulatory-compliance",
+      phase: "W1"
+    }
+  ]
+}
 
 {/* ============================================================
   BLOCK 5: CROSS-MODE COMBINATIONS
-  Source: sitemap-and-page-architecture.md §3.3 Block 5
-  Required elements:
-    - Heading: "Some projects span multiple modes"
-    - 3 cross-mode examples with flow diagrams (use exact sequences):
-        Sequence 1: Research → Strategy → Marketing → Content → Website
-        Sequence 2: Compliance → Development
-        Sequence 3: Legal + Finance + Research → Due Diligence
 ============================================================ */}
+
+export const crossModeSection = {
+  headline: "Some projects span multiple modes.",
+  subheadline: "Workforce is designed to sequence them. Each phase's deliverable becomes the next phase's brief.",
+  sequences: [
+    {
+      flow: "Research → Strategy → Marketing → Content → Website",
+      description: "Strategy first. Then copy. Then the site. One coherent project — from market validation to published page — without the handoff gaps that fragment strategy from execution."
+    },
+    {
+      flow: "Compliance → Development",
+      description: "Audit first. Findings, severity-rated. Then a Development sprint to fix what was found. The audit becomes the engineering brief — no gap between what was identified and what gets fixed."
+    },
+    {
+      flow: "Legal + Finance + Research → Due Diligence",
+      description: "Three parallel teams running simultaneously: legal risk review, financial model validation, market and competitive research. A synthesis lead assembles the integrated package."
+    }
+  ],
+  note: "Cross-mode sequencing requires user-initiated project starts between phases. We describe this as 'designed to sequence' — not as a single automatically-chained pipeline."
+}
 
 {/* ============================================================
   BLOCK 6: DON'T SEE YOUR USE CASE?
-  Source: website-content-blueprint.md §3.6
-  Required elements:
-    - Brief copy: platform breadth acknowledgement
-    - Link to How It Works or waitlist/contact form
 ============================================================ */}
+
+export const dontSeeYourUseCase = {
+  headline: "Don't see your use case?",
+  body: "Workforce covers 10 professional work modes — Development, Website, Marketing, Content, Research, Think Tank, Legal, Finance, Compliance, and Strategy. If your project spans more than one domain, that's the point: modes are designed to sequence. Start with How It Works to understand the full scope of what the platform can run.",
+  primaryCTA: { label: "See how it works →", href: "/how-it-works" },
+  secondaryCTA: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }
+}
+
+{/* ============================================================
+  PAGE-END CTA
+============================================================ */}
+
+export const pageEndCTA = {
+  headline: "Found your use case? Run it.",
+  primaryCTA: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
+  secondaryCTA: { label: "Browse by domain →", href: "/use-cases" }
+}
