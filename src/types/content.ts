@@ -31,6 +31,12 @@ export type UseCaseDomain =
   | "creative"
   | "strategy";
 
+/** CTA link with label and href */
+export interface CtaLink {
+  label: string;
+  href: string;
+}
+
 /** Frontmatter for static pages (home, how-it-works, pricing, trust) */
 export interface PageFrontmatter {
   title: string;
@@ -38,6 +44,18 @@ export interface PageFrontmatter {
   slug: string;
   type: "page";
   phase: ContentPhase;
+  /** Content section grouping — 'pages' for static pages, 'use-cases' for use case pages */
+  section?: "pages" | "use-cases";
+  /** Audience segments this page targets */
+  audience?: ContentAudience[];
+  /** Display order within a section */
+  order?: number;
+  /** Primary CTA for layout-level rendering */
+  ctaPrimary?: CtaLink;
+  /** Secondary CTA for layout-level rendering */
+  ctaSecondary?: CtaLink;
+  /** Open Graph image path or URL */
+  ogImage?: string;
 }
 
 /** Frontmatter for use case pages at /use-cases/[slug] */
