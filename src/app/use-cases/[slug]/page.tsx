@@ -42,56 +42,42 @@ export default async function UseCasePage({ params }: PageProps) {
 
   return (
     <main>
-      {/* Use case header */}
-      <section className="border-b border-white/[0.06] bg-[#09090b] px-6 py-16 md:py-24">
-        <div className="mx-auto max-w-4xl">
-          <div className="mb-4 flex flex-wrap gap-2">
-            <span className="rounded-full border border-[#6366f1]/45 bg-[#6366f1]/[0.18] px-3 py-1 text-xs font-semibold text-[#818cf8]">
-              {frontmatter.domain}
-            </span>
-            {frontmatter.modes.map((mode) => (
-              <span
-                key={mode}
-                className="rounded-full border border-white/[0.08] bg-white/[0.06] px-3 py-1 text-xs font-semibold tracking-[2px] uppercase text-[#b5b5c2]"
-              >
-                {mode}
+      {/* MDX content — Hero component inside MDX handles the page header */}
+      <MDXRemote source={content} components={mdxComponents} />
+
+      {/* Structured deliverables — shown after content body when available */}
+      {frontmatter.deliverables.length > 0 && (
+        <section className="border-t border-white/[0.06] px-6 py-12">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-4 flex flex-wrap items-center gap-2">
+              <span className="rounded-full border border-[#6366f1]/45 bg-[#6366f1]/[0.18] px-3 py-1 text-xs font-semibold text-[#818cf8]">
+                {frontmatter.domain}
               </span>
-            ))}
-          </div>
-
-          <h1 className="font-display text-3xl font-bold tracking-[-1.6px] text-[#fdfdff] md:text-[40px]">
-            {frontmatter.title}
-          </h1>
-          <p className="mt-4 font-body text-[15px] leading-[1.65] text-[#b5b5c2]">
-            {frontmatter.tagline}
-          </p>
-
-          {frontmatter.deliverables.length > 0 && (
-            <div className="mt-8">
-              <p className="mb-3 font-body text-[13px] font-semibold tracking-[2.5px] uppercase text-[#6e7a93]">
-                What agents produce
-              </p>
-              <ul className="flex flex-wrap gap-2">
-                {frontmatter.deliverables.map((d) => (
-                  <li
-                    key={d}
-                    className="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 font-body text-[13px] text-[#b5b5c2]"
-                  >
-                    {d}
-                  </li>
-                ))}
-              </ul>
+              {frontmatter.modes.map((mode) => (
+                <span
+                  key={mode}
+                  className="rounded-full border border-white/[0.08] bg-white/[0.06] px-3 py-1 text-xs font-semibold tracking-[2px] uppercase text-[#b5b5c2]"
+                >
+                  {mode}
+                </span>
+              ))}
             </div>
-          )}
-        </div>
-      </section>
-
-      {/* MDX content */}
-      <section className="px-6 py-16">
-        <div className="mx-auto max-w-4xl mdx-prose">
-          <MDXRemote source={content} components={mdxComponents} />
-        </div>
-      </section>
+            <p className="mb-3 font-body text-[13px] font-semibold tracking-[2.5px] uppercase text-[#6e7a93]">
+              What agents produce
+            </p>
+            <ul className="flex flex-wrap gap-2">
+              {frontmatter.deliverables.map((d) => (
+                <li
+                  key={d}
+                  className="rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 font-body text-[13px] text-[#b5b5c2]"
+                >
+                  {d}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
 
       {/* Related use cases */}
       {relatedEntries.length > 0 && (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getAllUseCases } from "@/lib/content";
-import { UseCaseGrid } from "@/components/mdx";
+import { UseCasesFilterGrid } from "@/components/ui/UseCasesFilterGrid";
 
 export const metadata: Metadata = {
   title: "Use Cases",
@@ -32,13 +32,7 @@ export default function UseCasesPage() {
           </p>
         </div>
 
-        {entries.length > 0 ? (
-          <UseCaseGrid entries={entries} />
-        ) : (
-          <p className="text-center text-[#6e7a93]">
-            No use cases found. Add .mdx files to /content/use-cases/.
-          </p>
-        )}
+        <UseCasesFilterGrid entries={entries} />
       </div>
     </main>
   );
