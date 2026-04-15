@@ -1,0 +1,450 @@
+/* ============================================================
+   Workforce — Interaction Layer — src/styles/interactions.css
+   Provides: transition utilities, keyframe animations, scroll
+             reveal, focus ring, skeleton, nav/menu motion,
+             ambient orb pulse, reduced-motion overrides.
+
+   Import order: after tokens.css, after globals.css.
+   Add to src/app/globals.css:
+     @import '../styles/interactions.css';
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL FOCUS RING
+   Replaces browser default outline with a 3px primary ring.
+   Uses :focus-visible so mouse clicks don't show the ring.
+   ============================================================ */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25); /* #818cf8 @ 25% */
+}
+
+/* High-contrast / Windows forced-colors mode */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 2px solid ButtonText;
+    box-shadow: none;
+  }
+}
+
+/* Skip-to-content — visually hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--wf-primary);
+  color: var(--wf-primary-fg);
+  border-radius: var(--wf-radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: top 120ms ease;
+}
+.skip-link:focus-visible {
+  top: 1rem;
+}
+
+
+/* ============================================================
+   TRANSITION UTILITIES
+   Apply these classes directly to elements.
+   ============================================================ */
+
+/* Micro-interaction (buttons, chips, nav items, links) */
+.transition-micro {
+  transition:
+    background-color 120ms ease,
+    background     120ms ease,
+    border-color   120ms ease,
+    color          120ms ease,
+    box-shadow     120ms ease;
+}
+
+/* Card hover lift */
+.transition-card {
+  transition:
+    box-shadow   200ms ease,
+    border-color 200ms ease,
+    transform    200ms ease;
+}
+
+/* Page shell / body background */
+.transition-shell {
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+/* Nav bar solidification on scroll */
+.transition-nav {
+  transition:
+    background     200ms ease,
+    background-color 200ms ease,
+    backdrop-filter 200ms ease,
+    border-color   200ms ease,
+    opacity        200ms ease;
+}
+
+/* Active state snap (faster than hover — feels tactile) */
+.transition-active {
+  transition:
+    background-color 80ms ease,
+    background     80ms ease,
+    border-color   80ms ease;
+}
+
+
+/* ============================================================
+   CARD HOVER STATES
+   Only active on hover-capable pointer devices.
+   Avoids sticky hover on touch screens.
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) {
+  .card-interactive {
+    transition:
+      box-shadow   200ms ease,
+      border-color 200ms ease,
+      transform    200ms ease;
+  }
+
+  .card-interactive:hover {
+    box-shadow:
+      0 12px 80px rgba(0, 0, 0, 0.50),
+      0 4px  28px rgba(0, 0, 0, 0.30);
+    border-color: rgba(255, 255, 255, 0.09);
+    transform: translateY(-2px);
+  }
+
+  /* Card focus state — ring wraps the whole card */
+  .card-interactive:focus-visible {
+    box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.25);
+    transform: none;
+  }
+}
+
+/* Touch / active tap feedback on non-hover devices */
+.card-interactive:active {
+  opacity: 0.88;
+  transition: opacity 80ms ease;
+}
+
+
+/* ============================================================
+   SECTION REVEAL — Scroll-entrance animations
+   JS adds .is-visible via IntersectionObserver.
+   Default: elements start invisible (opacity: 0).
+   ============================================================ */
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elements awaiting reveal — invisible by default */
+.section-reveal {
+  opacity: 0;
+}
+
+/* Once IntersectionObserver fires — animate in */
+.section-reveal.is-visible {
+  animation: section-enter 300ms ease-out forwards;
+  animation-delay: var(--stagger-delay, 0ms);
+}
+
+/*
+  Usage for staggered card grids:
+  <div class="section-reveal" style="--stagger-delay: 0ms">Card 1</div>
+  <div class="section-reveal" style="--stagger-delay: 60ms">Card 2</div>
+  <div class="section-reveal" style="--stagger-delay: 120ms">Card 3</div>
+*/
+
+/* Noscript / IntersectionObserver unavailable — always visible */
+.no-js .section-reveal,
+.no-js .section-reveal.is-visible {
+  opacity: 1;
+  animation: none;
+  transform: none;
+}
+
+
+/* ============================================================
+   SILVER ORB — Ambient pulse animation
+   Applied to .silver-orb elements in hero panels.
+   Very slow (8s) — creates life without distraction.
+   ============================================================ */
+@keyframes orb-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scaleX(1) scaleY(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scaleX(1.04) scaleY(0.97);
+  }
+}
+
+.silver-orb {
+  will-change: transform, opacity;
+  animation: orb-pulse 8s ease-in-out infinite;
+}
+/* Note: .silver-orb base styles (position, background, filter)
+   live in globals.css — this file adds animation only. */
+
+
+/* ============================================================
+   SKELETON SHIMMER — Loading placeholder animation
+   Apply .skeleton to any placeholder element.
+   ============================================================ */
+@keyframes skeleton-shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position:  400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.04) 25%,
+    rgba(255, 255, 255, 0.07) 50%,
+    rgba(255, 255, 255, 0.04) 75%
+  );
+  background-size: 800px 100%;
+  animation: skeleton-shimmer 1.4s ease-in-out infinite;
+  border-radius: var(--wf-radius-md, 0.75rem);
+}
+
+/* Skeleton shapes — use with .skeleton */
+.skeleton-text {
+  height: 1em;
+  border-radius: 4px;
+}
+.skeleton-title {
+  height: 1.5em;
+  border-radius: 6px;
+}
+.skeleton-card {
+  height: 200px;
+  border-radius: var(--wf-radius-lg, 1rem);
+}
+
+
+/* ============================================================
+   NAV DROPDOWN — Open/close animation
+   JS toggles .is-open on the dropdown panel.
+   ============================================================ */
+.nav-dropdown {
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 150ms ease-out, transform 150ms ease-out;
+}
+
+.nav-dropdown.is-open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* ============================================================
+   MOBILE MENU PANEL — Slide down from top
+   Full-width panel that drops below the sticky nav bar.
+   JS toggles .is-open and .is-closing for direction control.
+   ============================================================ */
+.mobile-menu {
+  transform: translateY(-100%);
+  transition: transform 250ms ease-out;
+}
+
+.mobile-menu.is-open {
+  transform: translateY(0);
+}
+
+.mobile-menu.is-closing {
+  transform: translateY(-100%);
+  transition: transform 200ms ease-in;
+}
+
+/* Backdrop overlay — fades in behind open menu */
+.mobile-menu-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.mobile-menu-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* ============================================================
+   HAMBURGER ICON — Animates to × on menu open
+   Three-bar icon: bars 1 and 3 rotate 45°, bar 2 fades.
+   Apply .is-open to the <button> element.
+   ============================================================ */
+.hamburger-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform 200ms ease, opacity 150ms ease;
+}
+
+.hamburger-bar--top    { transform: translateY(0)  rotate(0deg); }
+.hamburger-bar--mid    { opacity: 1; }
+.hamburger-bar--bottom { transform: translateY(0)  rotate(0deg); }
+
+.hamburger.is-open .hamburger-bar--top    { transform: translateY(6px)  rotate(45deg); }
+.hamburger.is-open .hamburger-bar--mid    { opacity: 0; }
+.hamburger.is-open .hamburger-bar--bottom { transform: translateY(-6px) rotate(-45deg); }
+
+
+/* ============================================================
+   MOBILE ACCORDION (Use Cases / Capabilities in mobile menu)
+   Max-height expansion — simpler than animating height directly.
+   Chevron icon rotates on expand.
+   ============================================================ */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out;
+}
+
+.accordion-content.is-open {
+  max-height: 480px; /* large enough for any submenu */
+}
+
+.accordion-chevron {
+  transition: transform 200ms ease;
+}
+
+.accordion-item.is-open .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+
+/* ============================================================
+   STICKY SECTION NAV (Long capability pages — R4)
+   Active item indicator transition.
+   ============================================================ */
+.section-nav-item {
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.section-nav-item.is-active {
+  color: var(--wf-fg);
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+
+/* ============================================================
+   PAGE PROGRESS BAR
+   Thin top-of-page bar driven by scroll or router events.
+   Position: fixed, above the nav (z-index: 60).
+   ============================================================ */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--wf-primary, #6366f1);
+  z-index: 60;
+  pointer-events: none;
+  transform-origin: left center;
+  transition: transform 80ms linear;
+}
+
+
+/* ============================================================
+   TOUCH TARGET HELPERS
+   Ensure 44×44px minimum tap area on mobile.
+   ============================================================ */
+@media (max-width: 767px) {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Chip touch area expansion */
+  .chip {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION — Disable all non-essential animation
+   State-change transitions (hover color, focus ring) remain
+   active — they are functional, not decorative.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  /* Kill all animations and transitions globally */
+  *,
+  *::before,
+  *::after {
+    animation-duration:       0.01ms !important;
+    animation-iteration-count: 1     !important;
+    transition-duration:      0.01ms !important;
+    scroll-behavior:          auto   !important;
+  }
+
+  /* Explicitly disable named animations */
+  .silver-orb       { animation: none; }
+  .skeleton         { animation: none; background: rgba(255, 255, 255, 0.05); }
+  .section-reveal,
+  .section-reveal.is-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Mobile menu — instant open/close */
+  .mobile-menu,
+  .mobile-menu.is-open,
+  .mobile-menu.is-closing {
+    transform: none;
+    transition: none;
+  }
+
+  /* Nav dropdown — instant open/close */
+  .nav-dropdown,
+  .nav-dropdown.is-open {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  /* Hamburger — instant state change */
+  .hamburger-bar { transition: none; }
+
+  /* Card hover — no transform lift */
+  .card-interactive:hover {
+    transform: none;
+  }
+
+  /* Accordion — instant expand */
+  .accordion-content {
+    transition: none;
+  }
+
+  /* Progress bar — no animation */
+  .progress-bar { transition: none; }
+
+  /* Skeleton stagger — no delays */
+  .section-reveal { animation-delay: 0ms !important; }
+
+  /* Focus ring MUST remain active — do not override here */
+}
