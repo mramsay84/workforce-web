@@ -6,6 +6,12 @@ interface FeatureCardProps {
   description: string;
   icon?: ReactNode;
   tag?: string;
+  /** When provided, the card renders as a clickable link */
+  href?: string;
+  /** Optional CTA label shown at the bottom of a linked card */
+  cta?: string;
+  /** Indigo accent treatment — use for the "Workforce answer" card in comparison pairs */
+  accent?: boolean;
 }
 
 /**
@@ -17,31 +23,68 @@ interface FeatureCardProps {
  *     description="Multiple specialists work simultaneously..."
  *     tag="Core"
  *   />
+ *
+ * Linked variant (renders as <a>):
+ *   <FeatureCard
+ *     title="Full-Stack SaaS MVP"
+ *     description="..."
+ *     tag="Development"
+ *     href="/use-cases/saas-mvp"
+ *     cta="See how it works →"
+ *   />
  */
-export function FeatureCard({ title, description, icon, tag }: FeatureCardProps) {
-  return (
-    <div
-      className={clsx(
-        "relative rounded-lg border p-6 transition-colors",
-        "bg-white/[0.02] border-white/[0.06]",
-        "hover:bg-white/[0.04] hover:border-white/[0.10]"
-      )}
-      style={{ backdropFilter: "blur(12px)" }}
-    >
+export function FeatureCard({ title, description, icon, tag, href, cta, accent }: FeatureCardProps) {
+  const inner = (
+    <>
       {tag && (
-        <span className="mb-4 inline-block rounded-full border border-white/[0.08] bg-white/[0.06] px-2.5 py-1 text-xs font-semibold tracking-[2.5px] uppercase text-[#b5b5c2]">
+        <span className={clsx(
+          "mb-4 inline-block rounded-full border px-2.5 py-1 text-xs font-semibold tracking-[2.5px] uppercase",
+          accent
+            ? "border-[#6366f1]/45 bg-[#6366f1]/[0.18] text-[#818cf8]"
+            : "border-white/[0.08] bg-white/[0.06] text-[#b5b5c2]"
+        )}>
           {tag}
         </span>
       )}
       {icon && (
         <div className="mb-4 text-[#6366f1]">{icon}</div>
       )}
-      <h3 className="font-display text-[20px] font-semibold tracking-[-0.4px] text-[#fdfdff]">
+      <h3 className={clsx(
+        "font-display text-[20px] font-semibold tracking-[-0.4px]",
+        accent ? "text-[#818cf8]" : "text-[#fdfdff]"
+      )}>
         {title}
       </h3>
       <p className="mt-2 font-body text-[15px] leading-[1.65] text-[#b5b5c2]">
         {description}
       </p>
+      {cta && (
+        <span className="mt-4 inline-flex text-sm font-medium text-[#6366f1] group-hover:text-[#818cf8] transition-colors">
+          {cta}
+        </span>
+      )}
+    </>
+  );
+
+  const classes = clsx(
+    "group relative rounded-lg border p-6 transition-colors",
+    accent
+      ? "bg-[#6366f1]/[0.04] border-[#6366f1]/20 hover:border-[#6366f1]/40"
+      : "bg-white/[0.02] border-white/[0.06] hover:bg-white/[0.04] hover:border-white/[0.10]",
+    href && "block"
+  );
+
+  if (href) {
+    return (
+      <a href={href} className={classes} style={{ backdropFilter: "blur(12px)", textDecoration: "none" }}>
+        {inner}
+      </a>
+    );
+  }
+
+  return (
+    <div className={classes} style={{ backdropFilter: "blur(12px)" }}>
+      {inner}
     </div>
   );
 }
