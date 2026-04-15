@@ -17,6 +17,7 @@ export { StepList } from "./StepList";
 export { PillarCard } from "./PillarCard";
 export { TrustBadge } from "./TrustBadge";
 export { PricingTable } from "./PricingTable";
+export { FAQList } from "./FAQList";
 
 import { Hero } from "./Hero";
 import { Section } from "./Section";
@@ -27,6 +28,7 @@ import { StepList } from "./StepList";
 import { PillarCard } from "./PillarCard";
 import { TrustBadge } from "./TrustBadge";
 import { PricingTable } from "./PricingTable";
+import { FAQList } from "./FAQList";
 
 /**
  * Component map for next-mdx-remote.
@@ -45,6 +47,7 @@ export const mdxComponents = {
   PillarCard,
   TrustBadge,
   PricingTable,
+  FAQList,
 } as const;
 
 export type MDXComponents = typeof mdxComponents;
