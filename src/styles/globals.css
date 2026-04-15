@@ -1,0 +1,349 @@
+/* ============================================================
+   Workforce — Base Styles & Utility Layer — src/styles/globals.css
+   Imports: tokens.css (CSS custom properties)
+   Provides: @theme Tailwind v4 extensions, font-face, base reset,
+             app-shell, silver-orb, card-glass, button, input, chip utilities
+   ============================================================ */
+
+/* ============================================================
+   GOOGLE FONTS — DM Sans + JetBrains Mono
+   Note for Frontend Lead: replace with next/font in layout.tsx
+   for optimal LCP and zero FOUT in production.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ============================================================
+   AILERON — Self-hosted display/heading font
+   Files must live at: public/fonts/aileron/
+   Download: /fonts/aileron.zip (woff2 bundle from Theme Guideline)
+   ============================================================ */
+@font-face {
+  font-family: 'Aileron';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Aileron-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Aileron';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Aileron-SemiBold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Aileron';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Aileron-Bold.woff2') format('woff2');
+}
+
+/* ============================================================
+   NOTE: Tailwind v3 — theme extension is in tailwind.config.ts.
+   Colors: wf-* namespace (e.g. text-wf-fg, bg-wf-primary)
+   Fonts: font-display, font-body, font-mono
+   Radius: rounded-sm, rounded-md, rounded-lg, rounded-xl
+   Spacing: wf-1 through wf-16 (e.g. p-wf-4, gap-wf-6)
+   Shadows: shadow-surface
+   ============================================================ */
+
+/* ============================================================
+   BASE RESET & DOCUMENT DEFAULTS
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--wf-bg);
+  color: var(--wf-fg);
+  font-family: var(--wf-font-body);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 240ms ease, color 240ms ease;
+}
+
+a {
+  color: var(--wf-primary-hover);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+a:hover {
+  color: #a5b4fc;
+}
+
+/* ============================================================
+   LAYOUT — Page container
+   max-width 1120px, responsive horizontal padding
+   ============================================================ */
+.wf-container {
+  width: 100%;
+  max-width: var(--wf-container-max);
+  margin-inline: auto;
+  padding-inline: var(--wf-container-px);
+}
+
+@media (max-width: 767px) {
+  .wf-container {
+    padding-inline: 1.25rem; /* 20px on mobile */
+  }
+}
+
+/* ============================================================
+   APP SHELL — Page backdrop + ambient gradient layer
+   Wrap the full page in <div class="app-shell">
+   ============================================================ */
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--wf-shell-bg);
+  overflow-x: hidden;
+  transition: background-color 240ms ease;
+}
+
+.app-shell::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: var(--wf-shell-gradient);
+  z-index: 0;
+  pointer-events: none;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================================================
+   SILVER ORB — Bottom-rising ambient glow
+   Place inside a relative-positioned panel (e.g. hero).
+   <div class="silver-orb" aria-hidden="true"></div>
+   ============================================================ */
+.silver-orb {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--wf-orb-gradient);
+  filter: blur(10px);
+}
+
+/* ============================================================
+   CARD GLASS — Translucent frosted card surface
+   <div class="card-glass">...</div>
+   ============================================================ */
+.card-glass {
+  border-radius: var(--wf-surface-radius);
+  overflow: hidden;
+  border: var(--wf-surface-border);
+  background: var(--wf-card-bg);
+  backdrop-filter: blur(var(--wf-card-blur));
+  -webkit-backdrop-filter: blur(var(--wf-card-blur));
+  box-shadow: var(--wf-surface-shadow);
+}
+
+/* Card glass — padding variant */
+.card-glass-padded {
+  border-radius: var(--wf-surface-radius);
+  overflow: hidden;
+  border: var(--wf-surface-border);
+  background: var(--wf-card-bg);
+  backdrop-filter: blur(var(--wf-card-blur));
+  -webkit-backdrop-filter: blur(var(--wf-card-blur));
+  box-shadow: var(--wf-surface-shadow);
+  padding: 1.5rem; /* 24px default padding */
+}
+
+/* ============================================================
+   HERO PANEL — Always-dark surface
+   Mirrors the login card sales-pitch panel aesthetic.
+   Dark even in html.light mode.
+   ============================================================ */
+.hero-panel {
+  position: relative;
+  background: var(--wf-hero-panel-bg);
+  color: var(--wf-hero-text);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* ============================================================
+   BUTTONS
+   .btn-primary  — indigo fill, white text
+   .btn-secondary — glass fill, border, fg text
+   .btn-ghost    — transparent, muted text, hover lifts
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem;        /* 40px */
+  padding: 0 1.25rem;    /* 0 20px */
+  border: 1px solid transparent;
+  border-radius: var(--wf-radius-md);
+  font-family: var(--wf-font-body);
+  font-size: 0.875rem;   /* 14px */
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wf-primary-hover) 25%, transparent);
+}
+
+/* Large button variant */
+.btn-lg {
+  height: 3rem;          /* 48px */
+  padding: 0 1.75rem;    /* 0 28px */
+  font-size: 0.9375rem;  /* 15px */
+  border-radius: var(--wf-radius-md);
+}
+
+.btn-primary {
+  background: var(--wf-primary);
+  color: var(--wf-primary-fg);
+  border-color: var(--wf-primary);
+}
+.btn-primary:hover {
+  background: var(--wf-primary-hover);
+  border-color: var(--wf-primary-hover);
+}
+
+.btn-secondary {
+  background: color-mix(in srgb, var(--wf-fg) 6%, transparent);
+  color: var(--wf-fg);
+  border-color: var(--wf-border-softer);
+}
+.btn-secondary:hover {
+  background: color-mix(in srgb, var(--wf-fg) 10%, transparent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--wf-fg-muted);
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  color: var(--wf-fg);
+  background: color-mix(in srgb, var(--wf-fg) 4%, transparent);
+}
+
+/* ============================================================
+   INPUT
+   ============================================================ */
+.wf-input {
+  width: 100%;
+  height: 2.5rem;        /* 40px */
+  padding: 0 0.875rem;   /* 0 14px */
+  background: color-mix(in srgb, var(--wf-fg) 3%, transparent);
+  color: var(--wf-fg);
+  border: 1px solid var(--wf-border-softer);
+  border-radius: var(--wf-radius-sm);
+  font-family: var(--wf-font-body);
+  font-size: 0.875rem;   /* 14px */
+  outline: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+.wf-input::placeholder {
+  color: var(--wf-fg-dim);
+}
+.wf-input:focus {
+  border-color: var(--wf-primary-hover);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--wf-primary-hover) 20%, transparent);
+}
+
+/* ============================================================
+   CHIPS / BADGES
+   ============================================================ */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: var(--wf-font-body);
+  font-size: 0.75rem;    /* 12px */
+  font-weight: 500;
+  background: color-mix(in srgb, var(--wf-fg) 6%, transparent);
+  color: var(--wf-fg);
+  border: 1px solid var(--wf-border-softer);
+}
+
+.chip-indigo {
+  background: color-mix(in srgb, var(--wf-primary) 18%, transparent);
+  border-color: color-mix(in srgb, var(--wf-primary) 45%, transparent);
+  color: #c7d2fe;
+}
+
+/* ============================================================
+   LOGO MARK
+   ============================================================ */
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--wf-fg);
+  color: var(--wf-bg);
+  font-family: var(--wf-font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  flex-shrink: 0;
+}
+
+/* Force logo to white-on-dark when inside hero panel */
+.hero-panel .logo-mark {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* ============================================================
+   DIVIDERS & SECTIONS
+   ============================================================ */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--wf-border-soft);
+  margin: 0;
+}
+
+/* ============================================================
+   SCROLLBAR STYLING (Webkit)
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--wf-border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wf-accent);
+}
