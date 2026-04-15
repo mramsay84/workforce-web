@@ -14,29 +14,28 @@
 
 /* ============================================================
    AILERON — Self-hosted display/heading font
-   Files must live at: public/fonts/aileron/
-   Download: /fonts/aileron.zip (woff2 bundle from Theme Guideline)
+   Source: @fontsource/aileron (CC0) — files in public/fonts/aileron/
    ============================================================ */
 @font-face {
   font-family: 'Aileron';
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/Aileron-Regular.woff2') format('woff2');
+  src: url('/fonts/aileron/aileron-latin-400-normal.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Aileron';
   font-weight: 600;
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/Aileron-SemiBold.woff2') format('woff2');
+  src: url('/fonts/aileron/aileron-latin-600-normal.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Aileron';
   font-weight: 700;
   font-style: normal;
   font-display: swap;
-  src: url('/fonts/Aileron-Bold.woff2') format('woff2');
+  src: url('/fonts/aileron/aileron-latin-700-normal.woff2') format('woff2');
 }
 
 /* ============================================================
