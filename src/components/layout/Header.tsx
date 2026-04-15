@@ -165,7 +165,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href="https://workforce-dev.rawaihub.com/login"
-              className="text-[var(--wf-fg-muted)] text-[0.9375rem] font-medium no-underline py-2 px-3.5 transition-micro hover:text-[var(--wf-fg)]"
+              className="inline-flex items-center min-h-[44px] text-[var(--wf-fg-muted)] text-[0.9375rem] font-medium no-underline py-2 px-3.5 transition-micro hover:text-[var(--wf-fg)]"
             >
               Sign in
             </a>
@@ -175,7 +175,7 @@ export default function Header() {
               data-ga-cta
               data-cta-label="Get Access"
               data-cta-stage="awareness"
-              className="inline-flex items-center gap-1.5 bg-[var(--wf-primary-cta)] text-white text-[0.9375rem] font-semibold no-underline py-2.5 px-5 rounded-[var(--wf-radius-md)] transition-micro hover:bg-[var(--wf-primary-hover)]"
+              className="inline-flex items-center min-h-[44px] gap-1.5 bg-[var(--wf-primary-cta)] text-white text-[0.9375rem] font-semibold no-underline py-2.5 px-5 rounded-[var(--wf-radius-md)] transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access
               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
@@ -270,7 +270,7 @@ export default function Header() {
           <div className="border-t border-[var(--wf-border-soft)] pt-4 mt-2 flex gap-3">
             <a
               href="https://workforce-dev.rawaihub.com/login"
-              className="flex-1 text-center py-3 rounded-[var(--wf-radius-md)] border border-[var(--wf-border-softer)] text-[0.9375rem] font-medium text-[var(--wf-fg-muted)] no-underline transition-micro hover:text-[var(--wf-fg)] hover:border-[var(--wf-border)]"
+              className="flex-1 inline-flex items-center justify-center min-h-[44px] py-3 rounded-[var(--wf-radius-md)] border border-[var(--wf-border-softer)] text-[0.9375rem] font-medium text-[var(--wf-fg-muted)] no-underline transition-micro hover:text-[var(--wf-fg)] hover:border-[var(--wf-border)]"
             >
               Sign in
             </a>
@@ -280,7 +280,7 @@ export default function Header() {
               data-ga-cta
               data-cta-label="Get Access"
               data-cta-stage="awareness"
-              className="flex-1 text-center py-3 rounded-[var(--wf-radius-md)] bg-[var(--wf-primary-cta)] text-[0.9375rem] font-semibold text-white no-underline transition-micro hover:bg-[var(--wf-primary-hover)]"
+              className="flex-1 inline-flex items-center justify-center min-h-[44px] py-3 rounded-[var(--wf-radius-md)] bg-[var(--wf-primary-cta)] text-[0.9375rem] font-semibold text-white no-underline transition-micro hover:bg-[var(--wf-primary-hover)]"
             >
               Get Access
             </a>
