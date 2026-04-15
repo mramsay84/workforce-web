@@ -7,21 +7,15 @@ const footerLinks = {
     { name: 'Pricing', href: '/pricing' },
     { name: 'Trust & Security', href: '/trust' },
   ],
-  Solutions: [
-    { name: 'For Engineering Teams', href: '/solutions/engineering' },
-    { name: 'For Marketing Teams', href: '/solutions/marketing' },
-    { name: 'For Legal Teams', href: '/solutions/legal' },
-    { name: 'For Strategy & Finance', href: '/solutions/strategy' },
-    { name: 'For Research Teams', href: '/solutions/research' },
+  'Use Cases': [
+    { name: 'SaaS MVP', href: '/use-cases/saas-mvp' },
+    { name: 'Product Launch GTM', href: '/use-cases/product-launch-gtm' },
+    { name: 'Investment Memo', href: '/use-cases/investment-memo' },
+    { name: 'NDA Triage', href: '/use-cases/nda-triage' },
+    { name: 'Literature Review', href: '/use-cases/literature-review' },
   ],
   Company: [
-    { name: 'About', href: '/about' },
-    { name: 'Changelog', href: '/changelog' },
     { name: 'Contact', href: 'mailto:hello@rawaihub.com' },
-  ],
-  'Legal & Trust': [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
     { name: 'Trust & Security', href: '/trust' },
   ],
 }
@@ -30,7 +24,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[var(--wf-border-soft)] bg-[var(--wf-bg)]">
       <div className="mx-auto max-w-[1120px] px-6 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="md:col-span-1">
             <Link href="/" className="inline-flex items-center gap-2.5 mb-4 no-underline">
