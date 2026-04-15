@@ -148,8 +148,8 @@ export default function Header() {
             </div>
 
             <NavLink href="/how-it-works">How It Works</NavLink>
-            <NavLink href="/capabilities">Capabilities</NavLink>
             <NavLink href="/pricing">Pricing</NavLink>
+            <NavLink href="/trust">Trust</NavLink>
           </nav>
 
           {/* Desktop CTA */}
@@ -239,8 +239,8 @@ export default function Header() {
           <div className="border-t border-[var(--wf-border-soft)] pt-2 mt-1 flex flex-col gap-0.5">
             {[
               { href: '/how-it-works', label: 'How It Works' },
-              { href: '/capabilities', label: 'Capabilities' },
               { href: '/pricing', label: 'Pricing' },
+              { href: '/trust', label: 'Trust' },
             ].map((link) => (
               <Link
                 key={link.href}

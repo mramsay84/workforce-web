@@ -4,8 +4,8 @@ const footerLinks = {
   Product: [
     { name: 'Use Cases', href: '/use-cases' },
     { name: 'How It Works', href: '/how-it-works' },
-    { name: 'Capabilities', href: '/capabilities' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Trust & Security', href: '/trust' },
   ],
   Solutions: [
     { name: 'For Engineering Teams', href: '/solutions/engineering' },
