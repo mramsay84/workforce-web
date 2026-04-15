@@ -11,6 +11,9 @@ primary_region = "syd"
     NEXT_PUBLIC_SITE_URL = "https://workforce-web.fly.dev"
     NEXT_PUBLIC_SIGNUP_URL = "https://workforce-dev.rawaihub.com/signup"
     NEXT_PUBLIC_LOGIN_URL = "https://workforce-dev.rawaihub.com/login"
+    # Set to GA4 Measurement ID (G-XXXXXXXXXX) when confirmed by boss/project-analyst
+    # Then redeploy: fly deploy --build-arg NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
+    NEXT_PUBLIC_GA_MEASUREMENT_ID = ""
 
 [env]
   PORT = "3000"
