@@ -1,53 +1,151 @@
 ---
-title: "NDA Triage at Scale"
-description: "Triage 12 NDAs simultaneously — GREEN, YELLOW, RED risk classification with clause-by-clause redlines. What takes a paralegal a week, done in hours."
+title: "NDA Triage at Scale — Clause-Level Risk Review Across a Contract Portfolio"
+description: "Workforce reviews NDA portfolios in parallel — applying GREEN/YELLOW/RED risk tiering to each contract, flagging non-standard clauses for escalation, and producing a structured triage matrix. Analysis, not legal advice."
 slug: nda-triage
 type: use-case
 domain: legal
-audience: ["legal", "operations", "founders"]
+audience: [legal, operations, founders]
 phase: D0
-hero_use_case: false
-tagline: "12 NDAs reviewed simultaneously. Each specialist handles a batch. Lead reviews borderline cases. Paralegal work done in hours, not a week."
-modes: ["Legal"]
+hero_use_case: true
+tagline: "NDA triage at scale — GREEN/YELLOW/RED risk tiering, clause-level flagging, escalation memos for every RED."
+modes: [Legal]
 deliverables:
-  - "Triage report per NDA (GREEN / YELLOW / RED)"
-  - "Clause-by-clause redline on non-standard terms"
-  - "Risk summary and escalation flags"
-related:
-  - "saas-agreement-review"
-  - "term-sheet-review"
+  - "Per-NDA GREEN/YELLOW/RED risk assessment"
+  - "Clause-level flagging (confidentiality scope, term/termination, exclusivity, IP ownership, governing law, dispute resolution)"
+  - "Escalation memos for all RED-rated items"
+  - "Summary triage matrix across the full portfolio"
+  - "Structured findings — analysis, not legal advice"
+related: [investment-memo]
 ---
 
-<Section title="What agents produce">
+<Hero
+  badge="Legal"
+  headline="NDA portfolio triage — clause-level risk review, structured findings, human escalation for every RED."
+  subheadline="Reviewing a stack of NDAs manually means days of work before you know which contracts need a lawyer's attention and which can be processed. Workforce applies consistent clause-level review across your entire portfolio simultaneously — flagging risk by severity, producing escalation memos for items that require human judgment, and delivering a triage matrix that shows you exactly where to focus."
+  cta={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+  ctaSecondary={{ label: "See how it works", href: "/how-it-works" }}
+/>
 
-A triage report for each NDA: GREEN (standard, sign), YELLOW (negotiate), RED (escalate). Clause-by-clause redline on non-standard terms. Escalation flags for items requiring human legal review. The full batch — not one at a time.
-
+<Section title="What Workforce delivers for NDA triage">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Per-NDA risk assessment"
+      description="Every contract in your portfolio receives a GREEN/YELLOW/RED overall rating. GREEN means standard terms with no material flags. YELLOW means non-standard provisions requiring consideration. RED means provisions requiring mandatory human legal review before execution."
+      tag="Risk tiering"
+    />
+    <FeatureCard
+      title="Clause-level flagging"
+      description="Six clause categories reviewed on every NDA: confidentiality scope, term and termination provisions, exclusivity obligations, IP ownership and assignment, governing law and jurisdiction, dispute resolution mechanisms."
+      tag="Clause review"
+    />
+    <FeatureCard
+      title="RED item escalation memos"
+      description="For every RED-rated provision, Workforce produces an escalation memo — what the clause says, why it's flagged, what the exposure is, and what human review should assess. RED items do not get summarized away."
+      tag="Escalation"
+    />
+    <FeatureCard
+      title="Triage matrix"
+      description="A structured summary across your full portfolio: contract name, overall risk rating, flagged clause categories, escalation status. Designed for a legal or ops decision-maker to triage efficiently."
+      tag="Portfolio view"
+    />
+    <FeatureCard
+      title="Consistent application"
+      description="The same review framework applies to every contract in the portfolio. No inconsistency from reviewer fatigue, varying interpretations, or different personnel across contracts."
+      tag="Consistency"
+    />
+    <FeatureCard
+      title="Analysis, not legal advice"
+      description="Every Workforce legal output carries explicit 'analysis, not legal advice' framing. RED items require human legal review — the platform identifies and escalates them; it does not replace the lawyer."
+      tag="Scope discipline"
+    />
+  </FeatureGrid>
 </Section>
 
-<Section title="How it runs" variant="surface">
+<Section title="How an NDA triage project runs" variant="surface">
   <StepList steps={[
     {
-      title: "NDAs are distributed across specialists",
-      description: "Each specialist agent handles a batch of NDAs simultaneously. No sequential queue — the entire batch processes in parallel."
+      title: "You submit the portfolio and review parameters",
+      description: "Upload your NDA set and describe any specific concerns — particular clause categories, jurisdiction sensitivities, business context for the agreements. The planner proposes the team structure based on portfolio size."
     },
     {
-      title: "Clause-by-clause analysis",
-      description: "Each NDA is reviewed clause-by-clause against standard market terms. Non-standard terms are flagged with risk classification."
+      title: "Contract Review Lead sets the review framework",
+      description: "The lead defines the clause review criteria, escalation thresholds, and risk rating logic for this portfolio. Specialists are briefed against this framework before any contract review begins."
     },
     {
-      title: "Lead reviews borderline cases",
-      description: "YELLOW and RED items are surfaced to the Legal Review Lead for additional scrutiny. GREEN items close automatically."
+      title: "Specialists review contracts in parallel",
+      description: "Multiple Contract Review Specialists work simultaneously across the portfolio — each assigned a set of contracts, each applying the same framework. Large portfolios that would take days serially are processed in parallel."
     },
     {
-      title: "Output delivered as structured report",
-      description: "Final triage report with per-NDA classification, redlines, and escalation summary — ready for your legal team to action."
+      title: "Lead reviews all work before it closes",
+      description: "No specialist review closes without the Contract Review Lead's sign-off. The lead verifies risk ratings, confirms escalation memos are complete, and ensures consistent application of the framework across the portfolio."
+    },
+    {
+      title: "You receive the triage matrix and escalation package",
+      description: "Complete portfolio assessment: per-contract risk ratings, clause-level flags, escalation memos for RED items, and the summary triage matrix. Your legal team now knows exactly where to focus."
     }
   ]} />
 </Section>
 
-<CallToAction
-  headline="Clear your NDA backlog"
-  body="Send your batch. Workforce triages it."
-  primary={{ label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" }}
-  secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
-/>
+<Section title="The team Workforce assembles for NDA triage">
+  <FeatureGrid columns={3}>
+    <FeatureCard
+      title="Contract Review Lead"
+      description="Sets the review framework, defines escalation thresholds, and reviews all specialist work before it closes. Produces the summary triage matrix. Ensures consistent application across the full portfolio."
+      tag="Legal mode"
+    />
+    <FeatureCard
+      title="Contract Review Specialists"
+      description="Execute clause-level review on assigned contracts — applying GREEN/YELLOW/RED tiering, flagging non-standard provisions, and drafting escalation memos for RED items."
+      tag="Specialists"
+    />
+    <FeatureCard
+      title="Escalation Review"
+      description="RED items surface to the Contract Review Lead for explicit review before the triage matrix closes. No RED item is processed without a documented escalation memo."
+      tag="Quality gate"
+    />
+  </FeatureGrid>
+</Section>
+
+<Section title="Clause categories reviewed on every NDA" variant="surface">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Confidentiality scope"
+      description="What information is covered, what's excluded, how 'confidential information' is defined. Broad or unusual definitions flagged. Gaps in carve-outs noted."
+      tag="Reviewed"
+    />
+    <FeatureCard
+      title="Term and termination"
+      description="Duration of confidentiality obligations, survival clauses, and termination rights. Perpetual obligations and unusual term lengths flagged."
+      tag="Reviewed"
+    />
+    <FeatureCard
+      title="Exclusivity obligations"
+      description="Any provisions restricting the party's ability to engage with competitors or similar counterparties. One-sided exclusivity and unusual scope flagged."
+      tag="Reviewed"
+    />
+    <FeatureCard
+      title="IP ownership and assignment"
+      description="Work-for-hire provisions, IP assignment scope, and residuals clauses. Provisions that could affect ownership of independently developed IP flagged."
+      tag="Reviewed"
+    />
+    <FeatureCard
+      title="Governing law and jurisdiction"
+      description="Which jurisdiction's law governs the agreement and where disputes must be resolved. Unfavorable jurisdictions and venue provisions flagged."
+      tag="Reviewed"
+    />
+    <FeatureCard
+      title="Dispute resolution"
+      description="Arbitration requirements, mandatory mediation, class action waivers, and other dispute resolution mechanisms. Unusual or one-sided provisions flagged."
+      tag="Reviewed"
+    />
+  </FeatureGrid>
+</Section>
+
+<Section align="center">
+  <CallToAction
+    headline="Brief your NDA triage project to Workforce."
+    body="Describe the portfolio — how many contracts, any specific concerns, and what decisions the triage needs to support. The planner will design the team and propose the execution plan."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "See how it works →", href: "/how-it-works" }}
+  />
+</Section>

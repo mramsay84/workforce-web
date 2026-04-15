@@ -1,103 +1,167 @@
 ---
-title: ""
-description: ""
-slug: "/use-cases/literature-review"
-pageType: "use-case"
-primaryAudience: ["icp-5-research"]
-phase: "D0"
-domain: "research-strategy"
-deliverable: ""
-teamRoles: []
-relatedUseCases: []
+title: "Systematic Literature Review — Evidence-Graded Research Synthesis"
+description: "Workforce runs a systematic literature review with documented search strategy, evidence grading, hypothesis tracking, and structured synthesis — applying Research and Think Tank modes to produce a defensible, reproducible review."
+slug: literature-review
+type: use-case
+domain: research
+audience: [research, healthcare, founders]
+phase: D0
+hero_use_case: false
+tagline: "Systematic literature review — evidence-graded, hypothesis-tracked, synthesized with a structured critique phase."
+modes: [Research, Think Tank]
+deliverables:
+  - "Documented search strategy (databases, keywords, inclusion/exclusion criteria)"
+  - "Evidence table (primary literature, secondary sources, grey literature)"
+  - "Evidence grading for each source (peer-reviewed, industry report, preprint, informal)"
+  - "Hypothesis tracking log (supporting and contradicting citations for each hypothesis)"
+  - "Synthesis document with integrated findings and confidence ratings"
+  - "Citation list with full provenance"
+  - "Methodology documentation (reproducible review process)"
+related: [investment-memo]
 ---
 
-{/*
-  USE CASE: SYSTEMATIC LITERATURE REVIEW — /use-cases/literature-review
-  Source authority: use-cases.md (linked project KB) — Literature Review entry | website-content-blueprint.md §8 | sitemap-and-page-architecture.md §3.4
-  Primary audience: ICP #5 — Research Professionals
-  Key requirement: Convert research buyers. Hero use case for ICP #5. Academic/systematic review framing.
-  Block sequence: Hero → What Gets Built → How It Runs → The Team → Why It's Different → Audience Pathway Callout → Related Use Cases → CTA
-  Key differentiator: Evidence grading system + Think Tank critique layer distinguish from single-agent research tools.
-*/}
+<Hero
+  badge="Research · Think Tank"
+  headline="A systematic literature review — evidence-graded, hypothesis-tracked, structured critique before synthesis."
+  subheadline="Systematic reviews fail at two points: evidence collection that's inconsistent or incomplete, and synthesis that papers over contradictions. Workforce applies structured research methodology throughout — documented search strategy, explicit evidence grading, hypothesis tracking that logs contradicting findings rather than suppressing them — and runs a Think Tank critique phase before synthesis to surface gaps and challenge conclusions."
+  cta={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+  ctaSecondary={{ label: "See how it works", href: "/how-it-works" }}
+/>
 
-{/* ============================================================
-  BLOCK 1: HERO
-  Source: sitemap-and-page-architecture.md §3.4 Block 1 | website-content-blueprint.md §8
-  Required elements:
-    - Domain label: "Research" (exact)
-    - Headline: deliverable-first — systematic, evidence-graded, critique-validated review
-    - Subheadline: 1 sentence on research team structure and evidence rigor
-    - Primary CTA
-    - Supporting visual: parallel research → evidence grading → critique layer → synthesis
-============================================================ */}
+<Section title="What Workforce delivers for a literature review">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Documented search strategy"
+      description="Database selection, search terms, inclusion and exclusion criteria, and the logic behind them — documented before search begins. The methodology is reviewable and reproducible."
+      tag="Methodology"
+    />
+    <FeatureCard
+      title="Evidence table"
+      description="All sources organized by type: primary literature, secondary sources, and grey literature. Each source graded, summarized, and mapped to the hypotheses it bears on."
+      tag="Evidence"
+    />
+    <FeatureCard
+      title="Evidence grading"
+      description="Every source graded: peer-reviewed vs. industry report vs. preprint vs. informal source. The confidence level attaches to every claim in the synthesis — not just the claim itself."
+      tag="Grading"
+    />
+    <FeatureCard
+      title="Hypothesis tracking log"
+      description="Each hypothesis is tracked with supporting and contradicting citations logged separately. Competing evidence is documented throughout — not resolved before all evidence is in."
+      tag="Hypothesis tracking"
+    />
+    <FeatureCard
+      title="Think Tank critique phase"
+      description="Before synthesis, agents challenge each other's findings — presenting competing interpretations, flagging gaps in coverage, and identifying where the evidence is weaker than it appears. Critique happens before conclusions are drawn."
+      tag="Think Tank mode"
+    />
+    <FeatureCard
+      title="Synthesis document"
+      description="Integrated findings with confidence ratings attached to each conclusion. Where evidence is strong and consistent, that's noted. Where evidence is mixed or weak, that's documented too — not smoothed over."
+      tag="Synthesis"
+    />
+    <FeatureCard
+      title="Methodology documentation"
+      description="The full review process is documented: search strategy, inclusion decisions, evidence grading logic, and synthesis methodology. Reviewers can trace any conclusion back through the process."
+      tag="Reproducibility"
+    />
+    <FeatureCard
+      title="Citation list with provenance"
+      description="Complete citation list with source type, grading, and the hypotheses each source was used to assess. No orphaned citations — every source is traceable to where it influenced the synthesis."
+      tag="Citations"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 2: WHAT GETS BUILT
-  Source: use-cases.md (linked project KB) — Literature Review entry, outputs section
-  Required elements:
-    - Deliverable in concrete terms
-    - Evidence grading and critique layer must be represented in outputs
-    - Bulleted list of specific outputs — use exact language from use-cases.md
-  Constraints:
-    - Do NOT invent outputs
-    - Evidence grading terminology must match use-cases.md exactly
-============================================================ */}
+<Section title="How a systematic literature review runs" variant="surface">
+  <StepList steps={[
+    {
+      title: "You define the research question and scope",
+      description: "Describe what you're trying to establish, the domain, any prior knowledge of the literature, and the decisions the review needs to support. The planner proposes the team and methodology framework."
+    },
+    {
+      title: "Research Lead designs the methodology",
+      description: "Before any search begins, the Research Lead documents the search strategy — databases, search terms, inclusion and exclusion criteria. The methodology is reviewed and locked before the literature search starts."
+    },
+    {
+      title: "Literature search and evidence grading",
+      description: "Literature Search Specialists run the documented search, retrieve sources, and begin the evidence table. The Evidence Grading Specialist grades each source as it comes in — type, recency, methodological quality."
+    },
+    {
+      title: "Hypothesis tracking throughout collection",
+      description: "As evidence accumulates, supporting and contradicting citations are logged against each hypothesis. Nothing is resolved prematurely — the tracking log reflects the state of the evidence at every point."
+    },
+    {
+      title: "Think Tank critique phase",
+      description: "Before synthesis begins, agents present competing interpretations and challenge each other's reading of the evidence. Gaps in coverage are flagged. Weak evidence dressed up as strong consensus is called out. Critique closes before the Synthesis Lead begins."
+    },
+    {
+      title: "Synthesis with confidence ratings",
+      description: "The Synthesis Lead integrates findings from the evidence table, hypothesis tracking log, and critique phase. Conclusions carry confidence ratings. Where evidence is mixed or limited, the synthesis says so explicitly."
+    }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 3: HOW IT RUNS
-  Source: use-cases.md (linked project KB) — Literature Review entry, process section
-  Required elements:
-    - Step-by-step: Planner → parallel research specialists → evidence grading → Think Tank critique → synthesis
-    - Parallel research workstreams (key differentiator)
-    - Think Tank critique layer (agents explicitly challenging findings before synthesis)
-============================================================ */}
+<Section title="The team Workforce assembles for a literature review">
+  <FeatureGrid columns={3}>
+    <FeatureCard
+      title="Research Lead"
+      description="Designs the search strategy, sets evidence grading criteria, manages the research team, and reviews all specialist work before it closes. Ensures methodology is documented and consistent throughout."
+      tag="Research mode"
+    />
+    <FeatureCard
+      title="Evidence Grading Specialist"
+      description="Applies explicit grading criteria to every source — distinguishing peer-reviewed literature, industry reports, preprints, and informal sources. Grading is documented, not inferred."
+      tag="Specialist"
+    />
+    <FeatureCard
+      title="Literature Search Specialists"
+      description="Execute the documented search strategy across assigned databases and source types. Retrieve, summarize, and map sources to the hypothesis tracking log."
+      tag="Specialists"
+    />
+    <FeatureCard
+      title="Think Tank agents"
+      description="In the critique phase, present competing interpretations and challenge findings independently before synthesis. The critique phase cannot be skipped — it is structural, not optional."
+      tag="Think Tank mode"
+    />
+    <FeatureCard
+      title="Synthesis Lead"
+      description="Receives the reviewed evidence table, hypothesis tracking log, and critique phase output. Produces the synthesis document with integrated findings and confidence ratings."
+      tag="Synthesis"
+    />
+    <FeatureCard
+      title="Lead review gates"
+      description="No specialist deliverable closes without the Research Lead's sign-off. The Synthesis Lead reviews the full package before the synthesis document closes."
+      tag="Quality gates"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 4: THE TEAM
-  Source: use-cases.md (linked project KB) — Literature Review entry, team section | messaging-framework.md §3 Pillar 1 supporting point 5
-  Required elements:
-    - "For this project, Workforce typically assembles:"
-    - Research leads with domain responsibility
-    - Specialist roles (evidence graders, literature specialists)
-    - Think Tank / critique agent role
-    - Synthesis specialist
-    - Review cycle note: evidence grading standards and critique phase
-  Constraints:
-    - Use exact role names from use-cases.md
-============================================================ */}
+<Section title="Where most literature reviews break down — and how Workforce addresses it" variant="surface">
+  <FeatureGrid columns={3}>
+    <FeatureCard
+      title="Inconsistent evidence standards"
+      description="Different reviewers apply different quality standards to different sources. Workforce's Evidence Grading Specialist applies the same criteria to every source — the grading is explicit, not implicit."
+      tag="Common failure"
+    />
+    <FeatureCard
+      title="Confirmation bias in synthesis"
+      description="Reviewers tend to emphasize supporting evidence and minimize contradictions. Workforce's hypothesis tracking log requires contradicting citations to be documented as systematically as supporting ones."
+      tag="Common failure"
+    />
+    <FeatureCard
+      title="No critique before synthesis"
+      description="Reviews that go straight from collection to synthesis skip the challenge phase. Think Tank mode requires agents to independently challenge findings before the Synthesis Lead draws conclusions."
+      tag="Common failure"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 5: WHY IT'S DIFFERENT
-  Source: positioning-structural-differentiation.md (research layer) | messaging-framework.md §3
-  Required elements:
-    - Comparison frame: vs. junior analyst / literature review software
-    - 3–4 structural differences
-    - Evidence grading + critique layer as primary differentiators
-  Constraints:
-    - Do NOT name specific research software or competitor products
-    - Structural contrast only
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 6: AUDIENCE PATHWAY CALLOUT (contextual)
-  Source: sitemap-and-page-architecture.md §3.4 Block 6
-  Required elements:
-    - "For Research Teams — how Workforce fits into your research workflow"
-    - Link to Research Teams audience pathway page (footer nav)
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 7: RELATED USE CASES
-  Source: sitemap-and-page-architecture.md §3.4 Block 7
-  Required elements:
-    - 3 cards: related use cases by domain
-    - Options: Investment Memo (D0), Due Diligence (W1), Financial Model Review (M1)
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 8: CTA
-  Source: sitemap-and-page-architecture.md §3.4 Block 8
-  Required elements:
-    - CTA label: "Brief this project to Workforce" or "Start with a plan"
-    - Primary CTA → https://workforce-dev.rawaihub.com/signup
-============================================================ */}
+<Section align="center">
+  <CallToAction
+    headline="Brief your literature review to Workforce."
+    body="Describe the research question, the domain, and what decisions the review needs to support. The planner will design the team and propose the methodology framework. Nothing starts until you approve it."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "See how it works →", href: "/how-it-works" }}
+  />
+</Section>

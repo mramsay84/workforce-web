@@ -1,6 +1,6 @@
 ---
 title: "Pricing — Workforce"
-description: "Usage-based pricing. Pay for the work your AI team does, not the hours they're available. No annual contracts."
+description: "Usage-based pricing. Pay for the work your structured team of AI agents does. Request access to get started."
 slug: pricing
 type: page
 phase: D0
@@ -8,8 +8,9 @@ phase: D0
 
 <Hero
   headline="Pricing"
-  subheadline="Usage-based. Pay for the work your AI team does. A human team costs $500K–$2M/year — Workforce costs ~$50–200/day."
+  subheadline="Workforce is in early access. Usage is billed based on the work your team executes — the agents, models, and compute involved in your project. Request access to get started."
   align="center"
+  badge="Early Access"
 />
 
 <Section align="center">
@@ -17,66 +18,72 @@ phase: D0
     {
       name: "Starter",
       price: "Pay as you go",
-      description: "For individuals exploring AI-assisted development. Pay only for what you use.",
+      description: "For individuals and small teams running focused projects. Pay for the work that runs — no seat fees, no minimums.",
       features: [
-        "Up to 3 concurrent agents",
-        "Core work modes (development, website, content)",
-        "Standard company laws",
-        "Community support",
-        "Fly.dev preview deployment"
+        "Core work modes: Development, Website, Content, Research",
+        "Standard company laws enforcement",
+        "Planner-designed team structure on every project",
+        "Lead-specialist review cycles built in",
+        "Context persistence across sessions"
       ],
-      cta: { label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" }
+      cta: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }
     },
     {
       name: "Team",
       price: "Usage-based",
-      description: "For teams running multiple projects simultaneously. Higher concurrency, all work modes.",
+      description: "For teams running multiple concurrent projects across multiple work modes. Higher parallelism, all ten modes, custom company laws.",
       features: [
-        "Up to 10 concurrent agents per project",
-        "All work modes",
-        "Custom company laws",
-        "Priority support",
-        "Advanced analytics",
-        "Team workspace"
+        "All ten professional work modes",
+        "Higher agent concurrency across projects",
+        "Custom company laws — your standards enforced across every agent",
+        "Team workspace for shared project history",
+        "Priority support"
       ],
-      cta: { label: "Get started", href: "https://workforce-dev.rawaihub.com/signup" },
+      cta: { label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" },
       highlighted: true
     },
     {
       name: "Enterprise",
-      description: "For organisations running Workforce at scale — dedicated infrastructure, custom integrations, SLA.",
+      description: "For organisations running Workforce at scale — dedicated infrastructure, custom integrations, and compliance tooling.",
       features: [
-        "Unlimited concurrent agents",
         "Dedicated infrastructure",
         "Custom MCP integrations",
         "SSO / SAML",
         "Audit logs and compliance exports",
-        "Dedicated account support"
+        "Dedicated account support",
+        "Custom SLA"
       ],
       cta: { label: "Contact us", href: "https://workforce-dev.rawaihub.com/signup" }
     }
   ]} />
 </Section>
 
-<Section title="Compare to a human team" align="center" variant="surface">
-  <TrustBadge
-    variant="grid"
-    items={[
-      { value: "$500K–2M", label: "Human team / year", description: "Salary, benefits, management, office space." },
-      { value: "$50–200/day", label: "Workforce equivalent", description: "API tokens for a full team working 24/7." },
-      { value: "0", label: "Days to onboard", description: "No interviews, no ramp time. Brief and start." },
-      { value: "Seconds", label: "Scale-up time", description: "From 3 agents to 10. No hiring process." },
-      { value: "24/7", label: "Availability", description: "No breaks, no sick days, no time zones." },
-      { value: "Zero", label: "Knowledge lost", description: "State lives in the database, not in people." }
-    ]}
-  />
+<Section title="What you approve before anything runs" subtitle="Every project starts with a plan. You control what executes." align="center" variant="surface">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="You approve the plan first"
+      description="The planner designs the team and proposes a structured execution plan before any work begins. You review the proposed leads, specialists, and phase structure. Nothing executes until you sign off."
+    />
+    <FeatureCard
+      title="High-stakes decisions surface mid-project"
+      description="Major decisions come back to you for approval during execution — not just at the start. You stay in the decision seat throughout; the platform handles coordination between decision points."
+    />
+    <FeatureCard
+      title="Usage reflects actual work"
+      description="You pay for the agents, models, and compute that run your project. A short focused task costs less than a multi-phase, multi-team project. You see what's being used before it runs."
+    />
+    <FeatureCard
+      title="Company laws apply to every agent"
+      description="Your non-negotiable rules — quality standards, brand requirements, coding conventions — are set once and enforced across every agent in every work mode. No configuration per project."
+    />
+  </FeatureGrid>
 </Section>
 
 <Section align="center">
   <CallToAction
-    headline="Start your first project free"
-    body="No credit card required. Describe your project and let the planner design your team."
-    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+    headline="Run your first project."
+    body="Describe your project. The planner designs the team and proposes the execution plan. Nothing starts until you approve it."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
     secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
   />
 </Section>

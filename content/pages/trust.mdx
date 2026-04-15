@@ -1,90 +1,122 @@
 ---
-title: "Why Workforce — AI Team You Can Trust"
-description: "Every known weakness of AI agents is systematically mitigated. Company laws, peer review, persistent context, heartbeat monitoring — the structural reinforcements that make it reliable."
+title: "Trust & Security — Workforce"
+description: "How Workforce handles your data, what the platform's quality enforcement looks like in practice, and what it means that legal and financial outputs are analysis, not advice."
 slug: trust
 type: page
 phase: D0
 ---
 
 <Hero
-  headline="Built around every known agent failure"
-  subheadline="We've catalogued 12 ways AI agents fail in production. Every one of them has a systematic mitigation built into Workforce."
+  headline="How Workforce handles your work — and your data."
+  subheadline="Professional work involves sensitive information. Before you run a legal review, a financial analysis, or a research project on Workforce, you should understand what the platform does with your data, how quality is enforced, and where human judgment is required."
   align="center"
-  badge="Reliability"
+  badge="Trust & Security"
 />
 
-<Section title="The 12 known failure modes — and how we fix them">
+<Section title="Data handling and retention">
   <FeatureGrid columns={2}>
     <FeatureCard
-      title="They run off on their own"
-      description="Company laws are injected into every agent's context before they write a single line. Peer review catches violations automatically."
-      tag="Fixed"
+      title="Where your data goes"
+      description="Project content — your briefs, uploaded documents, and agent-produced deliverables — is stored in Workforce's database for the duration of your project and accessible to the agents assigned to that project. Data is not used to train models."
     />
     <FeatureCard
-      title="Context window limits"
-      description="All state lives in the database. Agents call get_my_context() on every restart. Specialised roles reduce context needs — a frontend dev doesn't need to understand the entire backend."
-      tag="Fixed"
+      title="Model providers"
+      description="Workforce agents run on large language model infrastructure from established AI providers. Your project content is transmitted to those providers as part of inference. Workforce does not operate its own model infrastructure."
     />
     <FeatureCard
-      title="They lose track mid-task"
-      description="update_progress() after each step forces articulation. Plans are written to context before starting. The PM checks in on standups."
-      tag="Fixed"
+      title="Project isolation"
+      description="Agent context is scoped to the project. Agents on your project do not have access to other projects' data. File locking prevents concurrent write access — one agent writes at a time."
     />
     <FeatureCard
-      title="They hallucinate"
-      description="QA verifies with real browser testing. Multiple agents cross-check each other. Nothing closes without lead sign-off."
-      tag="Fixed"
-    />
-    <FeatureCard
-      title="They over-engineer"
-      description="Company law: only make changes directly requested or clearly necessary. Code review explicitly checks for extras. Focused task descriptions say what NOT to touch."
-      tag="Fixed"
-    />
-    <FeatureCard
-      title="They ignore conventions"
-      description="Company laws give specific examples. Read-before-write is mandatory. Review explicitly checks each law by number."
-      tag="Fixed"
-    />
-    <FeatureCard
-      title="They crash"
-      description="All state lives in Supabase. Heartbeat monitoring detects crashes in under 5 minutes. Auto-restart with fresh context. File locks auto-expire."
-      tag="Fixed"
-    />
-    <FeatureCard
-      title="They don't ask for help"
-      description="Base rule: if stuck after 2 attempts, STOP. Post a blocker. The PM monitors progress. block_task() explicitly marks tasks as blocked."
-      tag="Fixed"
+      title="Retention"
+      description="Project state and deliverables are retained so work can resume across sessions. If you need to understand the specific retention period or deletion process for your organisation, contact us before running sensitive work."
     />
   </FeatureGrid>
 </Section>
 
-<Section title="Systematic quality gates" variant="surface">
+<Section title="Analysis, not legal or financial advice" variant="surface">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Legal mode output is analysis"
+      description="When Workforce reviews a contract, the output is structured legal analysis — clause-level risk assessment, GREEN/YELLOW/RED tiering, and escalation flagging. It is not legal advice. RED items require qualified human legal review before you act on them."
+      tag="Legal mode"
+    />
+    <FeatureCard
+      title="Finance mode output is analysis"
+      description="When Workforce produces financial analysis — journal entries, variance analysis, benchmarking — the output is structured analysis with documented methodology. It is not financial advice or a certified financial statement. Numbers traced to source documents; validation required before use in regulated filings."
+      tag="Finance mode"
+    />
+    <FeatureCard
+      title="Research mode output is synthesis"
+      description="Literature reviews, competitive analyses, and market sizing produced by Workforce are evidence-graded research synthesis. Confidence ratings are attached to conclusions. The methodology is documented and reviewable. This is not a peer-reviewed publication."
+      tag="Research mode"
+    />
+    <FeatureCard
+      title="Workforce is a force multiplier for human judgment"
+      description="The platform is designed to run structured analysis at scale and surface findings for human review — not to replace the professional judgment that acting on those findings requires. You are the decision-maker. The platform handles the research and analysis that informs your decisions."
+    />
+  </FeatureGrid>
+</Section>
+
+<Section title="How escalation works">
   <StepList steps={[
-    { title: "Company laws", description: "Your non-negotiable rules are injected into every agent's system prompt before any work starts. They cannot be bypassed." },
-    { title: "Mandatory peer review", description: "No code merges without a review from a peer agent. No self-merging. Ever. The platform enforces this structurally." },
-    { title: "QA with real browser testing", description: "The QA agent uses Chrome DevTools — actually clicks through the app, fills forms, reads page content, takes screenshots." },
-    { title: "Security audits", description: "A dedicated security agent audits code for vulnerabilities before tasks close. Findings become tasks for the development team." },
-    { title: "Persistent context", description: "Decisions, findings, and patterns are saved to the database. When an agent restarts, it reloads everything it knew." }
+    {
+      title: "RED items require mandatory human review",
+      description: "In Legal mode, provisions rated RED — material risk, unusual IP assignment, perpetual obligations, unfavorable jurisdiction — are flagged in escalation memos and surface as mandatory review items. They are not summarized or minimized. A RED item cannot be resolved by the platform — it requires qualified human review before you act on it."
+    },
+    {
+      title: "High-stakes decisions surface as proposals",
+      description: "During project execution, major decisions come back to you for approval before the platform proceeds. The planner's execution plan requires your sign-off before any work begins. Scope changes and critical decision points mid-project require the same."
+    },
+    {
+      title: "Lead sign-off is required before anything closes",
+      description: "No specialist work closes without lead review. The review cycle is structural — it cannot be skipped or bypassed. Deliverables you receive have passed at least one layer of agent review before they reach you."
+    },
+    {
+      title: "Workforce flags gaps — it doesn't fill them",
+      description: "If evidence is insufficient, a research agent says so. If a legal clause requires a qualified attorney, it's flagged rather than interpreted. The platform is designed to surface uncertainty honestly, not resolve it artificially."
+    }
   ]} />
+</Section>
+
+<Section title="Platform quality enforcement" variant="surface">
+  <FeatureGrid columns={2}>
+    <FeatureCard
+      title="Company laws"
+      description="Your non-negotiable rules — brand standards, security requirements, coding conventions, quality thresholds — are set once and enforced across every agent in every work mode. They are injected into agent context before any work begins and cannot be bypassed."
+    />
+    <FeatureCard
+      title="File locking"
+      description="No two agents edit the same file simultaneously. The platform enforces exclusive access before any write operation — preventing concurrent conflict in code and document-heavy projects."
+    />
+    <FeatureCard
+      title="Context persistence"
+      description="Agent state is saved between sessions. Projects do not lose context when an agent stops. Work resumes from exactly where the team left off — long projects are not constrained by session limits."
+    />
+    <FeatureCard
+      title="No self-merging in development mode"
+      description="In Development mode, no specialist commits code without lead review. File locking prevents concurrent write conflicts. Playwright E2E tests run on every build. Quality gates are structural — they are not optional process steps."
+    />
+  </FeatureGrid>
 </Section>
 
 <Section align="center">
   <TrustBadge
     variant="row"
     items={[
-      { value: "12", label: "Agent failure modes catalogued" },
-      { value: "12", label: "Systematic mitigations built" },
-      { value: "0", label: "Self-merges allowed" },
-      { value: "100%", label: "State persisted to database" }
+      { value: "Analysis", label: "not legal or financial advice — RED items escalate to human review" },
+      { value: "Every task", label: "review cycles enforced — lead sign-off required before closing" },
+      { value: "Proposals", label: "required for high-stakes decisions — you approve before execution proceeds" },
+      { value: "Isolated", label: "project context — agents scoped to their project only" }
     ]}
   />
 </Section>
 
 <Section align="center">
   <CallToAction
-    headline="The system you can trust"
-    body="Not one agent. A team with specialisation, communication, review, testing, and monitoring — the combination that catches what individual agents miss."
-    primary={{ label: "Get started free", href: "https://workforce-dev.rawaihub.com/signup" }}
+    headline="Questions about data or security for your organisation?"
+    body="Contact us before running sensitive work if you have specific retention, compliance, or data handling requirements."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
     secondary={{ label: "Sign in", href: "https://workforce-dev.rawaihub.com/login" }}
   />
 </Section>

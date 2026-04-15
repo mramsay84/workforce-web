@@ -1,103 +1,123 @@
 ---
-title: ""
-description: ""
-slug: "/use-cases/saas-mvp"
-pageType: "use-case"
-primaryAudience: ["icp-1-engineering"]
-phase: "D0"
-domain: "development"
-deliverable: ""
-teamRoles: []
-relatedUseCases: []
+title: "Full-Stack SaaS MVP — Built by an AI Engineering Org"
+description: "A fully-deployed SaaS application — frontend, backend, auth, and deployment — built by a coordinated AI engineering org with file locking, peer review, and Playwright E2E testing enforced at every stage."
+slug: saas-mvp
+type: use-case
+domain: development
+audience:
+  - engineering
+  - founders
+phase: D0
+hero_use_case: true
+tagline: "A working application — frontend, backend, auth, and deployment — built by a coordinated AI engineering org."
+modes:
+  - Development
+deliverables:
+  - "Fully functional frontend (React, Next.js, or equivalent — adapts to your stack)"
+  - "Backend API with authentication and role-based access control"
+  - "Database schema and migrations"
+  - "Third-party integrations (payment, auth, email — as specified in brief)"
+  - "Automated test suite (Playwright E2E, minimum 80% Lighthouse audit score)"
+  - "Deployment to a live preview URL (Fly.dev or equivalent)"
+  - "Technical documentation for the codebase"
+related:
+  - product-launch-gtm
+  - investment-memo
 ---
 
-{/*
-  USE CASE: FULL-STACK SAAS MVP — /use-cases/saas-mvp
-  Source authority: use-cases.md (linked project KB) — SaaS MVP entry | website-content-blueprint.md §4 | sitemap-and-page-architecture.md §3.4
-  Primary audience: ICP #1 — Engineering Leads, CTOs
-  Key requirement: Each page must answer: What is built? Who runs it? Why is this better than alternatives?
-  Block sequence: Hero → What Gets Built → How It Runs → The Team → Why It's Different → Audience Pathway Callout → Related Use Cases → CTA
-  IMPORTANT: All deliverable language in this file must be sourced from use-cases.md — do NOT invent outputs
-*/}
+<Hero
+  badge="Development"
+  headline="A fully-deployed SaaS application — built by an AI engineering org."
+  subheadline="Frontend, backend, QA, DevOps, and Security specialists working in parallel — with file locking, peer review, and Playwright E2E testing enforced at every stage. You brief the product. The engineering org proposes the plan, builds in parallel, and delivers a working application to a live preview URL."
+  cta={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+  ctaSecondary={{ label: "See how it works", href: "/how-it-works" }}
+/>
 
-{/* ============================================================
-  BLOCK 1: HERO
-  Source: sitemap-and-page-architecture.md §3.4 Block 1 | website-content-blueprint.md §4
-  Required elements:
-    - Domain label: "Development" (exact)
-    - Headline: deliverable-first. Direction: "A fully-deployed SaaS MVP — built by an AI engineering team."
-    - Subheadline: 1 sentence on team composition and why it's powerful
-    - Primary CTA
-    - Supporting visual: representation of output or team structure (NOT a generic AI image)
-============================================================ */}
+<Section title="What Workforce delivers for a SaaS MVP project">
+  <FeatureGrid columns={2}>
+    <FeatureCard title="Fully functional frontend" description="React, Next.js, or equivalent — adapts to your stack. Component architecture, responsive layout, and design system applied consistently." />
+    <FeatureCard title="Backend API with auth and RBAC" description="Authentication, role-based access control, and business logic. API design reviewed and documented." />
+    <FeatureCard title="Database schema and migrations" description="Schema designed for the application. Migrations written and tested before any data-layer work closes." />
+    <FeatureCard title="Third-party integrations" description="Payment, auth, email — as specified in your brief. Integration code reviewed by the Backend Lead before it merges." />
+    <FeatureCard title="Automated test suite" description="Playwright E2E tests covering core user flows. Minimum 80% Lighthouse audit score enforced before delivery." />
+    <FeatureCard title="Live preview deployment" description="Working application deployed to a live Fly.dev preview URL. You test in a real browser — not a static mockup." />
+    <FeatureCard title="Technical documentation" description="Codebase documentation, setup instructions, and architectural decisions documented by the Documentation Specialist." />
+    <FeatureCard
+      title="What is not included"
+      description="Development mode produces working, reviewed, deployed code. It does not replace architect-level system design decisions or production infrastructure setup — those gate on your approval."
+      tag="Honest scope"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 2: WHAT GETS BUILT
-  Source: use-cases.md (linked project KB) — SaaS MVP entry, "What agents produce" section
-  Required elements:
-    - The deliverable in concrete terms
-    - Bulleted list of specific outputs — use exact language from use-cases.md
-  Constraints:
-    - Do NOT invent outputs not present in use-cases.md
-    - "What agents produce" framing from use-cases.md reference
-============================================================ */}
+<Section title="How a SaaS MVP project runs" variant="surface">
+  <StepList steps={[
+    {
+      title: "Brief the project",
+      description: "Describe the product, the stack, and the core user flows. Company-level rules (brand standards, security requirements, coding conventions) are set once and apply automatically to every agent."
+    },
+    {
+      title: "Planner designs the engineering org",
+      description: "The planner proposes the team: which leads, which specialist types, which parallel workstreams. You review and approve the plan before any code is written."
+    },
+    {
+      title: "Parallel engineering execution",
+      description: "Frontend Lead and Backend Lead run simultaneously. QA Lead sets up testing infrastructure in parallel with development. DevOps Lead configures deployment. Security Lead audits as code is produced."
+    },
+    {
+      title: "Review cycles enforce quality",
+      description: "No specialist self-merges. All commits go through lead review. QA specialists run automated tests on each build. Lighthouse audits confirm performance and accessibility thresholds."
+    },
+    {
+      title: "Delivery",
+      description: "A live preview URL, the full codebase, an automated test suite, a Lighthouse audit report, and technical documentation. You review in a real browser — not a demo."
+    }
+  ]} />
+</Section>
 
-{/* ============================================================
-  BLOCK 3: HOW IT RUNS
-  Source: use-cases.md (linked project KB) — SaaS MVP entry, process/steps section
-  Required elements:
-    - Step-by-step breakdown specific to SaaS MVP
-    - Numbered steps or timeline visual
-    - Names the planner, dev lead, key specialists for this project type
-    - Explains parallel workstreams
-============================================================ */}
+<Section title="The team Workforce assembles for a SaaS MVP">
+  <FeatureGrid columns={3}>
+    <FeatureCard title="Frontend Lead" description="Owns all UI, component architecture, and responsiveness. Specialists write components; the lead reviews before merge." tag="Lead" />
+    <FeatureCard title="Backend Lead" description="Owns API design, database, and business logic. Specialist work does not close without lead sign-off." tag="Lead" />
+    <FeatureCard title="QA Lead" description="Owns test coverage, automated test suite, and manual test plan. Playwright E2E tests run on every build." tag="Lead" />
+    <FeatureCard title="DevOps Lead" description="Owns deployment pipeline, environment configuration, and live preview URL." tag="Lead" />
+    <FeatureCard title="Security Lead" description="Owns security audit, dependency scanning, and vulnerability review. Audits run as code is produced — not as an afterthought." tag="Lead" />
+    <FeatureCard title="Design Lead" description="If the brief includes design: owns visual system, component library, and design-first workflow. (Included when specified in brief.)" tag="Lead (optional)" />
+  </FeatureGrid>
+  <FeatureGrid columns={1}>
+    <FeatureCard
+      title="Review cycle"
+      description="No specialist self-merges to any branch. All development work goes through lead review. The QA Lead runs Playwright tests on every build before any task is marked complete. Team composition is tailored to your specific project — this is the standard structure for a full-stack SaaS MVP."
+      tag="Quality enforcement"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 4: THE TEAM
-  Source: use-cases.md (linked project KB) — SaaS MVP entry, team composition section
-  Required elements:
-    - "For this project, Workforce typically assembles:"
-    - Lead roles with domain responsibility (use exact role names from use-cases.md)
-    - Specialist roles with task responsibility
-    - Review cycle note: code review + deployment verification specific to development mode
-  Constraints:
-    - Use exact role names from use-cases.md
-    - Do NOT invent roles
-============================================================ */}
+<Section title="Why this is different" variant="surface">
+  <FeatureGrid columns={3}>
+    <FeatureCard
+      title="vs. single AI coding assistant"
+      description="Cursor or Copilot assist one engineer at a time. Workforce runs a full engineering org simultaneously — frontend, backend, QA, DevOps in parallel. The output is not a faster individual; it is a coordinated team output."
+      tag="Comparison"
+    />
+    <FeatureCard
+      title="vs. contractor sprint"
+      description="A contractor sprint requires you to manage scope, review work, handle quality control, and coordinate handoffs. Workforce provides review cycles and coordination natively — you approve the plan and review the deliverable."
+      tag="Comparison"
+    />
+    <FeatureCard
+      title="vs. building with an LLM yourself"
+      description="You become the coordinator, the reviewer, and the QA tester. Workforce makes the platform the coordinator and reviewer. You stay in the engineering decision seat, not the management seat."
+      tag="Comparison"
+    />
+  </FeatureGrid>
+</Section>
 
-{/* ============================================================
-  BLOCK 5: WHY IT'S DIFFERENT
-  Source: positioning-structural-differentiation.md (dev-focused layer) | messaging-framework.md §3 Pillar 1
-  Required elements:
-    - Comparison frame: vs. single AI coding assistant / Cursor / contractor
-    - 3–4 structural differences (punchy — NOT a feature table)
-  Constraints:
-    - Do NOT name specific competitor products
-    - Do NOT use "better" — use structural contrast
-    - Use differentiation language from positioning-structural-differentiation.md
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 6: AUDIENCE PATHWAY CALLOUT (contextual)
-  Source: sitemap-and-page-architecture.md §3.4 Block 6
-  Required elements:
-    - "For Engineering Teams — how Workforce fits into your existing workflow"
-    - Link to Engineering Teams audience pathway page (footer nav)
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 7: RELATED USE CASES
-  Source: sitemap-and-page-architecture.md §3.4 Block 7
-  Required elements:
-    - 3 cards linking to related use cases by domain
-    - Day 0 options (dev domain): related W1 use cases listed in sitemap (Codebase Audit, API Design)
-    - Cross-domain option: any D0 use case
-============================================================ */}
-
-{/* ============================================================
-  BLOCK 8: CTA
-  Source: sitemap-and-page-architecture.md §3.4 Block 8
-  Required elements:
-    - CTA label: "Brief this project to Workforce" or "Start with a plan"
-    - Primary CTA → https://workforce-dev.rawaihub.com/signup
-============================================================ */}
+<Section align="center">
+  <CallToAction
+    headline="Brief your SaaS project to Workforce."
+    body="Describe the product and stack. The planner designs the engineering org and proposes the execution plan. Nothing starts until you approve it."
+    primary={{ label: "Get Access", href: "https://workforce-dev.rawaihub.com/signup" }}
+    secondary={{ label: "See how it works →", href: "/how-it-works" }}
+  />
+</Section>
