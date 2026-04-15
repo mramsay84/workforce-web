@@ -1,57 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import '../styles/tokens.css';
+@import '../styles/typography.css';
 @import '../styles/interactions.css';
-
-/* ── Workforce design tokens ─────────────────────────────────────────── */
-:root {
-  /* Backgrounds */
-  --wf-bg: #050507;
-  --wf-bg-surface: #09090b;
-  --wf-bg-surface-2: #0a0a0c;
-
-  /* Foregrounds */
-  --wf-fg: #fdfdff;
-  --wf-fg-muted: #b5b5c2;
-  --wf-fg-dim: #6e7a93;
-
-  /* Brand */
-  --wf-primary: #6366f1;
-  --wf-primary-hover: #818cf8;
-  --wf-primary-fg: #ffffff;
-
-  /* Borders */
-  --wf-border: #1e1e21;
-  --wf-border-soft: rgba(255, 255, 255, 0.06);
-  --wf-border-softer: rgba(255, 255, 255, 0.08);
-
-  /* Surface */
-  --wf-accent: #27272a;
-
-  /* Spacing */
-  --wf-space-1: 4px;
-  --wf-space-2: 8px;
-  --wf-space-3: 12px;
-  --wf-space-4: 16px;
-  --wf-space-6: 24px;
-  --wf-space-8: 32px;
-  --wf-space-12: 48px;
-  --wf-space-16: 64px;
-
-  /* Radii */
-  --wf-radius-sm: 0.5rem;
-  --wf-radius-md: 0.75rem;
-  --wf-radius-lg: 1rem;
-  --wf-radius-xl: 1.5rem;
-
-  /* Shadows */
-  --wf-surface-shadow: 0 8px 60px rgba(0, 0, 0, 0.40), 0 2px 20px rgba(0, 0, 0, 0.25);
-
-  /* Card (glass surface) */
-  --wf-card-bg: rgba(255, 255, 255, 0.02);
-  --wf-card-border: rgba(255, 255, 255, 0.06);
-  --wf-card-blur: 12px;
-}
 
 /* ── Base styles ─────────────────────────────────────────────────────── */
 html {
